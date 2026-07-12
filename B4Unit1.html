@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國中英語文法通 4 - Unit 1 形容詞原級與比較級互動教學</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Fresh editorial learning interface: calm teal + porcelain + soft rose accent */
+      --primary-color: #0ea5b1;
+      --primary-light: #c9f1f4;
+      --primary-soft: #f1fbfc;
+      --primary-dark: #064b5b;
+      --primary-ink: #083f4b;
+      --secondary-color: #f7fcfb;
+      --page-bg: #f5fbfa;
+      --text-color: #263846;
+      --muted-text: #627386;
+      --accent-color: #f27aad;
+      --accent-soft: #fff3f8;
+      --success-color: #2f8a62;
+      --success-soft: #eef8f2;
+      --error-color: #c85f6b;
+      --error-soft: #fff1f3;
+      --warning-color: #c89332;
+      --surface: rgba(255,255,255,0.82);
+      --surface-solid: #ffffff;
+      --hairline: rgba(8,75,91,0.12);
+      --hairline-strong: rgba(8,75,91,0.22);
+      --border-radius: 22px;
+      --shadow-soft: 0 10px 28px rgba(8,75,91,0.08);
+      --shadow-lift: 0 24px 64px rgba(8,75,91,0.14);
+      --shadow-card: 0 8px 22px rgba(8,75,91,0.07);
+      --focus-ring: 0 0 0 4px rgba(242,122,173,0.24);
+      --sidebar-width: 292px;
+      --font-zh: "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+      --font-en: "Inter", "Noto Sans TC", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-zh);
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 6%, rgba(14,165,177,0.15), transparent 31%),
+        radial-gradient(circle at 86% 12%, rgba(242,122,173,0.11), transparent 27%),
+        radial-gradient(circle at 50% 100%, rgba(201,241,244,0.58), transparent 38%),
+        linear-gradient(135deg, #f8fffe 0%, #f2faf8 48%, #fffafb 100%);
+      color: var(--text-color);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(8,75,91,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(8,75,91,0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.62), transparent 78%);
+      z-index: -2;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      width: 360px;
+      height: 360px;
+      right: -150px;
+      bottom: -160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(14,165,177,0.13), transparent 68%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001s !important; transition-duration: 0.001s !important; scroll-behavior: auto !important; }
+    }
+    :focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    ::selection { background: rgba(242,122,173,0.28); }
+
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      z-index: 2000;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      box-shadow: 0 0 18px rgba(14,165,177,0.32);
+      transition: width 0.12s linear;
+    }
+
+    .app-shell { display: flex; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      background: rgba(6,75,91,0.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      color: #fff;
+      padding: 12px 16px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 12px 28px rgba(6,75,91,0.18);
+    }
+    .topbar .title { font-weight: 900; letter-spacing: 0.03em; }
+    .hamburger {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.24);
+      color: #fff;
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.15s, border-color 0.2s;
+    }
+    .hamburger:active { transform: scale(0.94); }
+    .hamburger:hover { background: rgba(255,255,255,0.24); border-color: rgba(255,255,255,0.38); }
+
+    .sidebar {
+      width: var(--sidebar-width);
+      background:
+        linear-gradient(180deg, rgba(6,75,91,0.97), rgba(14,165,177,0.92)),
+        radial-gradient(circle at 0 0, rgba(255,255,255,0.24), transparent 35%);
+      color: white;
+      padding: 22px 16px 26px;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      z-index: 1000;
+      box-shadow: 12px 0 34px rgba(6,75,91,0.20);
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.42) transparent;
+    }
+    .sidebar::-webkit-scrollbar { width: 8px; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.36); border-radius: 999px; }
+    .brand-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 24px;
+      padding: 18px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 16px 34px rgba(0,0,0,0.08);
+    }
+    .brand-card::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -64px;
+      top: -64px;
+      background: radial-gradient(circle, rgba(255,255,255,0.22), transparent 64%);
+      pointer-events: none;
+    }
+    .unit-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-en);
+      font-size: 0.76rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 999px;
+      padding: 7px 11px;
+    }
+    .brand-card h2 {
+      margin: 12px 0 6px;
+      font-size: 1.46rem;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+    }
+    .brand-card p {
+      margin: 0;
+      font-size: 0.91rem;
+      color: rgba(255,255,255,0.80);
+    }
+    .progress-mini {
+      margin-top: 15px;
+      height: 7px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-mini span {
+      display: block;
+      height: 100%;
+      width: 8%;
+      background: linear-gradient(90deg, #ffffff, #ffd0e3);
+      border-radius: 999px;
+      transition: width 0.45s ease;
+    }
+
+    .nav-links { list-style: none; padding: 0; margin: 0; }
+    .nav-links li { margin-bottom: 7px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      display: block;
+      padding: 10px 12px;
+      border-radius: 15px;
+      transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease, padding-left 0.22s ease, box-shadow 0.22s ease;
+      cursor: pointer;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(255,255,255,0.17);
+      color: #fff;
+      font-weight: 800;
+      padding-left: 18px;
+      transform: translateX(2px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.13);
+    }
+    .nav-links a::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 10px; bottom: 10px;
+      width: 4px;
+      background: linear-gradient(180deg, #fff, #ffd0e3);
+      border-radius: 999px;
+      transform: scaleY(0);
+      transform-origin: center;
+      transition: transform 0.25s ease;
+    }
+    .nav-links a.active::before { transform: scaleY(1); }
+
+    .backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15,23,42,0.48);
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .main-content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      padding: 36px clamp(20px, 4vw, 52px) 44px;
+      max-width: 1160px;
+    }
+    .course-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 4vw, 44px);
+      margin-bottom: 26px;
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.93), rgba(241,251,252,0.82)),
+        radial-gradient(circle at 88% 16%, rgba(242,122,173,0.13), transparent 34%),
+        radial-gradient(circle at 8% 100%, rgba(14,165,177,0.10), transparent 34%);
+      box-shadow: var(--shadow-lift);
+      border: 1px solid rgba(14,165,177,0.16);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .course-hero::before {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.56);
+      pointer-events: none;
+    }
+    .course-hero::after {
+      content: "1";
+      position: absolute;
+      right: 26px;
+      top: 0;
+      font-family: var(--font-en);
+      font-size: clamp(5.4rem, 14vw, 10.2rem);
+      line-height: 1;
+      font-weight: 900;
+      color: rgba(14,165,177,0.10);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-family: var(--font-en);
+      color: var(--primary-dark);
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      background: rgba(241,251,252,0.92);
+      border: 1px solid rgba(14,165,177,0.22);
+      padding: 7px 12px;
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(8,75,91,0.04);
+    }
+    .course-hero h1 {
+      margin: 16px 0 10px;
+      padding: 0;
+      border: none;
+      color: var(--primary-ink);
+      font-size: clamp(2rem, 5vw, 4.15rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      display: block;
+      max-width: 820px;
+    }
+    .course-hero p {
+      max-width: 720px;
+      color: var(--muted-text);
+      font-size: 1.06rem;
+      margin: 0;
+    }
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+      max-width: 760px;
+    }
+    .chip {
+      background: rgba(255,255,255,0.86);
+      color: var(--primary-dark);
+      border: 1px solid rgba(14,165,177,0.18);
+      box-shadow: 0 8px 18px rgba(8,75,91,0.06);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .chip:hover { transform: translateY(-2px); box-shadow: 0 12px 22px rgba(8,75,91,0.10); }
+
+    .section {
+      display: none;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      padding: clamp(22px, 4vw, 42px);
+      border-radius: 30px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 30px;
+      border: 1px solid var(--hairline);
+      opacity: 0;
+      transform: translateY(16px);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .section::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary-color), rgba(14,165,177,0.35), var(--accent-color));
+    }
+    .section::after {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -150px;
+      top: -150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(14,165,177,0.08), transparent 68%);
+      pointer-events: none;
+    }
+    .section.active { display: block; }
+    .section.visible { opacity: 1; transform: translateY(0); }
+
+    h1.section-title {
+      position: relative;
+      color: var(--primary-dark);
+      border-bottom: 1px solid rgba(8,75,91,0.12);
+      padding-bottom: 18px;
+      margin: 0 0 24px;
+      font-size: clamp(1.6rem, 3.8vw, 2.28rem);
+      display: flex;
+      align-items: center;
+      line-height: 1.34;
+      letter-spacing: -0.025em;
+      z-index: 1;
+    }
+    h1.section-title .number {
+      font-family: var(--font-en);
+      color: var(--primary-color);
+      font-weight: 900;
+      margin-right: 14px;
+      min-width: 74px;
+      letter-spacing: -0.03em;
+    }
+    .level-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+    }
+    h3 {
+      color: var(--primary-dark);
+      margin-top: 36px;
+      margin-bottom: 16px;
+      font-size: 1.22rem;
+      border-left: 5px solid var(--accent-color);
+      padding: 10px 0 10px 14px;
+      background: linear-gradient(90deg, var(--accent-soft) 0%, rgba(255,255,255,0) 72%);
+      border-radius: 0 16px 16px 0;
+    }
+    h4 { font-size: 1.1rem; color: var(--primary-dark); margin: 0 0 8px; }
+    p, li { font-size: 1.055rem; color: #384657; margin-bottom: 10px; }
+    .en, .practice-question, .quiz-question, .quiz-option, .answer-text, .formula-pill, .cloze-article { font-family: var(--font-en); }
+    .zh { font-family: var(--font-zh); }
+    strong { color: var(--primary-ink); }
+
+    .grammar-box {
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(247,252,251,0.76));
+      padding: clamp(18px, 3vw, 28px);
+      border-radius: 24px;
+      border: 1px solid rgba(14,165,177,0.18);
+      margin: 22px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      z-index: 1;
+    }
+    .grammar-box::before {
+      content: '';
+      position: absolute;
+      inset: 16px auto 16px 0;
+      width: 5px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+      opacity: 0.9;
+    }
+    .grammar-tag {
+      background: linear-gradient(135deg, var(--primary-color), #0a8794);
+      color: white;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 900;
+      display: inline-block;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+      box-shadow: 0 8px 16px rgba(14,165,177,0.18);
+    }
+    .subtag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 1.06rem;
+      margin: 14px 0 8px;
+    }
+    .subtag .dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary-color), #0a8794);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-en);
+      font-weight: 900;
+      font-size: 0.92rem;
+      box-shadow: 0 6px 12px rgba(14,165,177,0.16);
+    }
+    .formula-pill {
+      background: rgba(255,255,255,0.92);
+      border: 1.6px solid rgba(8,75,91,0.22);
+      border-radius: 18px;
+      padding: 14px 20px;
+      margin: 12px 0 16px;
+      color: #1f2937;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 20px rgba(8,75,91,0.06);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .example-line {
+      border-left: 4px solid rgba(242,122,173,0.48);
+      padding: 9px 13px;
+      margin: 10px 0;
+      background: rgba(255,243,248,0.64);
+      border-radius: 0 14px 14px 0;
+    }
+
+    .grammar-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 16px 0;
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(8,75,91,0.08);
+      font-size: 1rem;
+      border: 1px solid rgba(14,165,177,0.17);
+    }
+    .grammar-table th, .grammar-table td {
+      border-bottom: 1px solid #e5eef1;
+      border-right: 1px solid #e5eef1;
+      padding: 11px 13px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .grammar-table th:last-child, .grammar-table td:last-child { border-right: none; }
+    .grammar-table tr:last-child td { border-bottom: none; }
+    .grammar-table th {
+      background: linear-gradient(135deg, var(--primary-color), #0a8794);
+      color: white;
+      font-weight: 800;
+    }
+    .grammar-table .soft-head { background: var(--primary-light); color: var(--primary-dark); font-weight: 800; }
+
+    .note-card {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid rgba(242,122,173,0.22);
+      border-left: 5px solid var(--accent-color);
+      border-radius: 20px;
+      padding: 14px 16px;
+      margin: 18px 0;
+      box-shadow: 0 8px 18px rgba(242,122,173,0.06);
+    }
+    .note-card .icon { font-size: 1.1rem; }
+    .note-card p { margin: 0; }
+
+    .practice-container {
+      background: rgba(255,255,255,0.70);
+      border: 1px dashed rgba(14,165,177,0.36);
+      border-radius: 26px;
+      padding: 16px clamp(16px, 3vw, 28px);
+      margin-top: 26px;
+      box-shadow: 0 8px 22px rgba(8,75,91,0.05);
+      z-index: 1;
+      position: relative;
+    }
+    .practice-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 4px 0 8px;
+      color: var(--primary-dark);
+    }
+    .practice-label {
+      background: #0f2630;
+      color: #fff;
+      font-family: var(--font-en);
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(15,38,48,0.13);
+    }
+    .practice-label b {
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 50%;
+      padding: 0 5px;
+      margin-left: 3px;
+    }
+    .practice-item {
+      border-bottom: 1px solid #edf4f6;
+      padding: 18px 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .practice-item:last-child { border-bottom: none; }
+    .practice-question {
+      font-weight: 650;
+      font-size: 1.055rem;
+      margin-bottom: 14px;
+      color: #203040;
+      line-height: 1.75;
+    }
+    .q-badge {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      margin-right: 8px;
+      vertical-align: middle;
+      font-weight: 900;
+    }
+    .answer-btn {
+      background: rgba(255,255,255,0.94);
+      color: var(--primary-dark);
+      border: 1.8px solid var(--primary-color);
+      padding: 8px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 850;
+      transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s, border-color 0.2s;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .answer-btn:hover {
+      background: var(--primary-color);
+      color: white;
+      box-shadow: 0 10px 20px rgba(14,165,177,0.18);
+      transform: translateY(-1px);
+    }
+    .answer-btn:active { transform: scale(0.96); }
+    .answer-text {
+      display: none;
+      margin-top: 14px;
+      color: #a01263;
+      font-weight: 900;
+      padding: 14px 16px;
+      background: var(--accent-soft);
+      border-radius: 16px;
+      border-left: 5px solid var(--accent-color);
+      font-size: 1.03rem;
+      line-height: 1.7;
+    }
+
+    .score-panel {
+      position: sticky;
+      top: 12px;
+      z-index: 50;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(14,165,177,0.20);
+      border-radius: 24px;
+      padding: 16px 18px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 30px rgba(8,75,91,0.09);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .score-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+      font-weight: 900;
+      color: var(--primary-dark);
+      gap: 14px;
+    }
+    .score-head .count { font-family: var(--font-en); white-space: nowrap; }
+    .score-head .count b { font-size: 1.28rem; color: var(--success-color); }
+    .score-track { height: 10px; background: #edf4f6; border-radius: 999px; overflow: hidden; }
+    .score-fill {
+      height: 100%; width: 0%; border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .score-done {
+      margin-top: 12px;
+      font-weight: 900;
+      text-align: center;
+      color: var(--primary-dark);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .score-done.show { opacity: 1; transform: translateY(0); }
+    .quiz-container { margin-top: 20px; }
+    .quiz-item {
+      background: rgba(255,255,255,0.94);
+      margin-bottom: 22px;
+      padding: clamp(20px, 3vw, 30px);
+      border: 1px solid #e4eef1;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(8,75,91,0.06);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .quiz-item:hover { transform: translateY(-2px); box-shadow: 0 18px 34px rgba(8,75,91,0.11); border-color: rgba(14,165,177,0.22); }
+    .quiz-question {
+      font-size: 1.11rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #203040;
+      line-height: 1.75;
+    }
+    .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .quiz-option {
+      font: inherit;
+      background: #fbfefe;
+      border: 1.8px solid #edf2f4;
+      color: #243341;
+      padding: 13px 16px;
+      border-radius: 18px;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+      font-size: 1rem;
+      position: relative;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      text-align: left;
+    }
+    .quiz-option:hover { background: var(--secondary-color); border-color: var(--primary-light); transform: translateY(-2px); box-shadow: 0 10px 18px rgba(8,75,91,0.06); }
+    .quiz-option.correct { background: var(--success-soft); border-color: var(--success-color); color: #22543c; }
+    .quiz-option.wrong { background: var(--error-soft); border-color: var(--error-color); color: #8c2d34; opacity: 0.94; }
+    .feedback { margin-top: 14px; font-weight: 900; min-height: 24px; font-size: 1.04rem; padding: 8px 0 0; border-radius: 8px; }
+    .cloze-article {
+      background: rgba(255,255,255,0.94);
+      padding: clamp(20px, 3vw, 30px);
+      border-radius: 22px;
+      border-left: 5px solid var(--accent-color);
+      line-height: 2;
+      font-size: 1.08rem;
+      margin-bottom: 26px;
+      box-shadow: 0 12px 26px rgba(8,75,91,0.08);
+    }
+    .cloze-blank {
+      display: inline-block;
+      min-width: 46px;
+      text-align: center;
+      border-bottom: 2px solid #94a3b8;
+      color: var(--primary-dark);
+      font-weight: 900;
+    }
+    .source-note {
+      font-size: 0.9rem;
+      color: #7a8695;
+      margin: 46px 0 12px;
+      text-align: center;
+      border-top: 1px solid rgba(8,75,91,0.12);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 980px) {
+      :root { --sidebar-width: 270px; }
+      .main-content { padding-inline: 24px; }
+    }
+    @media (max-width: 860px) {
+      .topbar { display: flex; }
+      .app-shell { flex-direction: column; }
+      .sidebar {
+        width: 84%; max-width: 340px; height: 100%; position: fixed; top: 0; left: 0;
+        transform: translateX(-105%); padding: 22px 16px;
+      }
+      .sidebar.open { transform: translateX(0); }
+      .backdrop.show { display: block; opacity: 1; }
+      .main-content { margin-left: 0; padding: 18px; max-width: none; }
+      .course-hero { border-radius: 26px; }
+      .course-hero::before { inset: 10px; border-radius: 20px; }
+      .quiz-options { grid-template-columns: 1fr; }
+      .grammar-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .formula-pill { border-radius: 16px; white-space: normal; }
+      .practice-heading { align-items: flex-start; flex-direction: column; gap: 6px; }
+      h1.section-title { align-items: flex-start; flex-direction: column; gap: 4px; }
+      h1.section-title .number { min-width: auto; }
+      .score-head { align-items: flex-start; flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+<div class="topbar">
+  <button class="hamburger" id="menuToggle" aria-label="開啟選單">☰</button>
+  <span class="title">B4 Unit 1｜形容詞比較</span>
+  <span style="width:42px"></span>
+</div>
+<div class="backdrop" id="backdrop"></div>
+<div class="app-shell">
+  <nav class="sidebar" id="sidebar">
+    <div class="brand-card">
+      <span class="unit-pill">Grammar Book 4 · Unit 1</span>
+      <h2>形容詞原級與比較級</h2>
+      <p>從原級句型、as...as，到 than 與進階比較句型。</p>
+      <div class="progress-mini"><span id="navProgress"></span></div>
+    </div>
+    <ul class="nav-links">
+      <li><a onclick="showSection('1-1')" class="active">1-1 形容詞原級基本句型</a></li>
+      <li><a onclick="showSection('1-2')">1-2 very + 形容詞原級</a></li>
+      <li><a onclick="showSection('1-3')">1-3 as + 形容詞原級 + as</a></li>
+      <li><a onclick="showSection('1-4')">1-4 比較級規則與不規則變化</a></li>
+      <li><a onclick="showSection('1-5')">1-5 比較級 than 的用法</a></li>
+      <li><a onclick="showSection('1-6')">1-6 同類型事物的比較</a></li>
+      <li><a onclick="showSection('1-7')">1-7 Which is...</a></li>
+      <li><a onclick="showSection('1-8')">1-8 Which has...</a></li>
+      <li><a onclick="showSection('1-9')">1-9 修飾比較級的副詞</a></li>
+      <li><a onclick="showSection('1-10')">1-10 The 比較級..., the 比較級...</a></li>
+      <li><a onclick="showSection('1-11')">1-11 比較級 + and + 比較級</a></li>
+      <li><a onclick="showSection('review-basic')">Review：基礎練習</a></li>
+      <li><a onclick="showSection('review-adv')">Review：進階練習</a></li>
+      <li><a onclick="showSection('review-cloze')">Review：克漏字選擇</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content" id="mainContent">
+    <header class="course-hero">
+      <span class="eyebrow">Unit 1 · Comparative Adjectives</span>
+      <h1>形容詞原級與比較級</h1>
+      <p>把課本單元整理成適合手機與投影閱讀的互動版：文法重點、例句、練習答案與 Review 測驗都能分段瀏覽。</p>
+      <div class="hero-chips">
+        <span class="chip">原級句型</span><span class="chip">as...as</span><span class="chip">than 比較</span><span class="chip">Which 問句</span><span class="chip">越來越 / 越...越...</span>
+      </div>
+    </header>
+
+    <section id="1-1" class="section active visible">
+      <span class="level-label">基礎練習</span>
+      <h1 class="section-title"><span class="number">1-1</span>形容詞原級基本句型</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>不做任何變化，以原始樣貌呈現的形容詞，稱為形容詞的「原級」。</p>
+        <div class="subtag"><span class="dot">1</span>be 動詞後接形容詞原級</div>
+        <div class="formula-pill">主詞 + be 動詞 + 形容詞原級.</div>
+        <div class="example-line"><strong>例</strong> <span class="en">This amusement park is beautiful.</span> 這個主題樂園很漂亮。</div>
+        <div class="subtag"><span class="dot">2</span>形容詞原級後接名詞</div>
+        <div class="formula-pill">主詞 + be 動詞 + a / an + 形容詞原級 + 名詞.</div>
+        <div class="example-line"><strong>例</strong> <span class="en">Window on China is a beautiful amusement park.</span> 小人國是個很漂亮的主題樂園。</div>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>A</b></span><h4>請將錯的句子改寫為正確的句子。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>Mandy is pretty a girl.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Mandy is a pretty girl.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>Kitty beautiful.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Kitty is beautiful.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>Patty is a student happy.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Patty is a happy student.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>Is sad Karen?</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Is Karen sad?</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>Are students Ken and Kevin good?</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Are Ken and Kevin good students?</div></div>
+      </div>
+    </section>
+
+    <section id="1-2" class="section">
+      <h1 class="section-title"><span class="number">1-2</span>「very + 形容詞原級」</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>1. <span class="en">very</span> 是副詞，用來修飾形容詞，表示強調。<span class="en">very</span> 修飾形容詞原級，位於形容詞前面。</p>
+        <p>2. <span class="en">very</span>、<span class="en">too</span>、<span class="en">quite</span>、<span class="en">pretty</span> 等副詞用來修飾形容詞原級。其句型為：</p>
+        <div class="formula-pill">A + be 動詞 + very / too / quite / pretty + 形容詞原級.</div>
+        <div class="example-line"><strong>例</strong> <span class="en">This amusement park is very beautiful.</span> 這主題樂園非常漂亮。（very 修飾原級 beautiful）</div>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>B</b></span><h4>請加入提示字改寫句子。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>He is tall. (very)</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">He is very tall.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>John is young. (too)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">John is too young.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>Kate is pretty. (quite)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Kate is quite pretty.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>Peter is popular. (pretty)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Peter is pretty popular.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>The lion is strong. (very)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The lion is very strong.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>Jenny is thin. (too)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Jenny is too thin.</div></div>
+      </div>
+    </section>
+
+    <section id="1-3" class="section">
+      <h1 class="section-title"><span class="number">1-3</span>「as + 形容詞原級 + as」</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>1. 兩者做比較時，如果比較的結果是相等的，可以用「as + 形容詞原級 + as」的句子表達。</p>
+        <p>2. 和 <span class="en">as</span>、<span class="en">than</span> 一樣，後面接人稱代名詞時要用主格，但口語中也常用受格。</p>
+        <div class="subtag"><span class="dot">1</span>肯定句型</div>
+        <div class="formula-pill">A + be 動詞 + as + 形容詞原級 + as +（B + be 動詞 / 受格）.</div>
+        <div class="example-line"><strong>例</strong> <span class="en">I am as old as she (is). = I am as old as her.</span> 我跟她一樣大。</div>
+        <div class="subtag"><span class="dot">2</span>否定句型</div>
+        <div class="formula-pill">A + be 動詞 + not + as / so + 形容詞原級 + as + B（+ be 動詞）/ 受格.</div>
+        <div class="example-line"><strong>例</strong> <span class="en">He is not as rich as she (is). = He is not as rich as her.</span> 他不像她一樣富有。</div>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>C</b></span><h4>請使用 as...as... 合併句子。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>English is hard, and math is hard, too.</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">English is as hard as math.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>Tina is beautiful, and Eva is beautiful, too.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Tina is as beautiful as Eva.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>Taking an MRT is convenient, and driving a car is convenient, too.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Taking an MRT is as convenient as driving a car.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>This movie theater is large, and that movie theater is large, too.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">This movie theater is as large as that movie theater.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>MP4 players are expensive, and MP3 players are expensive, too.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">MP4 players are as expensive as MP3 players.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>Those purple skirts are cheap, and these red skirts are cheap, too.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Those purple skirts are as cheap as these red skirts.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">6</span>Going swimming is interesting, and going skating is interesting, too.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Going swimming is as interesting as going skating.</div></div>
+      </div>
+    </section>
+
+    <section id="1-4" class="section">
+      <h1 class="section-title"><span class="number">1-4</span>形容詞比較級的規則與不規則變化</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>形容詞分為三級：形容詞原級、形容詞比較級、形容詞最高級。形容詞的「比較級」用來表達兩者的比較，其中一方的程度高於另一方，稱為「優勢比較」。</p>
+        <div class="subtag"><span class="dot">1</span>單音節或雙音節形容詞</div>
+        <table class="grammar-table">
+          <tr><th colspan="4">單音節或雙音節形容詞比較級的規則變化</th></tr>
+          <tr><td class="soft-head">直接加 -er</td><td class="soft-head">字尾為 e，直接加 -r</td><td class="soft-head">「短母音 + 子音」<br>重複字尾加 -er</td><td class="soft-head">字尾為 y，去 y 加 -ier</td></tr>
+          <tr><td class="en">cold → colder<br>dark → darker<br>weak → weaker</td><td class="en">late → later<br>cute → cuter<br>nice → nicer</td><td class="en">fat → fatter<br>big → bigger<br>thin → thinner</td><td class="en">happy → happier<br>easy → easier<br>angry → angrier</td></tr>
+        </table>
+        <div class="subtag"><span class="dot">2</span>大多數雙音節和所有三個音節以上的形容詞，在原級前加 more</div>
+        <table class="grammar-table">
+          <tr><th colspan="2">雙音節或多音節形容詞比較級的規則變化</th></tr>
+          <tr><td class="en">beautiful → more beautiful<br>popular → more popular</td><td class="en">famous → more famous<br>terrible → more terrible</td></tr>
+        </table>
+        <p>多數兩個音節的形容詞，加 <span class="en">more</span> 形成比較級，但也有些是加 -er，特別是字尾為 y 的形容詞，例如：<span class="en">lucky</span> 的比較級為 <span class="en">luckier</span>。</p>
+        <div class="subtag"><span class="dot">3</span>有的形容詞比較級是不規則變化</div>
+        <table class="grammar-table"><tr><th colspan="4">形容詞比較級的不規則變化</th></tr><tr><td class="en">good → better</td><td class="en">bad → worse</td><td class="en">little → less</td><td class="en">many / much → more</td></tr></table>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>D</b></span><h4>請將形容詞原級改寫成比較級。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>(1) dirty / (2) pretty</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">dirtier / prettier</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>special</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">more special</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>wet</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">wetter</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>young</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">younger</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>sad</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">sadder</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>wonderful</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">more wonderful</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">6</span>bad</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">worse</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">7</span>ugly</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">uglier</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">8</span>large</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">larger</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">9</span>expensive</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">more expensive</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">10</span>heavy</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">heavier</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">11</span>important</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">more important</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">12</span>early</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">earlier</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">13</span>difficult</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">more difficult</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">14</span>common</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">more common</div></div>
+      </div>
+    </section>
+
+    <section id="1-5" class="section">
+      <h1 class="section-title"><span class="number">1-5</span>形容詞比較級 than 的用法</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>1. 形容詞比較級的句型使用 <span class="en">than</span> 時，than 在句型中是連接詞，所以後面接人稱代名詞時，要使用主格加動詞；但在口語中有時會省略動詞，有時也可以使用受格。</p>
+        <p>2. 比較級的基本句型：</p>
+        <div class="formula-pill">A + be 動詞 + 形容詞比較級 + than + B（+ be 動詞）.</div>
+        <div class="example-line"><strong>例</strong> <span class="en">Susan is taller than her mother (is).</span> Susan 比她媽媽高。</div>
+        <div class="example-line"><strong>例</strong> <span class="en">My sister is taller than I (am). = My sister is taller than me.</span> 我妹妹比我高。</div>
+        <p>3. 若表「較不⋯⋯」，形容詞前加 <span class="en">less</span> 形成比較級。</p>
+        <div class="example-line"><strong>例</strong> <span class="en">The movie is less interesting than that one.</span> 這部電影沒那部有趣。</div>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>E</b></span><h4>請使用 than 合併句子。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>Mark’s bag is NT$600. / Simon’s bag is NT$650. (expensive)</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">Simon’s bag is more expensive than Mark’s bag.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>My mother works 8 hours a day. / My father works 10 hours a day. (busy)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">My father is busier than my mother.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>Tina is 10 years old. / Tiffany is 12 years old. (old)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Tiffany is older than Tina.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>This camera is NT$20,000. / That camera is NT$18,000. (cheap)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">That camera is cheaper than this camera.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>These slippers are size 7. / Those slippers are size 6. (small)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Those slippers are smaller than these slippers.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>The desk is 15 kilos. / The chair is 9 kilos. (heavy)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The desk is heavier than the chair.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">6</span>The refrigerator is clean. / The washing machine is very clean. (clean)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The washing machine is cleaner than the refrigerator.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">7</span>The red CD player is popular. / The green CD player is very popular. (popular)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The green CD player is more popular than the red CD player.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">8</span>Peter is 180 centimeters tall. / Paul is 178 centimeters tall. (tall)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Peter is taller than Paul.</div></div>
+      </div>
+    </section>
+
+    <section id="1-6" class="section">
+      <h1 class="section-title"><span class="number">1-6</span>比較級用於同類型事物的比較</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>同類的人或物才可以相比，不同類的不可以相比。</p>
+        <div class="example-line"><strong>例</strong> <span class="en">Lily’s math is better than Mandy.</span>（×）</div>
+        <div class="example-line"><strong>例</strong> <span class="en">Lily’s math is better than Mandy’s (math).</span>（○）<br>Lily 的數學比 Mandy 好。</div>
+        <div class="note-card"><span class="icon">💡</span><p><span class="en">Lily’s math</span> 不可以和 Mandy 這個人比較，應該和同類的 <span class="en">Mandy’s math</span> 比。</p></div>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>F</b></span><h4>請依提示用形容詞比較級造句。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>Mike’s math / bad / Mark’s math</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">Mike’s math is worse than Mark’s (math).</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>Ken’s computer games / interesting / Kevin’s computer games</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Ken’s computer games are more interesting than Kevin’s computer games.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>Brian’s sister / happy / Kitty’s sister</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Brian’s sister is happier than Kitty’s sister.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>Her English / good / his English</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Her English is better than his English.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>Betty’s refrigerator / expensive / my refrigerator</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Betty’s refrigerator is more expensive than my refrigerator.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>The cake / delicious / the pizza</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The cake is more delicious than the pizza.</div></div>
+      </div>
+    </section>
+
+    <section id="1-7" class="section">
+      <h1 class="section-title"><span class="number">1-7</span>形容詞比較級「Which is...」</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>1. 形容詞比較級的問句可以用 <span class="en">which</span> 起首，which 可當「疑問代名詞」或「疑問形容詞」。</p>
+        <p>（1）當「疑問代名詞」時，which 後面不必加名詞，可直接加動詞。</p>
+        <div class="example-line"><strong>例</strong> <span class="en">Which is better, the red bag or the blue bag?</span> 哪一個比較好，紅色包還是藍色包？</div>
+        <p>（2）當「疑問形容詞」時，which 後面加名詞，再加動詞。</p>
+        <div class="example-line"><strong>例</strong> <span class="en">Which bag is better, the red one or the blue one?</span><br>哪個包包比較好，紅色的還是藍色的？</div>
+        <p>2. 比較級的問句：</p>
+        <table class="grammar-table"><tr><td class="soft-head"><span class="en">Which + 名詞</span><br><span class="en">Which</span></td><td><span class="en">+ is + 形容詞比較級,</span></td><td><span class="en">A or B?</span></td></tr></table>
+        <div class="example-line"><strong>例</strong> A: <span class="en">Which animal is bigger, an elephant or a monkey?</span> 哪種動物比較大，大象還是猴子？<br>B: <span class="en">An elephant is bigger than a monkey.</span> 大象比猴子大。</div>
+        <div class="example-line"><strong>例</strong> A: <span class="en">Which is more interesting, math or science?</span> 哪個比較有趣，數學還是科學？<br>B: <span class="en">Science is more interesting than math.</span> 科學比數學有趣。</div>
+        <p><strong>補充</strong> one 的用法：one 單獨使用時，表示「不特定之物」，等於「a + 單數名詞」。one 之前有修飾語時，表「不特定之物」或「特定之物」，複數時要用 ones。</p>
+        <table class="grammar-table"><tr><th colspan="2">單數</th><th colspan="2">複數</th></tr><tr><td>a / an / the + 形容詞 / 序數</td><td rowspan="2" class="en">one</td><td>the + 形容詞</td><td rowspan="2" class="en">ones</td></tr><tr><td>this / that</td><td>these / those</td></tr></table>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>G</b></span><h4>請依提示造句。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例 1</span>music / interesting / classical / rock-and-roll</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">Which music is more interesting, classical or rock-and-roll?</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例 2</span>heavy / the red one / the yellow one</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">Which is heavier, the red one or the yellow one?</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>animal / cute / the panda / the giraffe</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Which animal is cuter, the panda or the giraffe?</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>books / easy / the blue ones / the yellow ones</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Which books are easier, the blue ones or the yellow ones?</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>camera / cheap / the big one / the small one</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Which camera is cheaper, the big one or the small one?</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>person / tall / Eva / Joanne</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Which person is taller, Eva or Joanne?</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>person / good / Debby / Danny</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Which person is better, Debby or Danny?</div></div>
+      </div>
+    </section>
+
+    <section id="1-8" class="section">
+      <h1 class="section-title"><span class="number">1-8</span>形容詞比較級「Which has...」</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>1. <span class="en">which</span> 當「疑問代名詞」的句型：</p>
+        <div class="formula-pill">Which + has + more + 名詞, A or B?</div>
+        <div class="example-line"><strong>例</strong> <span class="en">Which has more legs, the frog or the spider?</span> 哪一個腳比較多，青蛙還是蜘蛛？</div>
+        <p>2. 回答 <span class="en">Which has...</span> 的句型：</p>
+        <div class="formula-pill">A + has / have + more / less + 名詞 + than + B.</div>
+        <div class="example-line"><strong>例</strong> <span class="en">The spider has more legs than the frog.</span> 蜘蛛的腳比青蛙多。</div>
+        <div class="example-line"><strong>例</strong> <span class="en">The frog has less legs than the spider.</span> 青蛙的腳比蜘蛛少。</div>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>H</b></span><h4>請依提示回答句子或造原問句。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>Which has higher temperature, the bird or the snake?</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">The bird has higher temperature than the snake.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>Which person has more money, your father or your mother? (my father)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">My father has more money than my mother.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>Which person has more time, you or your sister? (my sister)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">My sister has more time than I.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>Which has more windows, the yellow house or the pink house? (the yellow house)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The yellow house has more windows than the pink house.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>Cows have more feet than chickens. (Which...)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Which has more feet, cows or chickens?</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>I have more books than my brother. (Which...)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Which person has more books, you or your brother?</div></div>
+      </div>
+    </section>
+
+    <section id="1-9" class="section">
+      <h1 class="section-title"><span class="number">1-9</span>修飾形容詞比較級的副詞</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>1. 修飾形容詞比較級的副詞：修飾形容詞比較級時，需要用 <span class="en">even</span>、<span class="en">much</span>、<span class="en">a little</span>、<span class="en">a lot</span>、<span class="en">lots</span> 等副詞來修飾。</p>
+        <p>2. 修飾形容詞原級的副詞與修飾形容詞比較級的副詞不同，如下：</p>
+        <table class="grammar-table"><tr><td class="soft-head">修飾形容詞原級的副詞</td><td class="en">very, too, quite, pretty</td></tr><tr><td class="soft-head">修飾形容詞比較級的副詞</td><td class="en">even, much, a little, a lot,（lots 不正式）</td></tr></table>
+        <div class="example-line"><strong>例</strong> <span class="en">The building is very tall.</span> 這棟建築物很高。</div>
+        <div class="example-line"><strong>例</strong> <span class="en">Samuel is much taller than his brother.</span> Samuel 比他弟弟高得多。</div>
+        <div class="example-line"><strong>例</strong> <span class="en">The skirt is a little cheaper than the jeans.</span> 這裙子比牛仔褲便宜一點。</div>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>I</b></span><h4>請填入 much 或 very。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>(1) Annie is _____ friendly.<br>(2) The chocolate cake is _____ more delicious.</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">very / much</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>Those clothes are _____ dirty.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">very</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>Getting up early is _____ important.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">very</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>Taking the THSR is _____ more convenient.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">much</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>The rabbit is _____ faster than the turtle.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">much</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>The desk is _____ lighter than the piano.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">much</div></div>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>J</b></span><h4>請加入提示字改寫句子。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>The yellow ball is bigger than the purple ball. (a lot)</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">The yellow ball is a lot bigger than the purple ball.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>It’s hotter today than it was yesterday. (a little)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">It’s a little hotter today than it was yesterday.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>She is heavier than Tina. (a lot)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">She is a lot heavier than Tina.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>This picture is more beautiful than that one. (far)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">This picture is far more beautiful than that one.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>The camera is more expensive than the cellphone. (even)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The camera is even more expensive than the cellphone.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>The weather in New York is colder than the weather in California. (much)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The weather in New York is much colder than the weather in California.</div></div>
+      </div>
+    </section>
+
+    <section id="1-10" class="section">
+      <span class="level-label">進階練習</span>
+      <h1 class="section-title"><span class="number">1-10</span>「The + 形容詞比較級, the + 形容詞比較級」</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>1.「The 比較級 ..., the 比較級 ...」是表示「越⋯⋯，就越⋯⋯」。可和形容詞或副詞連用，表示「原因和結果」，也就是「當一方變化時，另一方也隨之改變」。</p>
+        <p>2.「The 比較級 ..., the 比較級 ...」的句型：</p>
+        <div class="formula-pill">The 比較級 + A + 動詞 ..., the 比較級 + B + 動詞.</div>
+        <div class="example-line"><strong>例</strong> <span class="en">The harder you study, the better grades you will get.</span> 你越用功，就越會拿到更好的成績。</div>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>K</b></span><h4>請依提示重組下列句子。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>we get. / we are, / The older / the weaker</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">The older we are, the weaker we get.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>the more / The more / we spend. / we make,</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The more we make, the more we spend.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>we want. / we get, / The more / the more</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The more we get, the more we want.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>your coffee? / How do you / like / the better. / The stronger,</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">How do you like your coffee? The stronger, the better.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>the better. / The more, / do you want? / How much</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">How much do you want? The more, the better.</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>will become. / the healthier / you / you eat, / The less / meat</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The less meat you eat, the healthier you will become.</div></div>
+      </div>
+    </section>
+
+    <section id="1-11" class="section">
+      <h1 class="section-title"><span class="number">1-11</span>「比較級 + and + 比較級」</h1>
+      <div class="grammar-box">
+        <span class="grammar-tag">說明</span>
+        <p>「比較級 + and + 比較級」的句型如下：</p>
+        <div class="formula-pill">主詞 + be 動詞 / get / become + 比較級 + and + 比較級.</div>
+        <div class="example-line"><strong>例</strong> <span class="en">The weather is colder and colder.</span> 天氣越來越冷了。</div>
+        <div class="example-line"><strong>例</strong> <span class="en">Mandy is more and more beautiful.</span> Mandy 越來越美了。</div>
+      </div>
+      <div class="practice-container">
+        <div class="practice-heading"><span class="practice-label">Practice <b>L</b></span><h4>請填入適當的字。</h4></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>The puppy is getting _____ and _____. (big)</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">bigger / bigger</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>_____ and _____ people go to that shop. (many)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">More / more</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>The sky is getting _____ and _____. (dark)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">darker / darker</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>The poor have _____ and _____ money. (little)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">less / less</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>Life in the country is getting _____ and _____. (convenient)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">more / more convenient</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>The weather in California is becoming _____ and _____. (warm)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">warmer / warmer</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">6</span>The restaurant is becoming _____ and _____. (popular)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">more / more popular</div></div>
+        <div class="practice-item"><div class="practice-question"><span class="q-badge">7</span>Houses are becoming _____ and _____. (comfortable)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">more / more comfortable</div></div>
+      </div>
+    </section>
+
+    <section id="review-basic" class="section">
+      <h1 class="section-title"><span class="number">Review</span>基礎練習：單題選擇</h1>
+      <div class="score-panel">
+        <div class="score-head"><span>作答進度</span><span class="count"><b id="quiz-basic-correct">0</b> / <span id="quiz-basic-total">0</span> 答對</span></div>
+        <div class="score-track"><div class="score-fill" id="quiz-basic-fill"></div></div>
+        <div class="score-done" id="quiz-basic-done"></div>
+      </div>
+      <p>請選出最正確的答案。</p>
+      <div id="quiz-basic" class="quiz-container"></div>
+    </section>
+
+    <section id="review-adv" class="section">
+      <h1 class="section-title"><span class="number">Review</span>進階練習：單題選擇</h1>
+      <div class="score-panel">
+        <div class="score-head"><span>作答進度</span><span class="count"><b id="quiz-adv-correct">0</b> / <span id="quiz-adv-total">0</span> 答對</span></div>
+        <div class="score-track"><div class="score-fill" id="quiz-adv-fill"></div></div>
+        <div class="score-done" id="quiz-adv-done"></div>
+      </div>
+      <p>請選出最正確的答案。</p>
+      <div id="quiz-adv" class="quiz-container"></div>
+    </section>
+
+    <section id="review-cloze" class="section">
+      <h1 class="section-title"><span class="number">Review</span>克漏字選擇</h1>
+      <div class="score-panel">
+        <div class="score-head"><span>作答進度</span><span class="count"><b id="quiz-cloze-correct">0</b> / <span id="quiz-cloze-total">0</span> 答對</span></div>
+        <div class="score-track"><div class="score-fill" id="quiz-cloze-fill"></div></div>
+        <div class="score-done" id="quiz-cloze-done"></div>
+      </div>
+      <p>請閱讀下文，並選出最適合的答案。</p>
+      <div class="cloze-article">
+        <p>My uncle is five years <span class="cloze-blank">1</span> my father, and he is <span class="cloze-blank">2</span> and more handsome than my father.<br>
+        My father and I like him a lot. He is getting <span class="cloze-blank">3</span> in my family. We usually go to visit him on Sunday.<br>
+        He helps me with my homework on Sunday afternoon. First he teaches me math. He is <span class="cloze-blank">4</span> than my school teacher. Then, he teaches me English. His English is <span class="cloze-blank">5</span> than anyone else’s in my family. He also cooks us a delicious meal at night. The food is <span class="cloze-blank">6</span> than any food in a restaurant.<br>
+        I am so lucky to have such a <span class="cloze-blank">7</span> uncle.</p>
+      </div>
+      <div id="quiz-cloze" class="quiz-container"></div>
+    </section>
+
+    <div class="source-note">資料來源：依使用者提供之 B4 Unit 1 圖片內容整理製作。</div>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  const basicQuestions = [{"q": "Those shoes are ________ than these shoes.", "options": ["big", "bigger", "more big", "the bigger"], "ans": 1}, {"q": "This watch is more ________ than that one.", "options": ["nice", "beautiful", "more expensive", "cheaper"], "ans": 1}, {"q": "This park is ________ beautiful.", "options": ["very", "much", "a lot", "even"], "ans": 0}, {"q": "It’s ________ warmer today than it was yesterday.", "options": ["more", "lot", "very", "a little"], "ans": 3}, {"q": "The camera is ________ than the cellphone.", "options": ["cheap", "the cheaper", "very cheaper", "a little cheaper"], "ans": 3}, {"q": "Mike’s science is worse than ________.", "options": ["science", "Tina’s science", "Tina", "one"], "ans": 1}, {"q": "The red ball is ________ bigger than the blue ball.", "options": ["many", "very", "a little", "too"], "ans": 2}, {"q": "Andy is ________ than Ted.", "options": ["heavy", "heavier", "the heavier", "a little"], "ans": 1}, {"q": "Andrew is ________ than that man.", "options": ["successful", "more successful", "success", "very successful"], "ans": 1}, {"q": "Mandy is ________ her best friend.", "options": ["tall than", "the taller of", "very tall", "as tall as"], "ans": 3}, {"q": "Kate: Are you taller ________ your sister?<br>Nancy: Yes, I am.", "options": ["than", "with", "as", "like"], "ans": 0}, {"q": "Are the babies much ________?", "options": ["noisy", "the noisier", "noisier", "more noisy"], "ans": 2}, {"q": "Living in a big city is ________ than living in the country.", "options": ["convenient", "much convenient", "very convenient", "more convenient"], "ans": 3}, {"q": "Linda is not ________ Lisa.", "options": ["as nicer", "as nice as", "as nice", "quite nice"], "ans": 1}, {"q": "This picture is ________ that one.", "options": ["a lot beautiful", "a lot more beautiful", "a lot more beautiful than", "very more beautiful than"], "ans": 2}];
+  const advQuestions = [{"q": "Judy: Are flight tickets getting ________?<br>Jack: Yes, they are.", "options": ["the more expensive", "more and more expensive", "expensiver", "very more expensive"], "ans": 1}, {"q": "Lily is 160 cm. Mark is 170 cm. Mark is ________.", "options": ["shorter than Lily", "as tall as", "taller than Lily", "the shorter of the two"], "ans": 2}, {"q": "Fred is stronger than Paul. Paul is ________.", "options": ["as weak as Fred", "as strong as Fred", "weaker than Fred", "stronger than Fred"], "ans": 2}, {"q": "These shoes are size 6. Those shoes are size 7. Those shoes ________.", "options": ["are bigger than these shoes", "is smaller than these shoes", "are smaller than these shoes", "are as big as these shoes"], "ans": 0}, {"q": "Jenny works 45 hours a week. Benny works 40 hours a week. Jenny is ________.", "options": ["as busy as Benny", "busier than Benny", "busier Benny does", "the busier than Benny"], "ans": 1}];
+  const clozeQuestions = [{"q": "1.", "options": ["the more younger", "the younger than", "more younger than", "younger than"], "ans": 3}, {"q": "2.", "options": ["healthier", "more healthier", "the more healthier", "the healthier"], "ans": 0}, {"q": "3.", "options": ["more and more popular", "popular", "the more popular", "very more popular"], "ans": 0}, {"q": "4.", "options": ["patient", "more patient", "the more patient", "very more patient"], "ans": 1}, {"q": "5.", "options": ["better", "good", "more better", "more good"], "ans": 0}, {"q": "6.", "options": ["the more delicious", "very more delicious", "more delicious", "delicious"], "ans": 2}, {"q": "7.", "options": ["the more great", "more great", "greater", "great"], "ans": 3}];
+
+  const sidebar = document.getElementById('sidebar');
+  const backdrop = document.getElementById('backdrop');
+  const navProgress = document.getElementById('navProgress');
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const readingProgress = document.getElementById('readingProgress');
+  function updateReadingProgress() {
+    if (!readingProgress) return;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    readingProgress.style.width = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) + '%';
+  }
+  window.addEventListener('scroll', updateReadingProgress, { passive: true });
+  window.addEventListener('resize', updateReadingProgress);
+
+  function openMenu() { sidebar.classList.add('open'); backdrop.classList.add('show'); }
+  function closeMenu() { sidebar.classList.remove('open'); backdrop.classList.remove('show'); }
+  document.getElementById('menuToggle').addEventListener('click', openMenu);
+  backdrop.addEventListener('click', closeMenu);
+
+  function clearGsapState(el) {
+    if (!el) return;
+    if (window.gsap) {
+      gsap.killTweensOf(el);
+      gsap.set(el, { clearProps: 'opacity,visibility,transform' });
+    } else {
+      el.style.removeProperty('opacity');
+      el.style.removeProperty('visibility');
+      el.style.removeProperty('transform');
+    }
+  }
+
+  function animateSection(section) {
+    if (!section) return;
+
+    // Debug fix: previous GSAP autoAlpha animations may leave inline
+    // visibility:hidden on a section. Clear it before every reveal.
+    clearGsapState(section);
+
+    if (reduceMotion || !window.gsap) return;
+    const targets = section.querySelectorAll('.section-title, .level-label, .grammar-box, .practice-container, .quiz-item, .cloze-article');
+    gsap.killTweensOf(targets);
+    gsap.set(targets, { clearProps: 'opacity,visibility,transform' });
+    gsap.fromTo(targets, { y: 18, autoAlpha: 0 }, {
+      y: 0,
+      autoAlpha: 1,
+      duration: 0.52,
+      ease: 'power2.out',
+      stagger: 0.055,
+      overwrite: true
+    });
+  }
+
+  window.showSection = function(id) {
+    const current = document.querySelector('.section.active');
+    const next = document.getElementById(id);
+    if (!next) return;
+
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    navLinks.forEach(l => l.classList.remove('active'));
+    const activeLink = document.querySelector(`.nav-links a[onclick="showSection('${id}')"]`);
+    if (activeLink) activeLink.classList.add('active');
+    const currentIndex = navLinks.findIndex(link => link.classList.contains('active'));
+    if (navProgress && currentIndex >= 0) navProgress.style.width = ((currentIndex + 1) / navLinks.length * 100) + '%';
+
+    closeMenu();
+
+    const contentTop = document.getElementById('mainContent').offsetTop;
+    const hero = document.querySelector('.course-hero');
+    const targetTop = Math.max(0, contentTop + (hero ? hero.offsetHeight + 18 : 0));
+
+    if (current === next) {
+      window.scrollTo({ top: targetTop, behavior: reduceMotion ? 'auto' : 'smooth' });
+      animateSection(next);
+      return;
+    }
+
+    const reveal = () => {
+      clearGsapState(next);
+      next.classList.add('active');
+      void next.offsetWidth;
+      next.classList.add('visible');
+      window.scrollTo({ top: targetTop, behavior: reduceMotion ? 'auto' : 'smooth' });
+      requestAnimationFrame(() => animateSection(next));
+    };
+
+    if (current) {
+      if (!reduceMotion && window.gsap) {
+        // Use opacity instead of autoAlpha here. autoAlpha writes visibility:hidden,
+        // which can persist when the same section is opened again and cause a blank page.
+        gsap.killTweensOf(current);
+        gsap.to(current, { opacity: 0, y: 12, duration: 0.18, ease: 'power1.in', onComplete: () => {
+          current.classList.remove('active', 'visible');
+          clearGsapState(current);
+          reveal();
+        }});
+      } else {
+        current.classList.remove('visible');
+        setTimeout(() => { current.classList.remove('active'); clearGsapState(current); reveal(); }, 180);
+      }
+    } else {
+      reveal();
+    }
+  }
+
+  window.toggleAnswer = function(btn) {
+    const answerDiv = btn.nextElementSibling;
+    const isOpen = answerDiv.style.display === 'block';
+    if (isOpen) {
+      if (window.gsap && !reduceMotion) {
+        gsap.to(answerDiv, { autoAlpha: 0, y: -6, duration: 0.16, onComplete: () => { answerDiv.style.display = 'none'; } });
+      } else {
+        answerDiv.style.display = 'none';
+      }
+      btn.innerHTML = '顯示答案';
+      btn.style.backgroundColor = 'white';
+      btn.style.color = 'var(--primary-dark)';
+    } else {
+      answerDiv.style.display = 'block';
+      if (window.gsap && !reduceMotion) gsap.fromTo(answerDiv, { autoAlpha: 0, y: -8, scale: 0.98 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.28, ease: 'back.out(1.4)' });
+      btn.innerHTML = '隱藏答案';
+      btn.style.backgroundColor = 'var(--primary-color)';
+      btn.style.color = 'white';
+    }
+  }
+
+  const quizState = {};
+  function initScore(id, total) {
+    quizState[id] = { total, correct: 0, answered: new Set() };
+    document.getElementById(`${id}-total`).textContent = total;
+  }
+  function updateScore(id) {
+    const s = quizState[id];
+    const pct = s.total ? Math.round((s.answered.size / s.total) * 100) : 0;
+    document.getElementById(`${id}-correct`).textContent = s.correct;
+    document.getElementById(`${id}-fill`).style.width = pct + '%';
+    if (s.answered.size === s.total && s.total > 0) {
+      const done = document.getElementById(`${id}-done`);
+      const ratio = s.correct / s.total;
+      let msg;
+      if (ratio === 1) msg = '滿分！全部答對，太厲害了！';
+      else if (ratio >= 0.8) msg = `完成！答對 ${s.correct} / ${s.total}，表現很穩。`;
+      else if (ratio >= 0.6) msg = `完成！答對 ${s.correct} / ${s.total}，可以回頭複習幾個不熟的句型。`;
+      else msg = `完成！答對 ${s.correct} / ${s.total}，建議先複習前面的文法重點。`;
+      done.textContent = msg;
+      done.classList.add('show');
+      if (window.gsap && !reduceMotion) gsap.fromTo(done, { scale: 0.96 }, { scale: 1, duration: 0.32, ease: 'back.out(1.8)' });
+    }
+  }
+  function renderQuiz(id, questions, startNumber) {
+    const container = document.getElementById(id);
+    if (!container || !questions || questions.length === 0) return;
+    initScore(id, questions.length);
+    container.innerHTML = questions.map((q, i) => `
+      <div class="quiz-item" id="${id}-q${i}">
+        <div class="quiz-question">${i + startNumber}. ${q.q}</div>
+        <div class="quiz-options">
+          ${q.options.map((opt, oi) => `
+            <button class="quiz-option" onclick="checkAnswer('${id}', ${i}, ${oi}, ${q.ans})">
+              (${String.fromCharCode(65 + oi)})&nbsp; ${opt}
+            </button>
+          `).join('')}
+        </div>
+        <div class="feedback" id="${id}-fb${i}"></div>
+      </div>
+    `).join('');
+  }
+  window.checkAnswer = function(id, qIdx, oIdx, correctIdx) {
+    const s = quizState[id];
+    if (s && s.answered.has(qIdx)) return;
+    const qEl = document.getElementById(`${id}-q${qIdx}`);
+    const opts = qEl.querySelectorAll('.quiz-option');
+    const fb = document.getElementById(`${id}-fb${qIdx}`);
+    opts.forEach(opt => { opt.classList.remove('correct', 'wrong'); opt.disabled = true; });
+    const isCorrect = (oIdx === correctIdx);
+    if (isCorrect) {
+      opts[oIdx].classList.add('correct');
+      fb.innerHTML = '<span style="color:var(--success-color)">Correct! 答對了。</span>';
+      if (s) s.correct++;
+      if (window.gsap && !reduceMotion) gsap.fromTo(opts[oIdx], { scale: 0.97 }, { scale: 1, duration: 0.28, ease: 'back.out(2)' });
+    } else {
+      opts[oIdx].classList.add('wrong');
+      opts[correctIdx].classList.add('correct');
+      fb.innerHTML = `<span style="color:var(--error-color)">正確答案是 (${String.fromCharCode(65 + correctIdx)})</span>`;
+      if (navigator.vibrate) navigator.vibrate(50);
+      if (window.gsap && !reduceMotion) gsap.fromTo(opts[oIdx], { x: -6 }, { x: 0, duration: 0.38, ease: 'elastic.out(1, 0.32)' });
+    }
+    if (s) { s.answered.add(qIdx); updateScore(id); }
+  }
+
+  window.addEventListener('load', () => {
+    updateReadingProgress();
+    renderQuiz('quiz-basic', basicQuestions, 1);
+    renderQuiz('quiz-adv', advQuestions, 16);
+    renderQuiz('quiz-cloze', clozeQuestions, 1);
+    if (window.gsap && !reduceMotion) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from('.course-hero', { y: 22, autoAlpha: 0, duration: 0.7, ease: 'power2.out' });
+      gsap.from('.nav-links li', { x: -14, autoAlpha: 0, duration: 0.42, stagger: 0.035, ease: 'power2.out', delay: 0.12 });
+      // Only attach ScrollTrigger to the initially visible section.
+      // Attaching autoAlpha animations to display:none sections can preload them
+      // with visibility:hidden and make later navigation appear blank.
+      gsap.utils.toArray('.section.active .grammar-box, .section.active .practice-container, .section.active .quiz-item').forEach(el => {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+          y: 18,
+          autoAlpha: 0,
+          duration: 0.55,
+          ease: 'power2.out'
+        });
+      });
+      animateSection(document.querySelector('.section.active'));
+    }
+  });
+</script>
+</body>
+</html>
