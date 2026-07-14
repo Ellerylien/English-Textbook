@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國中英語文法通 4 - Unit 5 連綴、感官與使役動詞互動教學</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #8b7448;
+      --primary-light: #e8dfc9;
+      --primary-soft: #f6f1e6;
+      --primary-dark: #5d4d31;
+      --primary-ink: #413720;
+      --secondary-color: #f7f5ef;
+      --page-bg: #f1efe8;
+      --text-color: #393932;
+      --muted-text: #747267;
+      --accent-color: #667b70;
+      --accent-soft: #eaf0ec;
+      --success-color: #5f826e;
+      --success-soft: #edf4ef;
+      --error-color: #b66b65;
+      --error-soft: #f8eeee;
+      --warning-color: #b58a52;
+      --surface: rgba(255,255,255,0.82);
+      --surface-solid: #ffffff;
+      --hairline: rgba(51,79,80,0.12);
+      --hairline-strong: rgba(51,79,80,0.22);
+      --border-radius: 22px;
+      --shadow-soft: 0 10px 28px rgba(51,79,80,0.08);
+      --shadow-lift: 0 24px 64px rgba(51,79,80,0.14);
+      --shadow-card: 0 8px 22px rgba(51,79,80,0.07);
+      --focus-ring: 0 0 0 4px rgba(197,139,98,0.24);
+      --sidebar-width: 292px;
+      --font-zh: "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+      --font-en: "Inter", "Noto Sans TC", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-zh);
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 6%, rgba(82,122,122,0.15), transparent 31%),
+        radial-gradient(circle at 86% 12%, rgba(197,139,98,0.11), transparent 27%),
+        radial-gradient(circle at 50% 100%, rgba(201,241,244,0.58), transparent 38%),
+        linear-gradient(135deg, #f8fffe 0%, #f2faf8 48%, #fffafb 100%);
+      color: var(--text-color);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(51,79,80,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(51,79,80,0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.62), transparent 78%);
+      z-index: -2;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      width: 360px;
+      height: 360px;
+      right: -150px;
+      bottom: -160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(82,122,122,0.13), transparent 68%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001s !important; transition-duration: 0.001s !important; scroll-behavior: auto !important; }
+    }
+    :focus-visible { outline: none; box-shadow: var(--focus-ring); }
+    ::selection { background: rgba(197,139,98,0.28); }
+
+    .reading-progress { position: fixed; top: 0; left: 0; width: 0%; height: 4px; z-index: 2000; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); box-shadow: 0 0 18px rgba(82,122,122,0.32); transition: width 0.12s linear; }
+    .app-shell { display: flex; min-height: 100vh; }
+    .topbar {
+      display: none; position: sticky; top: 0; z-index: 1100;
+      background: rgba(51,79,80,0.86); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      color: #fff; padding: 12px 16px; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.15); box-shadow: 0 12px 28px rgba(51,79,80,0.18);
+    }
+    .topbar .title { font-weight: 900; letter-spacing: 0.03em; }
+    .hamburger {
+      background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.24); color: #fff; width: 42px; height: 42px; border-radius: 14px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.15s, border-color 0.2s;
+    }
+    .hamburger:active { transform: scale(0.94); }
+    .hamburger:hover { background: rgba(255,255,255,0.24); border-color: rgba(255,255,255,0.38); }
+    .sidebar {
+      width: var(--sidebar-width); background: linear-gradient(180deg, rgba(51,79,80,0.97), rgba(82,122,122,0.92)), radial-gradient(circle at 0 0, rgba(255,255,255,0.24), transparent 35%);
+      color: white; padding: 22px 16px 26px; position: fixed; height: 100%; overflow-y: auto; overscroll-behavior: contain; transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); z-index: 1000; box-shadow: 12px 0 34px rgba(51,79,80,0.20);
+    }
+    .sidebar::-webkit-scrollbar { width: 8px; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.36); border-radius: 999px; }
+    .brand-card { position: relative; overflow: hidden; background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08)); border: 1px solid rgba(255,255,255,0.22); border-radius: 24px; padding: 18px; margin-bottom: 18px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 16px 34px rgba(0,0,0,0.08); }
+    .brand-card::after { content: ''; position: absolute; width: 150px; height: 150px; right: -64px; top: -64px; background: radial-gradient(circle, rgba(255,255,255,0.22), transparent 64%); pointer-events: none; }
+    .unit-pill { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-en); font-size: 0.76rem; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.92); background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.20); border-radius: 999px; padding: 7px 11px; }
+    .brand-card h2 { margin: 12px 0 6px; font-size: 1.46rem; line-height: 1.35; letter-spacing: 0.01em; }
+    .brand-card p { margin: 0; font-size: 0.91rem; color: rgba(255,255,255,0.80); }
+    .progress-mini { margin-top: 15px; height: 7px; background: rgba(255,255,255,0.18); border-radius: 999px; overflow: hidden; }
+    .progress-mini span { display: block; height: 100%; width: 8%; background: linear-gradient(90deg, #ffffff, #ffd0e3); border-radius: 999px; transition: width 0.45s ease; }
+    .nav-links { list-style: none; padding: 0; margin: 0; }
+    .nav-links li { margin-bottom: 7px; }
+    .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; display: block; padding: 10px 12px; border-radius: 15px; transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease, padding-left 0.22s ease; font-size: 0.92rem; line-height: 1.45; position: relative; overflow: hidden; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.17); color: #fff; font-weight: 800; padding-left: 18px; transform: translateX(2px); }
+    .sidebar-footer { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.16); display: grid; gap: 10px; }
+    .sidebar-footer a { color: #fff; text-decoration: none; font-size: 0.88rem; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.10); }
+    .sidebar-footer a:hover { background: rgba(255,255,255,0.18); }
+    .main-content { margin-left: var(--sidebar-width); flex: 1; padding: 32px 38px 90px; }
+    .hero-section {
+      position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(255,255,255,0.80), rgba(255,255,255,0.56)); border: 1px solid rgba(255,255,255,0.68); border-radius: 30px; padding: 34px clamp(22px, 5vw, 42px); box-shadow: var(--shadow-lift); margin-bottom: 26px;
+    }
+    .hero-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(255,255,255,0), rgba(255,255,255,0.28)); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr); gap: 26px; align-items: end; }
+    .hero-section h1 { margin: 8px 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; color: var(--primary-dark); }
+    .hero-section p { margin: 0; color: var(--muted-text); font-size: 1rem; }
+    .hero-badge { justify-self: end; background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(255,255,255,0.75)); border: 1px solid rgba(255,255,255,0.75); border-radius: 28px; padding: 22px 20px; min-width: 210px; box-shadow: var(--shadow-soft); }
+    .hero-badge strong { display: block; font: 800 2.7rem/1 var(--font-en); color: var(--primary-color); }
+    .hero-badge span { display: block; margin-top: 4px; color: var(--muted-text); }
+    .section { display: none; margin-top: 16px; }
+    .section.active { display: block; }
+    .section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+    .section-title { margin: 0; font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.2; color: var(--primary-dark); }
+    .level-label { color: var(--accent-color); font: 700 0.76rem/1 var(--font-en); letter-spacing: 0.12em; text-transform: uppercase; background: var(--accent-soft); border-radius: 999px; padding: 8px 12px; }
+    .lede { margin: 0 0 18px; color: var(--muted-text); font-size: 0.98rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grammar-box, .practice-container, .review-card, .tip-box {
+      background: var(--surface); border: 1px solid rgba(255,255,255,0.65); border-radius: 22px; box-shadow: var(--shadow-card); padding: 18px 18px 18px;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    }
+    .grammar-box h3, .practice-container h3, .review-card h3 { margin: 0 0 12px; font-size: 1.05rem; color: var(--primary-dark); }
+    .tip-box { background: linear-gradient(140deg, var(--primary-soft), rgba(255,255,255,0.88)); }
+    .eyebrow-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; font: 800 0.74rem/1 var(--font-en); letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary-color); }
+    .eyebrow-label::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-color); box-shadow: 0 0 0 6px rgba(197,139,98,0.13); }
+    table.data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; overflow: hidden; border-radius: 16px; }
+    .data-table th, .data-table td { border: 1px solid var(--hairline-strong); padding: 10px 12px; vertical-align: top; }
+    .data-table th { background: var(--primary-light); color: var(--primary-dark); text-align: left; }
+    .data-table td small { color: var(--muted-text); }
+    .formula-list, .note-list, .example-list { margin: 0; padding-left: 1.1rem; }
+    .formula-list li, .note-list li, .example-list li { margin-bottom: 8px; }
+    .example { margin: 8px 0 0; padding: 10px 12px; background: rgba(255,255,255,0.66); border-left: 4px solid var(--accent-color); border-radius: 12px; }
+    .practice-items { display: grid; gap: 10px; }
+    .practice-item { padding: 10px 12px; background: rgba(255,255,255,0.65); border: 1px solid rgba(51,79,80,0.08); border-radius: 14px; }
+    .practice-label { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; font: 800 0.78rem/1 var(--font-en); color: #fff; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); margin-bottom: 12px; }
+    .answer-text { color: #d32583; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .answer-inline { color: var(--primary-color); font-weight: 700; }
+    .formula-pill { display: inline-block; padding: 6px 10px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-dark); font: 700 0.84rem/1.2 var(--font-en); margin: 4px 6px 4px 0; }
+    .review-card + .review-card { margin-top: 16px; }
+    .score-block { margin-bottom: 12px; }
+    .score-head { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; font-weight: 700; color: var(--primary-dark); }
+    .score-track { height: 10px; background: rgba(51,79,80,0.08); border-radius: 999px; overflow: hidden; }
+    .score-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); transition: width 0.25s ease; }
+    .score-done { margin-top: 6px; color: var(--muted-text); font-size: 0.9rem; }
+    .quiz-item { margin-bottom: 14px; padding: 14px; background: rgba(255,255,255,0.66); border: 1px solid rgba(51,79,80,0.10); border-radius: 16px; }
+    .quiz-question { font-weight: 700; color: var(--primary-dark); margin-bottom: 12px; }
+    .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .quiz-option { appearance: none; border: 1px solid var(--hairline-strong); background: #fff; border-radius: 12px; padding: 10px 12px; text-align: left; font: inherit; color: var(--text-color); cursor: pointer; transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease; }
+    .quiz-option:hover { transform: translateY(-2px); border-color: var(--primary-color); }
+    .quiz-option.correct { background: var(--success-soft); border-color: var(--success-color); color: #22543c; }
+    .quiz-option.wrong { background: var(--error-soft); border-color: var(--error-color); color: #8c2d34; }
+    .cloze-article { margin-bottom: 18px; padding: 14px 16px; border-radius: 16px; background: rgba(255,255,255,0.7); border: 1px dashed var(--hairline-strong); color: var(--text-color); }
+    .summary-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+    .summary-grid .mini { padding: 14px 16px; background: rgba(255,255,255,.62); border-radius: 16px; border: 1px solid rgba(51,79,80,0.08); }
+    .mini strong { display: block; color: var(--primary-dark); margin-bottom: 4px; }
+    .section-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 26px; }
+    .section-nav a { text-decoration: none; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.74); border: 1px solid rgba(51,79,80,0.10); color: var(--primary-dark); font-weight: 700; }
+    .section-nav a:hover { background: #fff; }
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(17,26,26,0.42); z-index: 950; }
+    .overlay.show { display: block; }
+    .en, .practice-question, .quiz-question, .quiz-option, .answer-text, .formula-pill, .cloze-article { font-family: var(--font-en); }
+    @media (max-width: 1040px) {
+      .hero-grid, .grid-2, .summary-grid { grid-template-columns: 1fr; }
+      .hero-badge { justify-self: start; }
+    }
+    @media (max-width: 920px) {
+      .topbar { display: flex; }
+      .sidebar { transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      .main-content { margin-left: 0; padding: 24px 16px 84px; }
+      .hero-section { margin-top: 14px; }
+    }
+    @media (max-width: 640px) {
+      .quiz-options { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .level-label { display: inline-block; margin-top: 10px; }
+      .hero-section h1 { font-size: 1.85rem; }
+      .hero-badge strong { font-size: 2.2rem; }
+      .practice-item { padding: 10px; }
+    }
+</style>
+<style id="series-theme">
+:root{--primary-color:#a38a4e;--primary-light:#eee5cd;--primary-soft:#f8f4e8;--primary-dark:#63583a;--primary-ink:#433c29;--secondary-color:#f5f3ee;--page-bg:#f1efe8;--text-color:#393934;--muted-text:#737168;--accent-color:#5f6261;--accent-soft:#e9eaea;}
+body{background:radial-gradient(circle at 12% 6%,rgba(163,138,78,.14),transparent 31%),radial-gradient(circle at 86% 12%,rgba(95,98,97,.09),transparent 27%),radial-gradient(circle at 50% 100%,rgba(238,229,205,.56),transparent 38%),linear-gradient(135deg,#f1efe8 0%,#f5f3ee 52%,#fbfaf7 100%) !important;}
+body::after{background:radial-gradient(circle,rgba(163,138,78,.12),transparent 68%) !important;}
+.sidebar{background:linear-gradient(180deg,rgba(99,88,58,.98),rgba(163,138,78,.94)),radial-gradient(circle at 0 0,rgba(255,255,255,.16),transparent 36%) !important;}
+</style></head>
+<body>
+  <div class="reading-progress" id="readingProgress"></div>
+  <div class="topbar"><button class="hamburger" id="hamburger" aria-label="開啟選單">☰</button><div class="title">B4 Unit 5｜連綴與使役動詞</div></div>
+  <div class="overlay" id="overlay"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-card">
+        <div class="unit-pill">Nordic Grammar · Unit 5</div>
+        <h2>Unit 5．連綴、感官與使役動詞</h2>
+        <p>從 look / feel 等連綴動詞，延伸到感官動詞、make / have / let 與 help。</p>
+        <div class="progress-mini"><span id="sidebarProgress"></span></div>
+      </div>
+      <ul class="nav-links" id="navLinks"><li><a href="#" data-section="u5-1" class="active">5-1 表感覺的連綴動詞</a></li><li><a href="#" data-section="u5-2" class="">5-2 like + 名詞</a></li><li><a href="#" data-section="u5-3" class="">5-3 狀態改變</a></li><li><a href="#" data-section="u5-4" class="">5-4 狀態保持</a></li><li><a href="#" data-section="u5-5" class="">5-5 how / what 問句</a></li><li><a href="#" data-section="u5-6" class="">5-6 感官動詞</a></li><li><a href="#" data-section="u5-7" class="">5-7 使役動詞</a></li><li><a href="#" data-section="u5-8" class="">5-8 help</a></li><li><a href="#" data-section="review-basic" class="">Review 基礎</a></li><li><a href="#" data-section="review-adv" class="">Review 進階</a></li><li><a href="#" data-section="review-cloze" class="">Review 克漏</a></li></ul>
+      <div class="sidebar-footer">
+        <a href="index.html">← 回到 Index</a>
+        <a href="B4Unit4.html">← Unit 4</a><a href="B4Unit6.html">Unit 6 →</a>
+      </div>
+    </aside>
+    <main class="main-content" id="mainContent">
+      <header class="hero-section">
+        <div class="hero-grid">
+          <div>
+            <div class="unit-pill" style="color: var(--primary-color); background: var(--primary-soft); border-color: transparent;">Unit 5</div>
+            <h1>從「感覺起來」到「使某人做事」</h1>
+            <p>以北歐家具風格的清爽資訊層級，整理連綴動詞、感官動詞、使役動詞與 help 的完整句型。</p>
+          </div>
+          <div class="hero-badge"><strong>05</strong><span>Linking · Perception · Causative</span></div>
+        </div>
+      </header>
+      <section id="u5-1" class="section active"><div class="section-head"><div><h2 class="section-title">5-1 表感覺的連綴動詞</h2><p class="lede">look、smell、taste、sound、feel 本身不能表達完整意思，後面常接形容詞作主詞補語。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Core Pattern</div><h3>連綴動詞＋形容詞</h3><ul class="note-list"><li>連綴動詞會依主詞與時態變化。</li><li>be 動詞也是最常見的連綴動詞。</li></ul><span class="formula-pill">主詞 + look / smell / taste / sound / feel + 形容詞</span><div class="example"><span class="en">The sofa looks comfortable.</span><br><span class="en">I am hungry.</span></div></div><div class="tip-box"><div class="eyebrow-label">Adjective or Adverb</div><h3>怎麼判斷？</h3><div class="example"><span class="en">The classroom sounds noisy.</span><br><span class="en">The students talked noisily.</span></div><div class="summary-grid"><div class="mini"><strong>描述主詞狀態</strong><div>連綴動詞後使用形容詞</div></div><div class="mini"><strong>描述動作方式</strong><div>一般動詞後多使用副詞</div></div></div></div></div><div class="practice-container"><div class="practice-label">Practice A｜請選擇正確的形容詞或副詞</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> The sofa looks (comfortable / comfortably). You can sit in it (comfortable / comfortably).</div><div class="answer-text">comfortable / comfortably</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> The students are taking the test (nervous / nervously) because they feel very (nervous / nervously).</div><div class="answer-text">nervously / nervous</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> The students talked (noisy / noisily), and the classroom sounds (noisy / noisily).</div><div class="answer-text">noisily / noisy</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> This story sounds (happy / happily). The kids laugh (happy / happily).</div><div class="answer-text">happy / happily</div></div></div></div><div class="section-nav"><span></span><a href="#" data-section="u5-2">下一節 →</a></div></section><section id="u5-2" class="section"><div class="section-head"><div><h2 class="section-title">5-2 連綴動詞 + like + 名詞</h2><p class="lede">表感覺的連綴動詞後接 like + 名詞，可表達「看／聽／聞／嚐／摸起來像……」。</p></div><div class="level-label">基礎練習</div></div><div class="grammar-box"><div class="eyebrow-label">Pattern</div><h3>基本句型</h3><span class="formula-pill">主詞 + look / smell / taste / sound / feel + like + 名詞</span><div class="example"><span class="en">That movie sounds like an interesting one.</span><br><span class="en">Your sister looks like a foreigner.</span></div></div><div class="practice-container"><div class="practice-label">Practice B｜請重組下列句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> chicken. / The frog / tastes / like</div><div class="answer-text">The frog tastes like chicken.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> dead / Your socks / fish. / smell / like</div><div class="answer-text">Your socks smell like dead fish.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> My feet / rocks. / like / feel</div><div class="answer-text">My feet feel like rocks.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> looked / a / The student / scary cat. / like</div><div class="answer-text">The student looked like a scary cat.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> cotton candy. / The pillow / like / feels</div><div class="answer-text">The pillow feels like cotton candy.</div></div></div></div><div class="section-nav"><a href="#" data-section="u5-1">← 上一節</a><a href="#" data-section="u5-3">下一節 →</a></div></section><section id="u5-3" class="section"><div class="section-head"><div><h2 class="section-title">5-3 表示狀態改變的連綴動詞</h2><p class="lede">get、become、go、grow、turn 可表示狀態改變，並可搭配進行式表達正在改變的過程。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Change</div><h3>狀態改變句型</h3><ul class="note-list"><li>後面可接形容詞原級或比較級。</li><li>也可用「比較級 + and + 比較級」表示變得越來越……。</li><li>become 表「成為」時，後面也可接名詞。</li></ul><div class="example"><span class="en">The leaves are becoming yellow.</span><br><span class="en">I am getting hungrier and hungrier.</span><br><span class="en">Paul became a baseball player.</span></div></div><div class="tip-box"><div class="eyebrow-label">Remember</div><h3>連綴動詞後仍接形容詞</h3><p>不要因為動詞在前面，就一律使用副詞；要先判斷是在補充主詞狀態，還是修飾動作。</p><div class="summary-grid"><div class="mini"><strong>狀態</strong><div>He got angry.</div></div><div class="mini"><strong>動作方式</strong><div>He looked at them angrily.</div></div></div></div></div><div class="practice-container"><div class="practice-label">Practice C｜請圈選正確的形容詞或副詞</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> Computers are becoming more and more (important / importantly).</div><div class="answer-text">important</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> My grandfather gets (tired / tiredly) easily.</div><div class="answer-text">tired</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Life is getting more and more (comfortable / comfortably) for them.</div><div class="answer-text">comfortable</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> My grandmother has become very (weak / weakly), and she walks (weak / weakly).</div><div class="answer-text">weak / weakly</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> He got (angry / angrily), and he looked at them (angry / angrily).</div><div class="answer-text">angry / angrily</div></div></div></div><div class="section-nav"><a href="#" data-section="u5-2">← 上一節</a><a href="#" data-section="u5-4">下一節 →</a></div></section><section id="u5-4" class="section"><div class="section-head"><div><h2 class="section-title">5-4 表示狀態保持的連綴動詞</h2><p class="lede">keep、stay 可表達狀態持續，後面接形容詞作補語。</p></div><div class="level-label">基礎練習</div></div><div class="grammar-box"><div class="eyebrow-label">Keep a State</div><h3>keep / stay + 形容詞</h3><span class="formula-pill">主詞 + keep / stay + 形容詞</span><div class="example"><span class="en">Peggy likes to keep busy.</span><br><span class="en">Try to stay calm when an earthquake happens.</span></div></div><div class="practice-container"><div class="practice-label">Practice D｜請依提示翻譯</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> 我妹妹一直高興了好幾天。(stay)</div><div class="answer-text">My sister stayed happy for many days.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> 我爺爺需要保持健康。(stay)</div><div class="answer-text">My grandfather needs to stay healthy.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> 喝熱湯能讓你保持溫暖。(keep)</div><div class="answer-text">Eating hot soup can keep you warm.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> 請不要一直對我生氣；對你的健康不好。(stay)</div><div class="answer-text">Please don’t stay angry at me. It’s not good for your health.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> 大家，保持安靜。(以 keep 開頭)</div><div class="answer-text">Keep quiet, everybody.</div></div></div></div><div class="section-nav"><a href="#" data-section="u5-3">← 上一節</a><a href="#" data-section="u5-5">下一節 →</a></div></section><section id="u5-5" class="section"><div class="section-head"><div><h2 class="section-title">5-5 連綴動詞的 how / what 問句</h2><p class="lede">how 問狀態如何；what...like 問看、聽、嚐、摸或聞起來像什麼。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">How</div><h3>問「感覺如何」</h3><span class="formula-pill">How + do / does / did + 主詞 + 連綴動詞原形 ...?</span><div class="example"><span class="en">How do you feel?</span> → <span class="en">I feel happy.</span></div></div><div class="grammar-box"><div class="eyebrow-label">What...like</div><h3>問「像什麼」</h3><span class="formula-pill">What + do / does / did + 主詞 + 連綴動詞原形 + like?</span><div class="example"><span class="en">What does it look like?</span> → <span class="en">It looks like a cat.</span></div></div></div><div class="practice-container"><div class="practice-label">Practice E｜請依提示造原問句</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> The little lion looks like a cat.</div><div class="answer-text">What does the little lion look like?</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> Patty looks busy.</div><div class="answer-text">How does Patty look?</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> The coffee tasted like water.</div><div class="answer-text">What did the coffee taste like?</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> The fish tastes like chicken.</div><div class="answer-text">What does the fish taste like?</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> The cake smells strange.</div><div class="answer-text">How does the cake smell?</div></div></div></div><div class="practice-container"><div class="practice-label">Practice F｜請填入 what 或 how</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> ___ do the boots feel? They feel comfortable.</div><div class="answer-text">How</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> ___ did the spaghetti taste? It tasted delicious.</div><div class="answer-text">How</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> ___ did the fish taste like? It tasted like pork.</div><div class="answer-text">What</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> ___ does my right hand feel like? It feels like ice.</div><div class="answer-text">What</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> ___ did the title of the story sound? It sounded sad.</div><div class="answer-text">How</div></div></div></div><div class="section-nav"><a href="#" data-section="u5-4">← 上一節</a><a href="#" data-section="u5-6">下一節 →</a></div></section><section id="u5-6" class="section"><div class="section-head"><div><h2 class="section-title">5-6 感官動詞</h2><p class="lede">see、watch、look at、hear、listen to、feel、smell 後可接原形動詞或 V-ing，語意焦點不同。</p></div><div class="level-label">進階練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Perception</div><h3>受詞 + 原形動詞 / V-ing</h3><span class="formula-pill">感官動詞 + 受詞 + 原形動詞</span><span class="formula-pill">感官動詞 + 受詞 + V-ing</span><div class="example"><span class="en">Jack saw him play / playing basketball.</span></div></div><div class="tip-box"><div class="eyebrow-label">Common Verbs</div><h3>常見感官動詞</h3><div class="summary-grid"><div class="mini"><strong>視覺</strong><div>see / watch / look at</div></div><div class="mini"><strong>聽覺</strong><div>hear / listen to</div></div><div class="mini"><strong>知覺與嗅覺</strong><div>feel / smell</div></div></div></div></div><div class="practice-container"><div class="practice-label">Practice G｜請依提示改寫句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> The bus is moving.（加入 No one feels...）</div><div class="answer-text">No one feels the bus moving.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> A cat is running after a rat.（加入 Do you see...）</div><div class="answer-text">Do you see a cat running after a rat?</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> The girl is playing the piano in the music room.（加入 I see...）</div><div class="answer-text">I see the girl playing the piano in the music room.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> The boys played baseball in the park.（加入 I saw...）</div><div class="answer-text">I saw the boys play baseball in the park.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> The desks are shaking.（加入 Do you feel...）</div><div class="answer-text">Do you feel the desks shaking?</div></div></div></div><div class="section-nav"><a href="#" data-section="u5-5">← 上一節</a><a href="#" data-section="u5-7">下一節 →</a></div></section><section id="u5-7" class="section"><div class="section-head"><div><h2 class="section-title">5-7 使役動詞</h2><p class="lede">make、have、let 表示要求、使某人做事或允許某人做事，後接原形動詞。</p></div><div class="level-label">進階練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Causative</div><h3>make / have / let</h3><ul class="note-list"><li>make 與 have 都可表命令或使某人做事，make 強制性較高。</li><li>let 表示允許。</li><li>否定句是在使役動詞前加助動詞與 not。</li></ul><span class="formula-pill">主詞 + make / have / let + 受詞 + 原形動詞</span><div class="example"><span class="en">Jack made him play basketball.</span><br><span class="en">Jack won’t make him play basketball.</span></div></div><div class="tip-box"><div class="eyebrow-label">No to</div><h3>使役動詞後不加 to</h3><p>make / have / let 後面的動詞使用原形，不使用 to + V。</p></div></div><div class="practice-container"><div class="practice-label">Practice H｜請依提示改寫</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> Mom had Nancy do her homework.（改為 Did 開頭）</div><div class="answer-text">Did Mom have Nancy do her homework?</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> I make him clean the living room.（加入 won’t）</div><div class="answer-text">I won’t make him clean the living room.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> My dad had me go to the concert.（加入 didn’t）</div><div class="answer-text">My dad didn’t have me go to the concert.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> He’ll make us happy.（加入 feel）</div><div class="answer-text">He’ll make us feel happy.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> Sharon makes her brother angry.（加入 always）</div><div class="answer-text">Sharon always makes her brother angry.</div></div></div></div><div class="practice-container"><div class="practice-label">Practice I｜請填入適當的動詞</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> Andrew always ___ (make) me ___ (laugh).</div><div class="answer-text">makes / laugh</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> My father ___ (let) me ___ (ride) a bicycle in the yard yesterday.</div><div class="answer-text">let / ride</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Mike won’t ___ (let) his brother ___ (walk) to school alone every day.</div><div class="answer-text">let / walk</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Mom ___ (have) me ___ (wash) the dishes last night.</div><div class="answer-text">had / wash</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> The teacher didn’t ___ (have) her students ___ (write) down the information.</div><div class="answer-text">have / write</div></div></div></div><div class="section-nav"><a href="#" data-section="u5-6">← 上一節</a><a href="#" data-section="u5-8">下一節 →</a></div></section><section id="u5-8" class="section"><div class="section-head"><div><h2 class="section-title">5-8 動詞 help</h2><p class="lede">help 後可接原形動詞或 to + 原形動詞；ask、tell 則接 to + V，否定時用 not to + V。</p></div><div class="level-label">進階練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Help</div><h3>help + 受詞 + (to) V</h3><span class="formula-pill">help + 受詞 + 原形動詞</span><span class="formula-pill">help + 受詞 + to + 原形動詞</span><div class="example"><span class="en">He helped me (to) fix the lamp.</span><br><span class="en">He didn’t help me (to) fix the lamp.</span></div></div><div class="grammar-box"><div class="eyebrow-label">Ask / Tell</div><h3>ask / tell + 受詞 + to V</h3><span class="formula-pill">ask / tell + 受詞 + to + 原形動詞</span><span class="formula-pill">ask / tell + 受詞 + not to + 原形動詞</span><div class="example"><span class="en">Please tell him to stay here.</span><br><span class="en">My parents always ask me not to watch TV.</span></div></div></div><div class="practice-container"><div class="practice-label">Practice J｜請填入適當的單字（每字限用一次）</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> She didn’t help me ___ the dishes.</div><div class="answer-text">do</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> Can you ___ me ___ the car?</div><div class="answer-text">help / fix</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> She ___ me to make a cake last week.</div><div class="answer-text">helped</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Patty helped me ___ a card yesterday.</div><div class="answer-text">make</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> My sister doesn’t help Mom ___ some food.</div><div class="answer-text">to buy</div></div></div></div><div class="practice-container"><div class="practice-label">Practice K｜請圈選正確的字</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> Please ask Patty (to clean / clean / cleaning) the dining room.</div><div class="answer-text">to clean</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> Mark told me not (to say / say / saying) so.</div><div class="answer-text">to say</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Please help me (to do / doing) the laundry.</div><div class="answer-text">to do</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> My mother asked me (not play / not to play / playing) too many video games.</div><div class="answer-text">not to play</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> I can’t help you (writing / write) the answers.</div><div class="answer-text">write</div></div></div></div><div class="section-nav"><a href="#" data-section="u5-7">← 上一節</a><a href="#" data-section="review-basic">下一節 →</a></div></section><section id="review-basic" class="section"><div class="section-head"><div><h2 class="section-title">Review｜單題選擇（基礎）</h2><p class="lede">依照課本 review 內容整理成互動題組。每題點選後立即顯示正誤。</p></div><div class="level-label">Review</div></div><div class="review-card"><div class="score-block"><div class="score-head"><span>作答進度</span><span><b id="quiz-basic-correct">0</b> / <span id="quiz-basic-total">0</span> 答對</span></div><div class="score-track"><div class="score-fill" id="quiz-basic-fill"></div></div><div class="score-done" id="quiz-basic-done"></div></div><div id="quiz-basic"></div></div><div class="section-nav"><a href="#" data-section="u5-8">← 上一節</a><a href="#" data-section="review-adv">下一節 →</a></div></section><section id="review-adv" class="section"><div class="section-head"><div><h2 class="section-title">Review｜單題選擇（進階）</h2><p class="lede">進階題與延伸句型。</p></div><div class="level-label">Review</div></div><div class="review-card"><div class="score-block"><div class="score-head"><span>作答進度</span><span><b id="quiz-adv-correct">0</b> / <span id="quiz-adv-total">0</span> 答對</span></div><div class="score-track"><div class="score-fill" id="quiz-adv-fill"></div></div><div class="score-done" id="quiz-adv-done"></div></div><div id="quiz-adv"></div></div><div class="section-nav"><a href="#" data-section="review-basic">← 上一節</a><a href="#" data-section="review-cloze">下一節 →</a></div></section><section id="review-cloze" class="section"><div class="section-head"><div><h2 class="section-title">Review｜克漏字選擇</h2><p class="lede">先閱讀短文，再完成每一題選項。</p></div><div class="level-label">Review</div></div><div class="review-card"><div class="cloze-article" id="cloze-article"></div><div class="score-block"><div class="score-head"><span>作答進度</span><span><b id="quiz-cloze-correct">0</b> / <span id="quiz-cloze-total">0</span> 答對</span></div><div class="score-track"><div class="score-fill" id="quiz-cloze-fill"></div></div><div class="score-done" id="quiz-cloze-done"></div></div><div id="quiz-cloze"></div></div><div class="section-nav"><a href="#" data-section="review-adv">← 上一節</a><a href="index.html">回到索引 ↗</a></div></section>
+    </main>
+  </div>
+<script>
+const unitData = {"basicQuestions": [{"q": "The students looked ____ a scary cat.", "opts": ["(A) likes", "(B) liked", "(C) like", "(D) liking"], "ans": 2}, {"q": "____ does the little lion look like?", "opts": ["(A) Where", "(B) How", "(C) When", "(D) What"], "ans": 3}, {"q": "The kids looked ____.", "opts": ["(A) happily", "(B) happy", "(C) the happier", "(D) happiest"], "ans": 1}, {"q": "The fish tastes ____.", "opts": ["(A) like a rock", "(B) a rock", "(C) rocks", "(D) like great"], "ans": 0}, {"q": "Please don’t ____ angry at me. I feel sad.", "opts": ["(A) stay", "(B) stays", "(C) stayed", "(D) staying"], "ans": 0}, {"q": "This boy looks ____. He can answer the question ____.", "opts": ["(A) smartly, quickly", "(B) smart, quickly", "(C) smart, quick", "(D) smartly, quickly"], "ans": 1}, {"q": "____ quiet; I’m studying.", "opts": ["(A) Keeps", "(B) Kept", "(C) Keep", "(D) Keeping"], "ans": 2}, {"q": "____ does the ice cream smell?", "opts": ["(A) How", "(B) How much", "(C) What", "(D) Which"], "ans": 0}, {"q": "He got sad; ____.", "opts": ["(A) he looked sadly them", "(B) he looked at them sadly", "(C) he looked sad at them", "(D) he looked at them sad"], "ans": 1}, {"q": "The pizza tasted terrible, and ____.", "opts": ["(A) his stomach hurt terrible", "(B) his stomach terrible hurt", "(C) his stomach hurt terribly", "(D) terrible his stomach hurt"], "ans": 2}], "advQuestions": [{"q": "The woman ____ Patty ____ call the police.", "opts": ["(A) talk, too", "(B) told, too", "(C) telled, to", "(D) told, to"], "ans": 3}, {"q": "Can you see the girl ____?", "opts": ["(A) dancing", "(B) is dancing", "(C) danced", "(D) has dance"], "ans": 0}, {"q": "Please help me ____ my keys.", "opts": ["(A) looks for", "(B) to look for", "(C) for looking", "(D) looking for"], "ans": 1}, {"q": "____ Mom have her do her homework?", "opts": ["(A) When", "(B) How", "(C) Did", "(D) Who"], "ans": 2}, {"q": "Could you tell your son ____ cry so loudly?", "opts": ["(A) isn’t to", "(B) doesn’t to", "(C) don’t to", "(D) not to"], "ans": 3}, {"q": "I see the girl ____ the piano in the music room.", "opts": ["(A) plays", "(B) played", "(C) playing", "(D) to play"], "ans": 2}, {"q": "____ you see a dog fighting with a cat?", "opts": ["(A) Is", "(B) Does", "(C) Do", "(D) Are"], "ans": 2}, {"q": "Mom ____ me ____ the dishes last night.", "opts": ["(A) have, wash", "(B) had, washed", "(C) have, washed", "(D) had, wash"], "ans": 3}], "clozeQuestions": [{"q": "Blank 1", "opts": ["(A) busiest", "(B) much busy", "(C) busy", "(D) busier"], "ans": 2}, {"q": "Blank 2", "opts": ["(A) opened", "(B) has opened", "(C) opening", "(D) to open"], "ans": 3}, {"q": "Blank 3", "opts": ["(A) prettier and happier", "(B) pretty and happily", "(C) pretty and happy", "(D) prettily and happily"], "ans": 2}, {"q": "Blank 4", "opts": ["(A) help", "(B) helps", "(C) helping", "(D) to help"], "ans": 3}, {"q": "Blank 5", "opts": ["(A) busy", "(B) busily", "(C) busiest", "(D) busier"], "ans": 0}, {"q": "Blank 6", "opts": ["(A) clean", "(B) cleaning", "(C) to clean", "(D) cleaned"], "ans": 0}, {"q": "Blank 7", "opts": ["(A) did", "(B) to do", "(C) do", "(D) doing"], "ans": 2}, {"q": "Blank 8", "opts": ["(A) Which", "(B) Why", "(C) What", "(D) How"], "ans": 3}, {"q": "Blank 9", "opts": ["(A) most delicious", "(B) delicious", "(C) deliciously", "(D) more delicious"], "ans": 1}, {"q": "Blank 10", "opts": ["(A) to go", "(B) going", "(C) go", "(D) went"], "ans": 2}], "clozeArticle": "Lily: My mom is so <b>1</b>. She works overtime every day.<br>\nJessie: Why is she so busy?<br>\nLily: She is helping her boss <b>2</b> a new shop.<br>\nJessie: She still looks so <b>3</b>. It sounds like she’s a real businesswoman now. Does she ever ask you <b>4</b> her?<br>\nLily: All the time! She always keeps me <b>5</b>. Mom has me <b>6</b> my room on Saturday and <b>7</b> my laundry on Thursday. I also cook her a meal on Sunday.<br>\nJessie: <b>8</b> does the food taste?<br>\nLily: It always smells good and tastes <b>9</b>. She likes it a lot.<br>\nJessie: You’re a good daughter. Your mom must be very happy.<br>\nLily: Yes, she is. And she lets me <b>10</b> to my favorite shows.<br>\nJessie: That’s nice of her."};
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+const hamburger = document.getElementById('hamburger');
+const navLinks = [...document.querySelectorAll('#navLinks a')];
+const sections = [...document.querySelectorAll('.section')];
+const readingProgress = document.getElementById('readingProgress');
+const sidebarProgress = document.getElementById('sidebarProgress');
+const storageKey = 'b4-unit5-active-section';
+
+function toggleSidebar(show) {
+  if (window.innerWidth > 920) return;
+  sidebar.classList.toggle('open', show);
+  overlay.classList.toggle('show', show);
+}
+if (hamburger) hamburger.addEventListener('click', () => toggleSidebar(!sidebar.classList.contains('open')));
+overlay.addEventListener('click', () => toggleSidebar(false));
+
+function showSection(id) {
+  sections.forEach(sec => sec.classList.toggle('active', sec.id === id));
+  navLinks.forEach(link => link.classList.toggle('active', link.dataset.section === id));
+  localStorage.setItem(storageKey, id);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (window.innerWidth <= 920) toggleSidebar(false);
+  updateSidebarMini();
+  const targetSection = document.getElementById(id);
+  if (window.gsap && targetSection && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const animated = targetSection.querySelectorAll('.section-head, .grammar-box, .tip-box, .practice-container, .review-card');
+    gsap.killTweensOf(animated);
+    gsap.fromTo(animated,
+      { opacity: 0, y: 22 },
+      { opacity: 1, y: 0, duration: 0.58, stagger: 0.055, ease: 'power3.out', clearProps: 'transform' }
+    );
+  }
+}
+
+navLinks.forEach(link => link.addEventListener('click', e => { e.preventDefault(); showSection(link.dataset.section); }));
+document.querySelectorAll('.section-nav a[data-section]').forEach(link => link.addEventListener('click', e => { e.preventDefault(); showSection(link.dataset.section); }));
+
+const saved = localStorage.getItem(storageKey);
+if (saved && document.getElementById(saved)) showSection(saved); else showSection(sections[0].id);
+
+function updateReadingProgress() {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+  readingProgress.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateReadingProgress);
+updateReadingProgress();
+
+function updateSidebarMini() {
+  const activeIndex = sections.findIndex(sec => sec.classList.contains('active'));
+  const pct = ((activeIndex + 1) / sections.length) * 100;
+  sidebarProgress.style.width = pct + '%';
+}
+
+const quizState = {};
+function setupQuiz(id, total) { quizState[id] = { total, answered: new Set(), correct: 0 }; updateScore(id); }
+function updateScore(id) {
+  const state = quizState[id];
+  document.getElementById(`${id}-total`).textContent = state.total;
+  document.getElementById(`${id}-correct`).textContent = state.correct;
+  document.getElementById(`${id}-fill`).style.width = (state.correct / state.total * 100) + '%';
+  document.getElementById(`${id}-done`).textContent = `已作答 ${state.answered.size} / ${state.total} 題`;
+}
+function renderQuiz(containerId, scoreId, questions, startNo=1) {
+  const container = document.getElementById(containerId);
+  setupQuiz(scoreId, questions.length);
+  container.innerHTML = questions.map((q, qi) => `
+    <div class="quiz-item" id="${scoreId}-q${qi}">
+      <div class="quiz-question">${qi+startNo}. ${q.q}</div>
+      <div class="quiz-options">
+        ${q.opts.map((opt, oi) => `<button class="quiz-option" data-score="${scoreId}" data-q="${qi}" data-o="${oi}">${opt}</button>`).join('')}
+      </div>
+    </div>
+  `).join('');
+  container.querySelectorAll('.quiz-option').forEach(btn => btn.addEventListener('click', () => {
+    const sid = btn.dataset.score; const qIndex = Number(btn.dataset.q); const optIndex = Number(btn.dataset.o); const q = questions[qIndex]; const st = quizState[sid];
+    if (st.answered.has(qIndex)) return;
+    st.answered.add(qIndex);
+    const item = document.getElementById(`${sid}-q${qIndex}`);
+    item.querySelectorAll('.quiz-option').forEach((b,i) => {
+      if (i === q.ans) b.classList.add('correct');
+      if (i === optIndex && i !== q.ans) b.classList.add('wrong');
+      b.disabled = true;
+    });
+    if (optIndex === q.ans) st.correct += 1;
+    updateScore(sid);
+  }));
+}
+
+document.getElementById('cloze-article').innerHTML = unitData.clozeArticle;
+renderQuiz('quiz-basic', 'quiz-basic', unitData.basicQuestions, 1);
+renderQuiz('quiz-adv', 'quiz-adv', unitData.advQuestions, 11);
+renderQuiz('quiz-cloze', 'quiz-cloze', unitData.clozeQuestions, 1);
+
+window.addEventListener('load', () => {
+  if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  gsap.from('.hero-section', { opacity: 0, y: 24, duration: 0.75, ease: 'power3.out' });
+  gsap.from('.brand-card', { opacity: 0, x: -18, duration: 0.68, ease: 'power3.out' });
+  gsap.from('.nav-links li', { opacity: 0, x: -12, duration: 0.42, stagger: 0.035, delay: 0.12, ease: 'power2.out' });
+});
+</script>
+</body></html>

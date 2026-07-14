@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國中英語文法通 4 - Unit 6 授與、花費與動詞片語互動教學</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #66768c;
+      --primary-light: #dde3eb;
+      --primary-soft: #f0f3f7;
+      --primary-dark: #465367;
+      --primary-ink: #303a4a;
+      --secondary-color: #f6f3ed;
+      --page-bg: #eef1f4;
+      --text-color: #303943;
+      --muted-text: #6d7580;
+      --accent-color: #ad8267;
+      --accent-soft: #f5ebe4;
+      --success-color: #5f826e;
+      --success-soft: #edf4ef;
+      --error-color: #b66b65;
+      --error-soft: #f8eeee;
+      --warning-color: #b58a52;
+      --surface: rgba(255,255,255,0.82);
+      --surface-solid: #ffffff;
+      --hairline: rgba(51,79,80,0.12);
+      --hairline-strong: rgba(51,79,80,0.22);
+      --border-radius: 22px;
+      --shadow-soft: 0 10px 28px rgba(51,79,80,0.08);
+      --shadow-lift: 0 24px 64px rgba(51,79,80,0.14);
+      --shadow-card: 0 8px 22px rgba(51,79,80,0.07);
+      --focus-ring: 0 0 0 4px rgba(197,139,98,0.24);
+      --sidebar-width: 292px;
+      --font-zh: "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+      --font-en: "Inter", "Noto Sans TC", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-zh);
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 6%, rgba(82,122,122,0.15), transparent 31%),
+        radial-gradient(circle at 86% 12%, rgba(197,139,98,0.11), transparent 27%),
+        radial-gradient(circle at 50% 100%, rgba(201,241,244,0.58), transparent 38%),
+        linear-gradient(135deg, #f8fffe 0%, #f2faf8 48%, #fffafb 100%);
+      color: var(--text-color);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(51,79,80,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(51,79,80,0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.62), transparent 78%);
+      z-index: -2;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      width: 360px;
+      height: 360px;
+      right: -150px;
+      bottom: -160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(82,122,122,0.13), transparent 68%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001s !important; transition-duration: 0.001s !important; scroll-behavior: auto !important; }
+    }
+    :focus-visible { outline: none; box-shadow: var(--focus-ring); }
+    ::selection { background: rgba(197,139,98,0.28); }
+
+    .reading-progress { position: fixed; top: 0; left: 0; width: 0%; height: 4px; z-index: 2000; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); box-shadow: 0 0 18px rgba(82,122,122,0.32); transition: width 0.12s linear; }
+    .app-shell { display: flex; min-height: 100vh; }
+    .topbar {
+      display: none; position: sticky; top: 0; z-index: 1100;
+      background: rgba(51,79,80,0.86); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      color: #fff; padding: 12px 16px; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.15); box-shadow: 0 12px 28px rgba(51,79,80,0.18);
+    }
+    .topbar .title { font-weight: 900; letter-spacing: 0.03em; }
+    .hamburger {
+      background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.24); color: #fff; width: 42px; height: 42px; border-radius: 14px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.15s, border-color 0.2s;
+    }
+    .hamburger:active { transform: scale(0.94); }
+    .hamburger:hover { background: rgba(255,255,255,0.24); border-color: rgba(255,255,255,0.38); }
+    .sidebar {
+      width: var(--sidebar-width); background: linear-gradient(180deg, rgba(51,79,80,0.97), rgba(82,122,122,0.92)), radial-gradient(circle at 0 0, rgba(255,255,255,0.24), transparent 35%);
+      color: white; padding: 22px 16px 26px; position: fixed; height: 100%; overflow-y: auto; overscroll-behavior: contain; transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); z-index: 1000; box-shadow: 12px 0 34px rgba(51,79,80,0.20);
+    }
+    .sidebar::-webkit-scrollbar { width: 8px; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.36); border-radius: 999px; }
+    .brand-card { position: relative; overflow: hidden; background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08)); border: 1px solid rgba(255,255,255,0.22); border-radius: 24px; padding: 18px; margin-bottom: 18px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 16px 34px rgba(0,0,0,0.08); }
+    .brand-card::after { content: ''; position: absolute; width: 150px; height: 150px; right: -64px; top: -64px; background: radial-gradient(circle, rgba(255,255,255,0.22), transparent 64%); pointer-events: none; }
+    .unit-pill { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-en); font-size: 0.76rem; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.92); background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.20); border-radius: 999px; padding: 7px 11px; }
+    .brand-card h2 { margin: 12px 0 6px; font-size: 1.46rem; line-height: 1.35; letter-spacing: 0.01em; }
+    .brand-card p { margin: 0; font-size: 0.91rem; color: rgba(255,255,255,0.80); }
+    .progress-mini { margin-top: 15px; height: 7px; background: rgba(255,255,255,0.18); border-radius: 999px; overflow: hidden; }
+    .progress-mini span { display: block; height: 100%; width: 8%; background: linear-gradient(90deg, #ffffff, #ffd0e3); border-radius: 999px; transition: width 0.45s ease; }
+    .nav-links { list-style: none; padding: 0; margin: 0; }
+    .nav-links li { margin-bottom: 7px; }
+    .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; display: block; padding: 10px 12px; border-radius: 15px; transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease, padding-left 0.22s ease; font-size: 0.92rem; line-height: 1.45; position: relative; overflow: hidden; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.17); color: #fff; font-weight: 800; padding-left: 18px; transform: translateX(2px); }
+    .sidebar-footer { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.16); display: grid; gap: 10px; }
+    .sidebar-footer a { color: #fff; text-decoration: none; font-size: 0.88rem; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.10); }
+    .sidebar-footer a:hover { background: rgba(255,255,255,0.18); }
+    .main-content { margin-left: var(--sidebar-width); flex: 1; padding: 32px 38px 90px; }
+    .hero-section {
+      position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(255,255,255,0.80), rgba(255,255,255,0.56)); border: 1px solid rgba(255,255,255,0.68); border-radius: 30px; padding: 34px clamp(22px, 5vw, 42px); box-shadow: var(--shadow-lift); margin-bottom: 26px;
+    }
+    .hero-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(255,255,255,0), rgba(255,255,255,0.28)); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr); gap: 26px; align-items: end; }
+    .hero-section h1 { margin: 8px 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; color: var(--primary-dark); }
+    .hero-section p { margin: 0; color: var(--muted-text); font-size: 1rem; }
+    .hero-badge { justify-self: end; background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(255,255,255,0.75)); border: 1px solid rgba(255,255,255,0.75); border-radius: 28px; padding: 22px 20px; min-width: 210px; box-shadow: var(--shadow-soft); }
+    .hero-badge strong { display: block; font: 800 2.7rem/1 var(--font-en); color: var(--primary-color); }
+    .hero-badge span { display: block; margin-top: 4px; color: var(--muted-text); }
+    .section { display: none; margin-top: 16px; }
+    .section.active { display: block; }
+    .section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+    .section-title { margin: 0; font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.2; color: var(--primary-dark); }
+    .level-label { color: var(--accent-color); font: 700 0.76rem/1 var(--font-en); letter-spacing: 0.12em; text-transform: uppercase; background: var(--accent-soft); border-radius: 999px; padding: 8px 12px; }
+    .lede { margin: 0 0 18px; color: var(--muted-text); font-size: 0.98rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grammar-box, .practice-container, .review-card, .tip-box {
+      background: var(--surface); border: 1px solid rgba(255,255,255,0.65); border-radius: 22px; box-shadow: var(--shadow-card); padding: 18px 18px 18px;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    }
+    .grammar-box h3, .practice-container h3, .review-card h3 { margin: 0 0 12px; font-size: 1.05rem; color: var(--primary-dark); }
+    .tip-box { background: linear-gradient(140deg, var(--primary-soft), rgba(255,255,255,0.88)); }
+    .eyebrow-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; font: 800 0.74rem/1 var(--font-en); letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary-color); }
+    .eyebrow-label::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-color); box-shadow: 0 0 0 6px rgba(197,139,98,0.13); }
+    table.data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; overflow: hidden; border-radius: 16px; }
+    .data-table th, .data-table td { border: 1px solid var(--hairline-strong); padding: 10px 12px; vertical-align: top; }
+    .data-table th { background: var(--primary-light); color: var(--primary-dark); text-align: left; }
+    .data-table td small { color: var(--muted-text); }
+    .formula-list, .note-list, .example-list { margin: 0; padding-left: 1.1rem; }
+    .formula-list li, .note-list li, .example-list li { margin-bottom: 8px; }
+    .example { margin: 8px 0 0; padding: 10px 12px; background: rgba(255,255,255,0.66); border-left: 4px solid var(--accent-color); border-radius: 12px; }
+    .practice-items { display: grid; gap: 10px; }
+    .practice-item { padding: 10px 12px; background: rgba(255,255,255,0.65); border: 1px solid rgba(51,79,80,0.08); border-radius: 14px; }
+    .practice-label { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; font: 800 0.78rem/1 var(--font-en); color: #fff; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); margin-bottom: 12px; }
+    .answer-text { color: #d32583; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .answer-inline { color: var(--primary-color); font-weight: 700; }
+    .formula-pill { display: inline-block; padding: 6px 10px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-dark); font: 700 0.84rem/1.2 var(--font-en); margin: 4px 6px 4px 0; }
+    .review-card + .review-card { margin-top: 16px; }
+    .score-block { margin-bottom: 12px; }
+    .score-head { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; font-weight: 700; color: var(--primary-dark); }
+    .score-track { height: 10px; background: rgba(51,79,80,0.08); border-radius: 999px; overflow: hidden; }
+    .score-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); transition: width 0.25s ease; }
+    .score-done { margin-top: 6px; color: var(--muted-text); font-size: 0.9rem; }
+    .quiz-item { margin-bottom: 14px; padding: 14px; background: rgba(255,255,255,0.66); border: 1px solid rgba(51,79,80,0.10); border-radius: 16px; }
+    .quiz-question { font-weight: 700; color: var(--primary-dark); margin-bottom: 12px; }
+    .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .quiz-option { appearance: none; border: 1px solid var(--hairline-strong); background: #fff; border-radius: 12px; padding: 10px 12px; text-align: left; font: inherit; color: var(--text-color); cursor: pointer; transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease; }
+    .quiz-option:hover { transform: translateY(-2px); border-color: var(--primary-color); }
+    .quiz-option.correct { background: var(--success-soft); border-color: var(--success-color); color: #22543c; }
+    .quiz-option.wrong { background: var(--error-soft); border-color: var(--error-color); color: #8c2d34; }
+    .cloze-article { margin-bottom: 18px; padding: 14px 16px; border-radius: 16px; background: rgba(255,255,255,0.7); border: 1px dashed var(--hairline-strong); color: var(--text-color); }
+    .summary-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+    .summary-grid .mini { padding: 14px 16px; background: rgba(255,255,255,.62); border-radius: 16px; border: 1px solid rgba(51,79,80,0.08); }
+    .mini strong { display: block; color: var(--primary-dark); margin-bottom: 4px; }
+    .section-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 26px; }
+    .section-nav a { text-decoration: none; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.74); border: 1px solid rgba(51,79,80,0.10); color: var(--primary-dark); font-weight: 700; }
+    .section-nav a:hover { background: #fff; }
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(17,26,26,0.42); z-index: 950; }
+    .overlay.show { display: block; }
+    .en, .practice-question, .quiz-question, .quiz-option, .answer-text, .formula-pill, .cloze-article { font-family: var(--font-en); }
+    @media (max-width: 1040px) {
+      .hero-grid, .grid-2, .summary-grid { grid-template-columns: 1fr; }
+      .hero-badge { justify-self: start; }
+    }
+    @media (max-width: 920px) {
+      .topbar { display: flex; }
+      .sidebar { transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      .main-content { margin-left: 0; padding: 24px 16px 84px; }
+      .hero-section { margin-top: 14px; }
+    }
+    @media (max-width: 640px) {
+      .quiz-options { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .level-label { display: inline-block; margin-top: 10px; }
+      .hero-section h1 { font-size: 1.85rem; }
+      .hero-badge strong { font-size: 2.2rem; }
+      .practice-item { padding: 10px; }
+    }
+</style>
+<style id="series-theme">
+:root{--primary-color:#687b8d;--primary-light:#dde5eb;--primary-soft:#f0f4f7;--primary-dark:#46576a;--primary-ink:#303d4b;--secondary-color:#f7f2ea;--page-bg:#eef1f3;--text-color:#303a43;--muted-text:#6d7780;--accent-color:#b89572;--accent-soft:#f5ede4;}
+body{background:radial-gradient(circle at 12% 6%,rgba(104,123,141,.14),transparent 31%),radial-gradient(circle at 86% 12%,rgba(184,149,114,.10),transparent 27%),radial-gradient(circle at 50% 100%,rgba(221,229,235,.56),transparent 38%),linear-gradient(135deg,#eef1f3 0%,#f7f2ea 52%,#fbfaf7 100%) !important;}
+body::after{background:radial-gradient(circle,rgba(104,123,141,.12),transparent 68%) !important;}
+.sidebar{background:linear-gradient(180deg,rgba(70,87,106,.98),rgba(104,123,141,.94)),radial-gradient(circle at 0 0,rgba(255,255,255,.16),transparent 36%) !important;}
+</style></head>
+<body>
+  <div class="reading-progress" id="readingProgress"></div>
+  <div class="topbar"><button class="hamburger" id="hamburger" aria-label="開啟選單">☰</button><div class="title">B4 Unit 6｜授與、花費與片語</div></div>
+  <div class="overlay" id="overlay"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-card">
+        <div class="unit-pill">Nordic Grammar · Unit 6</div>
+        <h2>Unit 6．授與、花費與動詞片語</h2>
+        <p>整理雙賓動詞、take / cost / spend、forget / stop、used to 與可分／不可分片語。</p>
+        <div class="progress-mini"><span id="sidebarProgress"></span></div>
+      </div>
+      <ul class="nav-links" id="navLinks"><li><a href="#" data-section="u6-1" class="active">6-1 授與動詞</a></li><li><a href="#" data-section="u6-2" class="">6-2 take</a></li><li><a href="#" data-section="u6-3" class="">6-3 cost</a></li><li><a href="#" data-section="u6-4" class="">6-4 spend</a></li><li><a href="#" data-section="u6-5" class="">6-5 forget / stop</a></li><li><a href="#" data-section="u6-6" class="">6-6 used to</a></li><li><a href="#" data-section="u6-7" class="">6-7 不可分片語</a></li><li><a href="#" data-section="u6-8" class="">6-8 可分片語</a></li><li><a href="#" data-section="u6-9" class="">6-9 受詞位置</a></li><li><a href="#" data-section="review-basic" class="">Review 基礎</a></li><li><a href="#" data-section="review-adv" class="">Review 進階</a></li><li><a href="#" data-section="review-cloze" class="">Review 克漏</a></li></ul>
+      <div class="sidebar-footer">
+        <a href="index.html">← 回到 Index</a>
+        <a href="B4Unit5.html">← Unit 5</a>
+      </div>
+    </aside>
+    <main class="main-content" id="mainContent">
+      <header class="hero-section">
+        <div class="hero-grid">
+          <div>
+            <div class="unit-pill" style="color: var(--primary-color); background: var(--primary-soft); border-color: transparent;">Unit 6</div>
+            <h1>從「給予」與「花費」到動詞片語位置</h1>
+            <p>用清楚的句型對照與互動練習，掌握 Unit 6 中容易混淆的主詞、介系詞與受詞位置。</p>
+          </div>
+          <div class="hero-badge"><strong>06</strong><span>Ditransitive · Cost · Phrasal Verbs</span></div>
+        </div>
+      </header>
+      <section id="u6-1" class="section active"><div class="section-head"><div><h2 class="section-title">6-1 授與動詞</h2><p class="lede">授與動詞又稱雙賓動詞，常同時接「人」與「物」兩個受詞。改寫時依動詞搭配 to、for、from 或 of。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Double Objects</div><h3>雙賓句型</h3><ul class="note-list"><li>接 to：give、send、show、sell、lend、write、read 等。</li><li>接 for：buy、make、cook、find 等。</li><li>ask 常搭配 of；borrow 常搭配 from。</li></ul><span class="formula-pill">V + 人 + 物</span><span class="formula-pill">V + 物 + to / for / of / from + 人</span><div class="example"><span class="en">Jack gave Jackson two pens.</span><br>= <span class="en">Jack gave two pens to Jackson.</span><br><span class="en">Why not cook chicken soup for your brother?</span></div></div><div class="tip-box"><div class="eyebrow-label">Common Verbs</div><h3>常見授與動詞</h3><div class="summary-grid"><div class="mini"><strong>to</strong><div>give / send / show / sell / lend</div></div><div class="mini"><strong>for</strong><div>buy / make / cook / find</div></div><div class="mini"><strong>other</strong><div>ask ... of / borrow ... from</div></div></div></div></div><div class="practice-container"><div class="practice-label">Practice A｜請填入適當的介系詞</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> My brother gave a bicycle ___ me.</div><div class="answer-text">to</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> She teaches English ___ us.</div><div class="answer-text">to</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Peter bought flowers ___ Mandy.</div><div class="answer-text">for</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> I borrowed the book ___ the library.</div><div class="answer-text">from</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> Eva asked a favor ___ Miss Wang.</div><div class="answer-text">of</div></div></div></div><div class="practice-container"><div class="practice-label">Practice B｜請加入介系詞改寫授與動詞的句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> The man sold Mr. Wu a car.</div><div class="answer-text">The man sold a car to Mr. Wu.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> She gave me a book.</div><div class="answer-text">She gave a book to me.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> He showed them a map.</div><div class="answer-text">He showed a map to them.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> He asked Mr. Wang a question.</div><div class="answer-text">He asked a question of Mr. Wang.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> She lent Patty a bicycle.</div><div class="answer-text">She lent a bicycle to Patty.</div></div><div class="practice-item"><div class="practice-question"><strong>6.</strong> Kitty sent me a gift.</div><div class="answer-text">Kitty sent a gift to me.</div></div></div></div><div class="section-nav"><span></span><a href="#" data-section="u6-2">下一節 →</a></div></section><section id="u6-2" class="section"><div class="section-head"><div><h2 class="section-title">6-2 花費 take 的用法</h2><p class="lede">take 表「花費時間」，可使用虛主詞 it、動名詞片語或人作主詞。how long 用來詢問時間長度。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Take Time</div><h3>三種句型</h3><span class="formula-pill">It takes / took + 人 + 時間 + to V</span><span class="formula-pill">V-ing + takes / took + 人 + 時間</span><span class="formula-pill">人 + take(s) / took + 時間 + to V</span><div class="example"><span class="en">It takes me two hours to do my homework every day.</span><br><span class="en">To do my homework takes two hours every day.</span><br><span class="en">I take two hours to do my homework every day.</span></div></div><div class="grammar-box"><div class="eyebrow-label">Question</div><h3>How long 問句</h3><span class="formula-pill">How long + does / did + it + take + 人 + to V?</span><span class="formula-pill">How long + do / does / did + 人 + take + to V?</span><div class="example"><span class="en">How long does it take you to do your homework?</span></div></div></div><div class="practice-container"><div class="practice-label">Practice C｜請翻譯下列句子（每題三種寫法）</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> Jack 花了三小時彈鋼琴。</div><div class="answer-text">It took Jack three hours to play the piano. / Playing the piano took Jack three hours. / Jack took three hours to play the piano.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> Mandy 每天花兩小時洗碗盤。</div><div class="answer-text">It takes Mandy two hours to do the dishes every day. / Doing the dishes takes Mandy two hours every day. / Mandy takes two hours to do the dishes every day.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Kate 和 Kitty 每天花一小時散步。</div><div class="answer-text">It takes Kate and Kitty one hour to take a walk every day. / Taking a walk takes Kate and Kitty one hour every day. / Kate and Kitty take one hour to take a walk every day.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Jeff 花了四小時打網球。</div><div class="answer-text">It took Jeff four hours to play tennis. / Playing tennis took Jeff four hours. / Jeff took four hours to play tennis.</div></div></div></div><div class="practice-container"><div class="practice-label">Practice D｜請依提示造原問句</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> It took Jeff four hours to go to Hsinchu.</div><div class="answer-text">How long did it take Jeff to go to Hsinchu?</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> Sandy takes two hours to mop the floor every day.</div><div class="answer-text">How long does Sandy take to mop the floor every day?</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Mom takes three hours to shop for the picnic.</div><div class="answer-text">How long does Mom take to shop for the picnic?</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> It takes John two hours to study English.</div><div class="answer-text">How long does it take John to study English?</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> It took my brother one hour to take a shower.</div><div class="answer-text">How long did it take your brother to take a shower?</div></div></div></div><div class="section-nav"><a href="#" data-section="u6-1">← 上一節</a><a href="#" data-section="u6-3">下一節 →</a></div></section><section id="u6-3" class="section"><div class="section-head"><div><h2 class="section-title">6-3 花費 cost 的用法</h2><p class="lede">cost 表「花費金錢」，主詞通常是物或虛主詞 it，不使用人作主詞。how much 用來詢問金額。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Cost Money</div><h3>cost 的句型</h3><span class="formula-pill">It costs / cost + 人 + 錢 + to V</span><span class="formula-pill">物 + costs / cost + 人 + 錢</span><div class="example"><span class="en">It cost me two hundred dollars to pay the bill.</span><br><span class="en">To pay the bill cost me two hundred dollars.</span></div></div><div class="grammar-box"><div class="eyebrow-label">Question</div><h3>How much 問句</h3><span class="formula-pill">How much + does / did + 物 / it + cost (+ 人)?</span><div class="example"><span class="en">How much does the chair cost?</span> → <span class="en">It costs three hundred dollars.</span></div></div></div><div class="practice-container"><div class="practice-label">Practice E｜請翻譯下列句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> Jack 花了三千元買一台相機。</div><div class="answer-text">It cost Jack three thousand dollars to buy the camera. / The camera cost Jack three thousand dollars.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> 母親每天花五百元買蔬菜水果。</div><div class="answer-text">It costs Mom five hundred dollars to buy vegetables and fruit every day. / Vegetables and fruit cost Mom five hundred dollars every day.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> 我每天花八十元搭乘火車。</div><div class="answer-text">It costs me eighty dollars to take a train every day. / Taking a train costs me eighty dollars every day.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Jeff 花了五千元買這台 CD 音響。</div><div class="answer-text">It cost Jeff five thousand dollars to buy the CD player. / The CD player cost Jeff five thousand dollars.</div></div></div></div><div class="section-nav"><a href="#" data-section="u6-2">← 上一節</a><a href="#" data-section="u6-4">下一節 →</a></div></section><section id="u6-4" class="section"><div class="section-head"><div><h2 class="section-title">6-4 花費 spend 的用法</h2><p class="lede">spend 後可接時間或金錢，主詞使用人；後面接 V-ing 或 on + 名詞。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Spend</div><h3>spend 的基本句型</h3><span class="formula-pill">人 + spend(s) / spent + 時間 / 錢 + V-ing</span><span class="formula-pill">人 + spend(s) / spent + 時間 / 錢 + on + 名詞</span><div class="example"><span class="en">I spend two hours doing my homework every day.</span><br><span class="en">I spent 500 dollars buying that watch.</span></div></div><div class="tip-box"><div class="eyebrow-label">Conversion</div><h3>與 take / cost 互換</h3><div class="summary-grid"><div class="mini"><strong>時間</strong><div>spend + 時間 + V-ing ↔ it takes + 人 + 時間 + to V</div></div><div class="mini"><strong>金錢</strong><div>spend + 錢 + V-ing ↔ it costs + 人 + 錢 + to V</div></div></div></div></div><div class="practice-container"><div class="practice-label">Practice F｜請依提示改寫句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> It cost Jack three thousand dollars to buy the camera. (spend)</div><div class="answer-text">Jack spent three thousand dollars buying the camera.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> It takes Mom two hours to go to the office every day. (spend)</div><div class="answer-text">Mom spends two hours going to the office every day.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> I spend one hour taking the train every day. (take)</div><div class="answer-text">It takes me one hour to take the train every day.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Sarah spent thirty thousand dollars buying the refrigerator. (cost)</div><div class="answer-text">It cost Sarah thirty thousand dollars to buy the refrigerator.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> Tina spends one hour practicing dancing every day. (take)</div><div class="answer-text">It takes Tina one hour to practice dancing every day.</div></div></div></div><div class="practice-container"><div class="practice-label">Practice G｜請填入 how long 或 how much</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> ___ does it take to go to Taipei?</div><div class="answer-text">How long</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> ___ does the desk cost?</div><div class="answer-text">How much</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> ___ does it cost Jeff to take a bus?</div><div class="answer-text">How much</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> ___ does it take you to feed your dog?</div><div class="answer-text">How long</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> ___ did it cost Kitty to buy the ticket of the amusement park?</div><div class="answer-text">How much</div></div><div class="practice-item"><div class="practice-question"><strong>6.</strong> ___ did it take Sandy to do the dishes?</div><div class="answer-text">How long</div></div></div></div><div class="practice-container"><div class="practice-label">Practice H｜請填入 how long 或 how much</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> A: ___ does Mom spend on tickets? B: One thousand dollars.</div><div class="answer-text">How much</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> A: ___ does Sarah spend taking the bus every day? B: She spends one hundred and fifty dollars.</div><div class="answer-text">How much</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> A: ___ do you spend on your homework? B: I spend two hours on my homework.</div><div class="answer-text">How long</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> A: ___ does Helen spend taking a bath? B: She spends one hour taking a bath.</div><div class="answer-text">How long</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> A: ___ did you spend buying the chair? B: I spent five hundred dollars buying the chair.</div><div class="answer-text">How much</div></div><div class="practice-item"><div class="practice-question"><strong>6.</strong> A: ___ did Sandy spend on the book? B: She spent one hundred dollars on the book.</div><div class="answer-text">How much</div></div></div></div><div class="section-nav"><a href="#" data-section="u6-3">← 上一節</a><a href="#" data-section="u6-5">下一節 →</a></div></section><section id="u6-5" class="section"><div class="section-head"><div><h2 class="section-title">6-5 forget / stop 的用法</h2><p class="lede">forget 與 stop 後接 V-ing 或 to V 時，語意不同。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Forget</div><h3>forget + V-ing / to V</h3><div class="example"><span class="en">I forgot mailing the letter.</span><br><span class="en">I forgot to mail the letter.</span></div></div><div class="grammar-box"><div class="eyebrow-label">Stop</div><h3>stop + V-ing / to V</h3><div class="example"><span class="en">The man got lost and stopped to read the map.</span></div></div></div><div class="practice-container"><div class="practice-label">Practice I｜請合併下列句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> I stopped eating. / I worked.</div><div class="answer-text">I stopped to work.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> She forgot to do it. / She didn’t mail the letter.</div><div class="answer-text">She forgot to mail the letter.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Kitty was doing her homework. / Kitty stopped it.</div><div class="answer-text">Kitty stopped doing her homework.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Sandy forgot doing it. / She mopped the floor.</div><div class="answer-text">Sandy forgot mopping the floor.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> Jeffery forgot to do it. / He didn’t brush his teeth.</div><div class="answer-text">Jeffery forgot to brush his teeth.</div></div><div class="practice-item"><div class="practice-question"><strong>6.</strong> Ken stopped doing it. / He quit smoking.</div><div class="answer-text">Ken stopped smoking.</div></div></div></div><div class="section-nav"><a href="#" data-section="u6-4">← 上一節</a><a href="#" data-section="u6-6">下一節 →</a></div></section><section id="u6-6" class="section"><div class="section-head"><div><h2 class="section-title">6-6 used to / be used to</h2><p class="lede">used to + 原形動詞表過去習慣；be used to + V-ing 表現在習慣做某事。</p></div><div class="level-label">進階練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Past Habit</div><h3>used to + V</h3><span class="formula-pill">主詞 + used to + 原形動詞</span><span class="formula-pill">主詞 + didn’t use to / used not to + 原形動詞</span><div class="example"><span class="en">My father used to drive to work.</span></div></div><div class="grammar-box"><div class="eyebrow-label">Current Habit</div><h3>be used to + V-ing</h3><span class="formula-pill">主詞 + be + used to + V-ing</span><span class="formula-pill">主詞 + be + not + used to + V-ing</span><div class="example"><span class="en">My mother is used to drinking water before breakfast.</span></div></div></div><div class="practice-container"><div class="practice-label">Practice J｜請依提示造句</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> Tiffany / not / used to / get up early</div><div class="answer-text">Tiffany didn’t use to get up early.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> Tina / be used to / eat sandwiches for lunch</div><div class="answer-text">Tina is used to eating sandwiches for lunch.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Fiona / used to / do homework / well</div><div class="answer-text">Fiona used to do homework well.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> William / be used to / study English / hard</div><div class="answer-text">William is used to studying English hard.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> Kevin / not / be used to / go to bed / late</div><div class="answer-text">Kevin is not used to going to bed late.</div></div><div class="practice-item"><div class="practice-question"><strong>6.</strong> Karen / not / used to / take the bus / to school</div><div class="answer-text">Karen didn’t use to take the bus to school.</div></div></div></div><div class="section-nav"><a href="#" data-section="u6-5">← 上一節</a><a href="#" data-section="u6-7">下一節 →</a></div></section><section id="u6-7" class="section"><div class="section-head"><div><h2 class="section-title">6-7 不可分的動詞片語</h2><p class="lede">不可分動詞片語只能把受詞放在整個片語之後，不能插入動詞與介系詞之間。</p></div><div class="level-label">進階練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Inseparable</div><h3>常見不可分片語</h3><table class="data-table"><thead><tr><th>片語</th><th>意思</th></tr></thead><tbody><tr><td>get on / get off</td><td>上車 / 下車</td></tr><tr><td>talk about / worry about</td><td>談論 / 擔心</td></tr><tr><td>look at / look for / look after</td><td>看著 / 尋找 / 照顧</td></tr><tr><td>laugh at / deal with</td><td>嘲笑 / 處理</td></tr><tr><td>leave for / listen to / wait for</td><td>前往 / 聆聽 / 等待</td></tr></tbody></table><div class="example"><span class="en">Let’s get on the bus.</span> ✓<br><span class="en">Let’s get the bus on.</span> ✗</div></div><div class="tip-box"><div class="eyebrow-label">Position</div><h3>受詞放在哪裡？</h3><p>不論受詞是名詞或代名詞，都放在完整片語之後。</p></div></div><div class="practice-container"><div class="practice-label">Practice K｜請重組下列句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> is / the rat. / The cat / looking at</div><div class="answer-text">The cat is looking at the rat.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> They / the test. / talking about / are</div><div class="answer-text">They are talking about the test.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> The nurse / the sick people. / looks after</div><div class="answer-text">The nurse looks after the sick people.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> The students / their / are / waiting for / teacher.</div><div class="answer-text">The students are waiting for their teacher.</div></div></div></div><div class="section-nav"><a href="#" data-section="u6-6">← 上一節</a><a href="#" data-section="u6-8">下一節 →</a></div></section><section id="u6-8" class="section"><div class="section-head"><div><h2 class="section-title">6-8 可分的動詞片語</h2><p class="lede">可分片語的名詞受詞可放在片語後或兩字之間；若受詞是代名詞，必須放在兩字之間。</p></div><div class="level-label">進階練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Separable</div><h3>常見可分片語</h3><table class="data-table"><thead><tr><th>片語</th><th>意思</th></tr></thead><tbody><tr><td>turn on / turn off</td><td>打開 / 關掉</td></tr><tr><td>put on / take off</td><td>穿上 / 脫掉</td></tr><tr><td>try on / pick up</td><td>試穿 / 撿起</td></tr><tr><td>give up / find out</td><td>放棄 / 找出</td></tr><tr><td>take out / clean up / put down</td><td>拿出 / 清理 / 放下</td></tr></tbody></table><div class="example"><span class="en">Can you turn on the light?</span><br>= <span class="en">Can you turn the light on?</span></div></div><div class="tip-box"><div class="eyebrow-label">Pronoun Rule</div><h3>代名詞一定放中間</h3><div class="example"><span class="en">She picked the garbage up.</span> ✓<br><span class="en">She picked it up.</span> ✓<br><span class="en">She picked up it.</span> ✗</div></div></div><div class="practice-container"><div class="practice-label">Practice L｜請改寫以下句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> I tried on the skirt.</div><div class="answer-text">I tried the skirt on.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> Mom is cleaning up the kitchen.</div><div class="answer-text">Mom is cleaning the kitchen up.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Would you put down the boxes?</div><div class="answer-text">Would you put the boxes down?</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> You need to put on your coat.</div><div class="answer-text">You need to put your coat on.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> Students found out the answers.</div><div class="answer-text">Students found the answers out.</div></div><div class="practice-item"><div class="practice-question"><strong>6.</strong> Don’t give up your life goal.</div><div class="answer-text">Don’t give your life goal up.</div></div></div></div><div class="section-nav"><a href="#" data-section="u6-7">← 上一節</a><a href="#" data-section="u6-9">下一節 →</a></div></section><section id="u6-9" class="section"><div class="section-head"><div><h2 class="section-title">6-9 動詞片語接名詞或代名詞</h2><p class="lede">可分動詞片語接名詞時有兩種位置；接代名詞時只能放在動詞與副詞之間。</p></div><div class="level-label">進階練習</div></div><div class="grammar-box"><div class="eyebrow-label">Object Placement</div><h3>名詞與代名詞的位置</h3><div class="example"><span class="en">She handed in her homework.</span><br>= <span class="en">She handed her homework in.</span><br>= <span class="en">She handed it in.</span></div></div><div class="practice-container"><div class="practice-label">Practice M｜請翻譯下列句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> 男孩脫掉了他的夾克。</div><div class="answer-text">The boy took off his jacket. / The boy took his jacket off. / The boy took it off.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> 那女孩要我寫下她的名字。</div><div class="answer-text">The girl wanted me to write down her name. / The girl wanted me to write her name down. / The girl wanted me to write it down.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> 請把你的書本收好。</div><div class="answer-text">Please put away your books. / Please put your books away. / Please put them away.</div></div></div></div><div class="section-nav"><a href="#" data-section="u6-8">← 上一節</a><a href="#" data-section="review-basic">下一節 →</a></div></section><section id="review-basic" class="section"><div class="section-head"><div><h2 class="section-title">Review｜單題選擇（基礎）</h2><p class="lede">依照課本 review 內容整理成互動題組。每題點選後立即顯示正誤。</p></div><div class="level-label">Review</div></div><div class="review-card"><div class="score-block"><div class="score-head"><span>作答進度</span><span><b id="quiz-basic-correct">0</b> / <span id="quiz-basic-total">0</span> 答對</span></div><div class="score-track"><div class="score-fill" id="quiz-basic-fill"></div></div><div class="score-done" id="quiz-basic-done"></div></div><div id="quiz-basic"></div></div><div class="section-nav"><a href="#" data-section="u6-9">← 上一節</a><a href="#" data-section="review-adv">下一節 →</a></div></section><section id="review-adv" class="section"><div class="section-head"><div><h2 class="section-title">Review｜單題選擇（進階）</h2><p class="lede">進階題與延伸句型。</p></div><div class="level-label">Review</div></div><div class="review-card"><div class="score-block"><div class="score-head"><span>作答進度</span><span><b id="quiz-adv-correct">0</b> / <span id="quiz-adv-total">0</span> 答對</span></div><div class="score-track"><div class="score-fill" id="quiz-adv-fill"></div></div><div class="score-done" id="quiz-adv-done"></div></div><div id="quiz-adv"></div></div><div class="section-nav"><a href="#" data-section="review-basic">← 上一節</a><a href="#" data-section="review-cloze">下一節 →</a></div></section><section id="review-cloze" class="section"><div class="section-head"><div><h2 class="section-title">Review｜克漏字選擇</h2><p class="lede">先閱讀短文，再完成每一題選項。</p></div><div class="level-label">Review</div></div><div class="review-card"><div class="cloze-article" id="cloze-article"></div><div class="score-block"><div class="score-head"><span>作答進度</span><span><b id="quiz-cloze-correct">0</b> / <span id="quiz-cloze-total">0</span> 答對</span></div><div class="score-track"><div class="score-fill" id="quiz-cloze-fill"></div></div><div class="score-done" id="quiz-cloze-done"></div></div><div id="quiz-cloze"></div></div><div class="section-nav"><a href="#" data-section="review-adv">← 上一節</a><a href="index.html">回到索引 ↗</a></div></section>
+    </main>
+  </div>
+<script>
+const unitData = {"basicQuestions": [{"q": "Sandy ____ closing the door.", "opts": ["(A) forgetting", "(B) forgotten", "(C) forgot", "(D) forget"], "ans": 2}, {"q": "Father ____ one hour watching TV news every night.", "opts": ["(A) spending", "(B) spent", "(C) spends", "(D) spend"], "ans": 2}, {"q": "____ costs me eighty dollars to take the train every day.", "opts": ["(A) It", "(B) It’s", "(C) Its", "(D) It is"], "ans": 0}, {"q": "____ dinner took Mom three hours yesterday.", "opts": ["(A) Prepare", "(B) Preparing", "(C) Prepared", "(D) Prepares"], "ans": 1}, {"q": "Mike asked a question ____ Mr. Wang.", "opts": ["(A) for", "(B) of", "(C) from", "(D) to"], "ans": 1}, {"q": "Michelle teaches English ____ us.", "opts": ["(A) in", "(B) too", "(C) as", "(D) to"], "ans": 3}, {"q": "Jackson ____ three hours ____ play the piano.", "opts": ["(A) took, to", "(B) takes, for", "(C) taken, to", "(D) take, to"], "ans": 0}, {"q": "How long ____ it take your sister to do her homework last night?", "opts": ["(A) do", "(B) does", "(C) did", "(D) doing"], "ans": 2}, {"q": "____ does the steak cost?", "opts": ["(A) How many", "(B) How much", "(C) How more", "(D) How often"], "ans": 1}, {"q": "A: ____ does Helen spend making her bed? B: Ten minutes.", "opts": ["(A) How long", "(B) How often", "(C) How many", "(D) How much"], "ans": 0}], "advQuestions": [{"q": "Peter ____ to bed late.", "opts": ["(A) is not used to going", "(B) is not used to go", "(C) doesn’t used to going", "(D) doesn’t used going"], "ans": 0}, {"q": "Would you put the boxes ____? Thanks!", "opts": ["(A) at", "(B) on", "(C) off", "(D) down"], "ans": 3}, {"q": "Which sentence is not correct?", "opts": ["(A) Kitty handed in her homework.", "(B) Kitty handed it in.", "(C) Kitty handed her homework in.", "(D) Kitty handed in it."], "ans": 3}, {"q": "Which sentence is correct?", "opts": ["(A) The students gets on the bus.", "(B) The students get the bus on.", "(C) The students gets it on.", "(D) The students get on the bus."], "ans": 3}, {"q": "Jenny lent some money ____ me.", "opts": ["(A) to", "(B) from", "(C) at", "(D) with"], "ans": 0}], "clozeQuestions": [{"q": "Blank 1", "opts": ["(A) try on them", "(B) try them on", "(C) try it on", "(D) try on it"], "ans": 1}, {"q": "Blank 2", "opts": ["(A) cost", "(B) spend", "(C) take", "(D) costs"], "ans": 0}, {"q": "Blank 3", "opts": ["(A) spends", "(B) costs", "(C) spend", "(D) cost"], "ans": 2}, {"q": "Blank 4", "opts": ["(A) take us", "(B) costs us", "(C) cost us", "(D) takes us"], "ans": 3}, {"q": "Blank 5", "opts": ["(A) is not used to wearing", "(B) am using to wear", "(C) am not used to wearing", "(D) is used to wear"], "ans": 2}, {"q": "Blank 6", "opts": ["(A) worry about", "(B) worry of", "(C) worry at", "(D) worry in"], "ans": 0}], "clozeArticle": "Bill and Jacky are in a shoe store.<br>\nClerk: May I help you?<br>\nBill: We are looking for a pair of sneakers.<br>\nClerk: The black ones look good.<br>\nJacky: I like them. Can I <b>1</b>?<br>\nBill: But they’re NT$2,000 dollars. They are too expensive for me.<br>\nJacky: Oh! That’s too bad. Let’s try another pair on.<br>\nClerk: How about the white ones? They <b>2</b> NT$1,500 dollars.<br>\nBill: I can only <b>3</b> NT$1,000 dollars. They’re too expensive, too.<br>\nClerk: The green ones are on sale this week. They’re only NT$850 dollars.<br>\nJacky: They look good, too. It <b>4</b> hours to find a pair of sneakers.<br>\nBill: I <b>5</b> green sneakers. They look strange on me.<br>\nJacky: Let’s take them.<br>\nClerk: Yes. Don’t <b>6</b> it. They look great on you.<br>\nBill: OK. I will take them."};
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+const hamburger = document.getElementById('hamburger');
+const navLinks = [...document.querySelectorAll('#navLinks a')];
+const sections = [...document.querySelectorAll('.section')];
+const readingProgress = document.getElementById('readingProgress');
+const sidebarProgress = document.getElementById('sidebarProgress');
+const storageKey = 'b4-unit6-active-section';
+
+function toggleSidebar(show) {
+  if (window.innerWidth > 920) return;
+  sidebar.classList.toggle('open', show);
+  overlay.classList.toggle('show', show);
+}
+if (hamburger) hamburger.addEventListener('click', () => toggleSidebar(!sidebar.classList.contains('open')));
+overlay.addEventListener('click', () => toggleSidebar(false));
+
+function showSection(id) {
+  sections.forEach(sec => sec.classList.toggle('active', sec.id === id));
+  navLinks.forEach(link => link.classList.toggle('active', link.dataset.section === id));
+  localStorage.setItem(storageKey, id);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (window.innerWidth <= 920) toggleSidebar(false);
+  updateSidebarMini();
+  const targetSection = document.getElementById(id);
+  if (window.gsap && targetSection && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const animated = targetSection.querySelectorAll('.section-head, .grammar-box, .tip-box, .practice-container, .review-card');
+    gsap.killTweensOf(animated);
+    gsap.fromTo(animated,
+      { opacity: 0, y: 22 },
+      { opacity: 1, y: 0, duration: 0.58, stagger: 0.055, ease: 'power3.out', clearProps: 'transform' }
+    );
+  }
+}
+
+navLinks.forEach(link => link.addEventListener('click', e => { e.preventDefault(); showSection(link.dataset.section); }));
+document.querySelectorAll('.section-nav a[data-section]').forEach(link => link.addEventListener('click', e => { e.preventDefault(); showSection(link.dataset.section); }));
+
+const saved = localStorage.getItem(storageKey);
+if (saved && document.getElementById(saved)) showSection(saved); else showSection(sections[0].id);
+
+function updateReadingProgress() {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+  readingProgress.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateReadingProgress);
+updateReadingProgress();
+
+function updateSidebarMini() {
+  const activeIndex = sections.findIndex(sec => sec.classList.contains('active'));
+  const pct = ((activeIndex + 1) / sections.length) * 100;
+  sidebarProgress.style.width = pct + '%';
+}
+
+const quizState = {};
+function setupQuiz(id, total) { quizState[id] = { total, answered: new Set(), correct: 0 }; updateScore(id); }
+function updateScore(id) {
+  const state = quizState[id];
+  document.getElementById(`${id}-total`).textContent = state.total;
+  document.getElementById(`${id}-correct`).textContent = state.correct;
+  document.getElementById(`${id}-fill`).style.width = (state.correct / state.total * 100) + '%';
+  document.getElementById(`${id}-done`).textContent = `已作答 ${state.answered.size} / ${state.total} 題`;
+}
+function renderQuiz(containerId, scoreId, questions, startNo=1) {
+  const container = document.getElementById(containerId);
+  setupQuiz(scoreId, questions.length);
+  container.innerHTML = questions.map((q, qi) => `
+    <div class="quiz-item" id="${scoreId}-q${qi}">
+      <div class="quiz-question">${qi+startNo}. ${q.q}</div>
+      <div class="quiz-options">
+        ${q.opts.map((opt, oi) => `<button class="quiz-option" data-score="${scoreId}" data-q="${qi}" data-o="${oi}">${opt}</button>`).join('')}
+      </div>
+    </div>
+  `).join('');
+  container.querySelectorAll('.quiz-option').forEach(btn => btn.addEventListener('click', () => {
+    const sid = btn.dataset.score; const qIndex = Number(btn.dataset.q); const optIndex = Number(btn.dataset.o); const q = questions[qIndex]; const st = quizState[sid];
+    if (st.answered.has(qIndex)) return;
+    st.answered.add(qIndex);
+    const item = document.getElementById(`${sid}-q${qIndex}`);
+    item.querySelectorAll('.quiz-option').forEach((b,i) => {
+      if (i === q.ans) b.classList.add('correct');
+      if (i === optIndex && i !== q.ans) b.classList.add('wrong');
+      b.disabled = true;
+    });
+    if (optIndex === q.ans) st.correct += 1;
+    updateScore(sid);
+  }));
+}
+
+document.getElementById('cloze-article').innerHTML = unitData.clozeArticle;
+renderQuiz('quiz-basic', 'quiz-basic', unitData.basicQuestions, 1);
+renderQuiz('quiz-adv', 'quiz-adv', unitData.advQuestions, 11);
+renderQuiz('quiz-cloze', 'quiz-cloze', unitData.clozeQuestions, 1);
+
+window.addEventListener('load', () => {
+  if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  gsap.from('.hero-section', { opacity: 0, y: 24, duration: 0.75, ease: 'power3.out' });
+  gsap.from('.brand-card', { opacity: 0, x: -18, duration: 0.68, ease: 'power3.out' });
+  gsap.from('.nav-links li', { opacity: 0, x: -12, duration: 0.42, stagger: 0.035, delay: 0.12, ease: 'power2.out' });
+});
+</script>
+</body></html>

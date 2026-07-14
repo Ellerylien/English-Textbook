@@ -1,0 +1,825 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>國中英語文法通 4 - Unit 2 形容詞最高級互動教學</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet"><style>
+    :root {
+      /* Fresh editorial learning interface: calm teal + porcelain + soft rose accent */
+      --primary-color: #527a7a;
+      --primary-light: #dce8e4;
+      --primary-soft: #f4f7f4;
+      --primary-dark: #334f50;
+      --primary-ink: #263e3f;
+      --secondary-color: #f7f6f1;
+      --page-bg: #f3f1ea;
+      --text-color: #2f3a3a;
+      --muted-text: #687473;
+      --accent-color: #c58b62;
+      --accent-soft: #faf1e8;
+      --success-color: #5f826e;
+      --success-soft: #edf4ef;
+      --error-color: #b66b65;
+      --error-soft: #f8eeee;
+      --warning-color: #b58a52;
+      --surface: rgba(255,255,255,0.82);
+      --surface-solid: #ffffff;
+      --hairline: rgba(51,79,80,0.12);
+      --hairline-strong: rgba(51,79,80,0.22);
+      --border-radius: 22px;
+      --shadow-soft: 0 10px 28px rgba(51,79,80,0.08);
+      --shadow-lift: 0 24px 64px rgba(51,79,80,0.14);
+      --shadow-card: 0 8px 22px rgba(51,79,80,0.07);
+      --focus-ring: 0 0 0 4px rgba(197,139,98,0.24);
+      --sidebar-width: 292px;
+      --font-zh: "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+      --font-en: "Inter", "Noto Sans TC", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-zh);
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 6%, rgba(82,122,122,0.15), transparent 31%),
+        radial-gradient(circle at 86% 12%, rgba(197,139,98,0.11), transparent 27%),
+        radial-gradient(circle at 50% 100%, rgba(201,241,244,0.58), transparent 38%),
+        linear-gradient(135deg, #f8fffe 0%, #f2faf8 48%, #fffafb 100%);
+      color: var(--text-color);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(51,79,80,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(51,79,80,0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.62), transparent 78%);
+      z-index: -2;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      width: 360px;
+      height: 360px;
+      right: -150px;
+      bottom: -160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(82,122,122,0.13), transparent 68%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001s !important; transition-duration: 0.001s !important; scroll-behavior: auto !important; }
+    }
+    :focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    ::selection { background: rgba(197,139,98,0.28); }
+
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      z-index: 2000;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      box-shadow: 0 0 18px rgba(82,122,122,0.32);
+      transition: width 0.12s linear;
+    }
+
+    .app-shell { display: flex; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      background: rgba(51,79,80,0.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      color: #fff;
+      padding: 12px 16px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 12px 28px rgba(51,79,80,0.18);
+    }
+    .topbar .title { font-weight: 900; letter-spacing: 0.03em; }
+    .hamburger {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.24);
+      color: #fff;
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.15s, border-color 0.2s;
+    }
+    .hamburger:active { transform: scale(0.94); }
+    .hamburger:hover { background: rgba(255,255,255,0.24); border-color: rgba(255,255,255,0.38); }
+
+    .sidebar {
+      width: var(--sidebar-width);
+      background:
+        linear-gradient(180deg, rgba(51,79,80,0.97), rgba(82,122,122,0.92)),
+        radial-gradient(circle at 0 0, rgba(255,255,255,0.24), transparent 35%);
+      color: white;
+      padding: 22px 16px 26px;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      z-index: 1000;
+      box-shadow: 12px 0 34px rgba(51,79,80,0.20);
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.42) transparent;
+    }
+    .sidebar::-webkit-scrollbar { width: 8px; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.36); border-radius: 999px; }
+    .brand-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 24px;
+      padding: 18px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 16px 34px rgba(0,0,0,0.08);
+    }
+    .brand-card::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -64px;
+      top: -64px;
+      background: radial-gradient(circle, rgba(255,255,255,0.22), transparent 64%);
+      pointer-events: none;
+    }
+    .unit-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-en);
+      font-size: 0.76rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 999px;
+      padding: 7px 11px;
+    }
+    .brand-card h2 {
+      margin: 12px 0 6px;
+      font-size: 1.46rem;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+    }
+    .brand-card p {
+      margin: 0;
+      font-size: 0.91rem;
+      color: rgba(255,255,255,0.80);
+    }
+    .progress-mini {
+      margin-top: 15px;
+      height: 7px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-mini span {
+      display: block;
+      height: 100%;
+      width: 8%;
+      background: linear-gradient(90deg, #ffffff, #ffd0e3);
+      border-radius: 999px;
+      transition: width 0.45s ease;
+    }
+
+    .nav-links { list-style: none; padding: 0; margin: 0; }
+    .nav-links li { margin-bottom: 7px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      display: block;
+      padding: 10px 12px;
+      border-radius: 15px;
+      transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease, padding-left 0.22s ease, box-shadow 0.22s ease;
+      cursor: pointer;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(255,255,255,0.17);
+      color: #fff;
+      font-weight: 800;
+      padding-left: 18px;
+      transform: translateX(2px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.13);
+    }
+    .nav-links a::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 10px; bottom: 10px;
+      width: 4px;
+      background: linear-gradient(180deg, #fff, #ffd0e3);
+      border-radius: 999px;
+      transform: scaleY(0);
+      transform-origin: center;
+      transition: transform 0.25s ease;
+    }
+    .nav-links a.active::before { transform: scaleY(1); }
+
+    .backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15,23,42,0.48);
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .main-content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      padding: 36px clamp(20px, 4vw, 52px) 44px;
+      max-width: 1160px;
+    }
+    .course-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 4vw, 44px);
+      margin-bottom: 26px;
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.93), rgba(241,251,252,0.82)),
+        radial-gradient(circle at 88% 16%, rgba(197,139,98,0.13), transparent 34%),
+        radial-gradient(circle at 8% 100%, rgba(82,122,122,0.10), transparent 34%);
+      box-shadow: var(--shadow-lift);
+      border: 1px solid rgba(82,122,122,0.16);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .course-hero::before {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.56);
+      pointer-events: none;
+    }
+    .course-hero::after {
+      content: "2";
+      position: absolute;
+      right: 26px;
+      top: 0;
+      font-family: var(--font-en);
+      font-size: clamp(5.4rem, 14vw, 10.2rem);
+      line-height: 1;
+      font-weight: 900;
+      color: rgba(82,122,122,0.10);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-family: var(--font-en);
+      color: var(--primary-dark);
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      background: rgba(241,251,252,0.92);
+      border: 1px solid rgba(82,122,122,0.22);
+      padding: 7px 12px;
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(51,79,80,0.04);
+    }
+    .course-hero h1 {
+      margin: 16px 0 10px;
+      padding: 0;
+      border: none;
+      color: var(--primary-ink);
+      font-size: clamp(2rem, 5vw, 4.15rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      display: block;
+      max-width: 820px;
+    }
+    .course-hero p {
+      max-width: 720px;
+      color: var(--muted-text);
+      font-size: 1.06rem;
+      margin: 0;
+    }
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+      max-width: 760px;
+    }
+    .chip {
+      background: rgba(255,255,255,0.86);
+      color: var(--primary-dark);
+      border: 1px solid rgba(82,122,122,0.18);
+      box-shadow: 0 8px 18px rgba(51,79,80,0.06);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .chip:hover { transform: translateY(-2px); box-shadow: 0 12px 22px rgba(51,79,80,0.10); }
+
+    .section {
+      display: none;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      padding: clamp(22px, 4vw, 42px);
+      border-radius: 30px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 30px;
+      border: 1px solid var(--hairline);
+      opacity: 0;
+      transform: translateY(16px);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .section::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary-color), rgba(82,122,122,0.35), var(--accent-color));
+    }
+    .section::after {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -150px;
+      top: -150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(82,122,122,0.08), transparent 68%);
+      pointer-events: none;
+    }
+    .section.active { display: block; }
+    .section.visible { opacity: 1; transform: translateY(0); }
+
+    h1.section-title {
+      position: relative;
+      color: var(--primary-dark);
+      border-bottom: 1px solid rgba(51,79,80,0.12);
+      padding-bottom: 18px;
+      margin: 0 0 24px;
+      font-size: clamp(1.6rem, 3.8vw, 2.28rem);
+      display: flex;
+      align-items: center;
+      line-height: 1.34;
+      letter-spacing: -0.025em;
+      z-index: 1;
+    }
+    h1.section-title .number {
+      font-family: var(--font-en);
+      color: var(--primary-color);
+      font-weight: 900;
+      margin-right: 14px;
+      min-width: 74px;
+      letter-spacing: -0.03em;
+    }
+    .level-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+    }
+    h3 {
+      color: var(--primary-dark);
+      margin-top: 36px;
+      margin-bottom: 16px;
+      font-size: 1.22rem;
+      border-left: 5px solid var(--accent-color);
+      padding: 10px 0 10px 14px;
+      background: linear-gradient(90deg, var(--accent-soft) 0%, rgba(255,255,255,0) 72%);
+      border-radius: 0 16px 16px 0;
+    }
+    h4 { font-size: 1.1rem; color: var(--primary-dark); margin: 0 0 8px; }
+    p, li { font-size: 1.055rem; color: #384657; margin-bottom: 10px; }
+    .en, .practice-question, .quiz-question, .quiz-option, .answer-text, .formula-pill, .cloze-article { font-family: var(--font-en); }
+    .zh { font-family: var(--font-zh); }
+    strong { color: var(--primary-ink); }
+
+    .grammar-box {
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(247,252,251,0.76));
+      padding: clamp(18px, 3vw, 28px);
+      border-radius: 24px;
+      border: 1px solid rgba(82,122,122,0.18);
+      margin: 22px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      z-index: 1;
+    }
+    .grammar-box::before {
+      content: '';
+      position: absolute;
+      inset: 16px auto 16px 0;
+      width: 5px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+      opacity: 0.9;
+    }
+    .grammar-tag {
+      background: linear-gradient(135deg, var(--primary-color), #426c6d);
+      color: white;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 900;
+      display: inline-block;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+      box-shadow: 0 8px 16px rgba(82,122,122,0.18);
+    }
+    .subtag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 1.06rem;
+      margin: 14px 0 8px;
+    }
+    .subtag .dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary-color), #426c6d);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-en);
+      font-weight: 900;
+      font-size: 0.92rem;
+      box-shadow: 0 6px 12px rgba(82,122,122,0.16);
+    }
+    .formula-pill {
+      background: rgba(255,255,255,0.92);
+      border: 1.6px solid rgba(51,79,80,0.22);
+      border-radius: 18px;
+      padding: 14px 20px;
+      margin: 12px 0 16px;
+      color: #1f2937;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 20px rgba(51,79,80,0.06);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .example-line {
+      border-left: 4px solid rgba(197,139,98,0.48);
+      padding: 9px 13px;
+      margin: 10px 0;
+      background: rgba(255,243,248,0.64);
+      border-radius: 0 14px 14px 0;
+    }
+
+    .grammar-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 16px 0;
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(51,79,80,0.08);
+      font-size: 1rem;
+      border: 1px solid rgba(82,122,122,0.17);
+    }
+    .grammar-table th, .grammar-table td {
+      border-bottom: 1px solid #e5eef1;
+      border-right: 1px solid #e5eef1;
+      padding: 11px 13px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .grammar-table th:last-child, .grammar-table td:last-child { border-right: none; }
+    .grammar-table tr:last-child td { border-bottom: none; }
+    .grammar-table th {
+      background: linear-gradient(135deg, var(--primary-color), #426c6d);
+      color: white;
+      font-weight: 800;
+    }
+    .grammar-table .soft-head { background: var(--primary-light); color: var(--primary-dark); font-weight: 800; }
+
+    .note-card {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid rgba(197,139,98,0.22);
+      border-left: 5px solid var(--accent-color);
+      border-radius: 20px;
+      padding: 14px 16px;
+      margin: 18px 0;
+      box-shadow: 0 8px 18px rgba(197,139,98,0.06);
+    }
+    .note-card .icon { font-size: 1.1rem; }
+    .note-card p { margin: 0; }
+
+    .practice-container {
+      background: rgba(255,255,255,0.70);
+      border: 1px dashed rgba(82,122,122,0.36);
+      border-radius: 26px;
+      padding: 16px clamp(16px, 3vw, 28px);
+      margin-top: 26px;
+      box-shadow: 0 8px 22px rgba(51,79,80,0.05);
+      z-index: 1;
+      position: relative;
+    }
+    .practice-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 4px 0 8px;
+      color: var(--primary-dark);
+    }
+    .practice-label {
+      background: #344243;
+      color: #fff;
+      font-family: var(--font-en);
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(15,38,48,0.13);
+    }
+    .practice-label b {
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 50%;
+      padding: 0 5px;
+      margin-left: 3px;
+    }
+    .practice-item {
+      border-bottom: 1px solid #e8ece8;
+      padding: 18px 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .practice-item:last-child { border-bottom: none; }
+    .practice-question {
+      font-weight: 650;
+      font-size: 1.055rem;
+      margin-bottom: 14px;
+      color: #334040;
+      line-height: 1.75;
+    }
+    .q-badge {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      margin-right: 8px;
+      vertical-align: middle;
+      font-weight: 900;
+    }
+    .answer-btn {
+      background: rgba(255,255,255,0.94);
+      color: var(--primary-dark);
+      border: 1.8px solid var(--primary-color);
+      padding: 8px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 850;
+      transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s, border-color 0.2s;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .answer-btn:hover {
+      background: var(--primary-color);
+      color: white;
+      box-shadow: 0 10px 20px rgba(82,122,122,0.18);
+      transform: translateY(-1px);
+    }
+    .answer-btn:active { transform: scale(0.96); }
+    .answer-text {
+      display: none;
+      margin-top: 14px;
+      color: #8a5b3f;
+      font-weight: 900;
+      padding: 14px 16px;
+      background: var(--accent-soft);
+      border-radius: 16px;
+      border-left: 5px solid var(--accent-color);
+      font-size: 1.03rem;
+      line-height: 1.7;
+    }
+
+    .score-panel {
+      position: sticky;
+      top: 12px;
+      z-index: 50;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(82,122,122,0.20);
+      border-radius: 24px;
+      padding: 16px 18px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 30px rgba(51,79,80,0.09);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .score-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+      font-weight: 900;
+      color: var(--primary-dark);
+      gap: 14px;
+    }
+    .score-head .count { font-family: var(--font-en); white-space: nowrap; }
+    .score-head .count b { font-size: 1.28rem; color: var(--success-color); }
+    .score-track { height: 10px; background: #e8ece8; border-radius: 999px; overflow: hidden; }
+    .score-fill {
+      height: 100%; width: 0%; border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .score-done {
+      margin-top: 12px;
+      font-weight: 900;
+      text-align: center;
+      color: var(--primary-dark);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .score-done.show { opacity: 1; transform: translateY(0); }
+    .quiz-container { margin-top: 20px; }
+    .quiz-item {
+      background: rgba(255,255,255,0.94);
+      margin-bottom: 22px;
+      padding: clamp(20px, 3vw, 30px);
+      border: 1px solid #e2e6e1;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(51,79,80,0.06);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .quiz-item:hover { transform: translateY(-2px); box-shadow: 0 18px 34px rgba(51,79,80,0.11); border-color: rgba(82,122,122,0.22); }
+    .quiz-question {
+      font-size: 1.11rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #334040;
+      line-height: 1.75;
+    }
+    .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .quiz-option {
+      font: inherit;
+      background: #fbfaf6;
+      border: 1.8px solid #edf2f4;
+      color: #374443;
+      padding: 13px 16px;
+      border-radius: 18px;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+      font-size: 1rem;
+      position: relative;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      text-align: left;
+    }
+    .quiz-option:hover { background: var(--secondary-color); border-color: var(--primary-light); transform: translateY(-2px); box-shadow: 0 10px 18px rgba(51,79,80,0.06); }
+    .quiz-option.correct { background: var(--success-soft); border-color: var(--success-color); color: #41634f; }
+    .quiz-option.wrong { background: var(--error-soft); border-color: var(--error-color); color: #8b514d; opacity: 0.94; }
+    .feedback { margin-top: 14px; font-weight: 900; min-height: 24px; font-size: 1.04rem; padding: 8px 0 0; border-radius: 8px; }
+    .cloze-article {
+      background: rgba(255,255,255,0.94);
+      padding: clamp(20px, 3vw, 30px);
+      border-radius: 22px;
+      border-left: 5px solid var(--accent-color);
+      line-height: 2;
+      font-size: 1.08rem;
+      margin-bottom: 26px;
+      box-shadow: 0 12px 26px rgba(51,79,80,0.08);
+    }
+    .cloze-blank {
+      display: inline-block;
+      min-width: 46px;
+      text-align: center;
+      border-bottom: 2px solid #8c9995;
+      color: var(--primary-dark);
+      font-weight: 900;
+    }
+    .source-note {
+      font-size: 0.9rem;
+      color: #737d7a;
+      margin: 46px 0 12px;
+      text-align: center;
+      border-top: 1px solid rgba(51,79,80,0.12);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 980px) {
+      :root { --sidebar-width: 270px; }
+      .main-content { padding-inline: 24px; }
+    }
+    @media (max-width: 860px) {
+      .topbar { display: flex; }
+      .app-shell { flex-direction: column; }
+      .sidebar {
+        width: 84%; max-width: 340px; height: 100%; position: fixed; top: 0; left: 0;
+        transform: translateX(-105%); padding: 22px 16px;
+      }
+      .sidebar.open { transform: translateX(0); }
+      .backdrop.show { display: block; opacity: 1; }
+      .main-content { margin-left: 0; padding: 18px; max-width: none; }
+      .course-hero { border-radius: 26px; }
+      .course-hero::before { inset: 10px; border-radius: 20px; }
+      .quiz-options { grid-template-columns: 1fr; }
+      .grammar-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .formula-pill { border-radius: 16px; white-space: normal; }
+      .practice-heading { align-items: flex-start; flex-direction: column; gap: 6px; }
+      h1.section-title { align-items: flex-start; flex-direction: column; gap: 4px; }
+      h1.section-title .number { min-width: auto; }
+      .score-head { align-items: flex-start; flex-direction: column; gap: 4px; }
+    }
+  
+    /* Unit 2 Nordic furniture refinement */
+    body { background:
+      radial-gradient(circle at 10% 5%, rgba(82,122,122,.12), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(197,139,98,.10), transparent 28%),
+      linear-gradient(135deg,#f7f5ef 0%,#eef3ef 50%,#f8f5ef 100%); }
+    .sidebar { background:
+      linear-gradient(180deg, rgba(47,67,67,.98), rgba(82,122,122,.94)),
+      radial-gradient(circle at 0 0, rgba(255,255,255,.16), transparent 36%); }
+    .course-hero { background:
+      linear-gradient(135deg,rgba(255,255,252,.95),rgba(242,245,239,.88)),
+      radial-gradient(circle at 88% 14%,rgba(197,139,98,.12),transparent 36%); }
+    .section, .grammar-box, .quiz-item { border-color: rgba(51,79,80,.14); }
+    .section::before { background: linear-gradient(90deg,#527a7a,#91aaa1,#c58b62); }
+    .wood-note { background:#f8f1e8;border:1px solid rgba(197,139,98,.24);border-radius:18px;padding:14px 16px;margin:16px 0; }
+    .comparison-grid { display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0; }
+    .comparison-card { background:rgba(255,255,255,.82);border:1px solid rgba(51,79,80,.14);border-radius:18px;padding:16px;box-shadow:0 8px 20px rgba(51,79,80,.05); }
+    .comparison-card h4 { margin-bottom:10px; }
+    @media(max-width:700px){.comparison-grid{grid-template-columns:1fr}}
+</style><style id="series-theme">
+:root{--primary-color:#718895;--primary-light:#dce5e9;--primary-soft:#f1f5f6;--primary-dark:#465d68;--primary-ink:#31444d;--secondary-color:#f8f5ef;--page-bg:#eef2f3;--text-color:#303d43;--muted-text:#6b777c;--accent-color:#b6926f;--accent-soft:#f4ece3;}
+body{background:radial-gradient(circle at 12% 6%,rgba(113,136,149,.14),transparent 31%),radial-gradient(circle at 86% 12%,rgba(182,146,111,.10),transparent 27%),radial-gradient(circle at 50% 100%,rgba(220,229,233,.56),transparent 38%),linear-gradient(135deg,#eef2f3 0%,#f8f5ef 52%,#fbfaf7 100%) !important;}
+body::after{background:radial-gradient(circle,rgba(113,136,149,.12),transparent 68%) !important;}
+.sidebar{background:linear-gradient(180deg,rgba(70,93,104,.98),rgba(113,136,149,.94)),radial-gradient(circle at 0 0,rgba(255,255,255,.16),transparent 36%) !important;}
+</style></head><body>
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+<div class="topbar"><button class="hamburger" id="menuToggle" aria-label="開啟選單">☰</button><span class="title">B4 Unit 2｜形容詞最高級</span><span style="width:42px"></span></div>
+<div class="backdrop" id="backdrop"></div><div class="app-shell"><nav class="sidebar" id="sidebar"><div class="brand-card"><span class="unit-pill">Grammar Book 4 · Unit 2</span><h2>形容詞最高級</h2><p>從最高級變化、比較範圍，到等義句型與 Review。</p><div class="progress-mini"><span id="navProgress"></span></div></div><ul class="nav-links"><li><a onclick="showSection('2-1')" class="active">2-1 最高級規則與不規則</a></li><li><a onclick="showSection('2-2')">2-2 in／of all</a></li><li><a onclick="showSection('2-3')">2-3 of the＋數量</a></li><li><a onclick="showSection('2-4')">2-4 of the two</a></li><li><a onclick="showSection('2-5')">2-5 which／who</a></li><li><a onclick="showSection('2-6')">2-6 than any／all the</a></li><li><a onclick="showSection('2-7')">2-7 any other／all the other</a></li><li><a onclick="showSection('2-8')">2-8 no other</a></li><li><a onclick="showSection('quiz-basic')">Review：單題選擇</a></li><li><a onclick="showSection('quiz-cloze')">Review：克漏字</a></li></ul></nav>
+<main class="main-content" id="mainContent"><header class="course-hero"><span class="eyebrow">Unit 2 · Superlative Adjectives</span><h1>形容詞最高級與進階比較</h1><p>以清楚的文法卡片、互動答案與即時測驗，整理最高級、of the two、than any other 與 no other 等核心句型。</p><div class="hero-chips"><span class="chip">最高級變化</span><span class="chip">in / of all</span><span class="chip">of the two</span><span class="chip">than any other</span><span class="chip">no other</span></div></header>
+<section id="2-1" class="section"><div class="section-inner"><span class="level-label">基礎練習</span><h1 class="section-title"><span class="number">2-1</span>形容詞最高級的規則與不規則變化</h1><div class="grammar-box"><span class="grammar-tag">說明</span><p>除了原級和比較級以外，形容詞還有「最高級」，表示「最……的」。最高級的形成方式和比較級相似：短形容詞通常改成 <span class="en">-est</span>；較長的形容詞則在前面加 <span class="en">most</span>。</p>
+<div class="subtag"><span class="dot">1</span>單音節或雙音節形容詞</div>
+<table class="grammar-table"><tr><th colspan="4">形容詞最高級的規則變化</th></tr><tr><td class="soft-head">直接加 -est</td><td class="soft-head">字尾為 e，直接加 -st</td><td class="soft-head">短母音＋子音<br>重複字尾加 -est</td><td class="soft-head">字尾為 y，去 y 加 -iest</td></tr><tr><td class="en">kind → kindest<br>light → lightest<br>small → smallest</td><td class="en">fine → finest<br>large → largest<br>nice → nicest</td><td class="en">wet → wettest<br>sad → saddest<br>hot → hottest</td><td class="en">dirty → dirtiest<br>busy → busiest<br>heavy → heaviest</td></tr></table>
+<div class="subtag"><span class="dot">2</span>雙音節或多音節形容詞前加 most</div><table class="grammar-table"><tr><th colspan="2">雙音節或多音節形容詞最高級</th></tr><tr><td class="en">nervous → most nervous<br>important → most important</td><td class="en">comfortable → most comfortable<br>successful → most successful</td></tr></table>
+<div class="subtag"><span class="dot">3</span>不規則變化</div><table class="grammar-table"><tr><th colspan="4">形容詞最高級的不規則變化</th></tr><tr><td class="en">good → best</td><td class="en">bad → worst</td><td class="en">little → least</td><td class="en">many / much → most</td></tr></table></div><div class="practice-container"><div class="practice-heading"><span class="practice-label">Practice <b>A</b></span><h4>請將形容詞原級改寫成最高級。</h4></div><div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>high</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the highest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>friendly</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the friendliest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>successful</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the most successful</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>great</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the greatest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>thin</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the thinnest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">6</span>fine</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the finest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">7</span>small</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the smallest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">8</span>difficult</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the most difficult</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">9</span>bad</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the worst</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">10</span>little</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the least</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">11</span>exciting</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the most exciting</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">12</span>sad</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the saddest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">13</span>many</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the most</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">14</span>heavy</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the heaviest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">15</span>dirty</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the dirtiest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">16</span>easy</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the easiest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">17</span>funny</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the funniest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">18</span>convenient</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the most convenient</div></div></div></div></section><section id="2-2" class="section"><div class="section-inner"><h1 class="section-title"><span class="number">2-2</span>the＋形容詞最高級＋in＋地方／of all</h1><div class="grammar-box"><span class="grammar-tag">說明</span><p>1. 「最……的」人或事物通常有明確範圍，因此最高級前面一般加冠詞 <span class="en">the</span>。</p><p>2. 上下文已清楚時，最高級後面的名詞可以省略。</p><div class="formula-pill">the + 形容詞最高級 + 名詞 + in + 地方範圍 / of all</div><div class="example-line"><span class="en">Louis is the fastest runner in the world.</span> Louis 是世界上最快的跑者。</div><div class="example-line"><span class="en">This computer is the best of all.</span> 這台電腦是所有電腦中最好的。</div></div><div class="practice-container"><div class="practice-heading"><span class="practice-label">Practice <b>B</b></span><h4>請將錯的句子改寫為正確的句子。</h4></div><div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>Tina is the happy girl in the world.</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">Tina is the happiest girl in the world.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>Math is more difficult subject of all.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Math is the most difficult subject of all.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>Taipei 101 is the tall building in Taiwan.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Taipei 101 is the tallest building in Taiwan.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>This novel is most expensive on the shelf.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">This novel is the most expensive on the shelf.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>Mr. Wang is the more popular teacher of all.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Mr. Wang is the most popular teacher of all.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>My brother is the younger boy of all.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">My brother is the youngest boy of all.</div></div></div></div></section><section id="2-3" class="section"><div class="section-inner"><h1 class="section-title"><span class="number">2-3</span>the＋形容詞最高級＋of the＋數量</h1><div class="grammar-box"><span class="grammar-tag">說明</span><p>最高級用在三者以上的比較，表示其中一個是「最……的」。</p><div class="formula-pill">the + 形容詞最高級 + of the three / four / ...</div><div class="example-line"><span class="en">Peter is the tallest of the three.</span> Peter 是這三人中最高的。</div></div><div class="practice-container"><div class="practice-heading"><span class="practice-label">Practice <b>C</b></span><h4>請使用「of the＋數量」合併成最高級句子。</h4></div><div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>Lucy is 140 cm. / Tiffany is 150 cm. / Amy is 156 cm.</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">Lucy is the shortest of the three.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>Nancy is beautiful. / Kitty is more beautiful than Nancy. / Patty is more beautiful than Kitty.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Patty is the most beautiful of the three.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>Paul is older than Mike. / Mike is older than Jimmy. / Jimmy is older than Sam.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Paul is the oldest of the four.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>Joanne weighs 35 kilos. / Eva weighs 40 kilos. / Melody weighs 45 kilos.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Melody is the heaviest of the three.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>The bicycle is fast. / The motorcycle is faster. / The car is the fastest.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The bicycle is the slowest of the three.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>Judy and Lily were late. / Kitty was later than Judy and Lily. / Kitty was later than Sandy.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Kitty was the latest of the four.</div></div></div></div></section><section id="2-4" class="section"><div class="section-inner"><h1 class="section-title"><span class="number">2-4</span>the＋形容詞比較級＋of the two</h1><div class="grammar-box"><span class="grammar-tag">說明</span><p><span class="en">the + 形容詞比較級 + of the two</span> 用於兩者比較，雖然形式是比較級，語意上等於「兩者中較……的」。</p><div class="comparison-grid"><div class="comparison-card"><h4>三者以上</h4><div class="formula-pill">the + 最高級 + of the three / four...</div><p class="en">He is the best of the three.</p></div><div class="comparison-card"><h4>兩者</h4><div class="formula-pill">the + 比較級 + of the two</div><p class="en">He is the better of the two.</p></div></div></div><div class="practice-container"><div class="practice-heading"><span class="practice-label">Practice <b>D</b></span><h4>請寫出比較級或最高級。</h4></div><div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>This is ______ movie of the four. (bad)</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">the worst</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>He is ______ boy of the ten in the class. (tall)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the tallest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>Mark is ______ of the two boys. (smart)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the smarter</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>This bag is ______ of the two. (large)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the larger</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>She is ______ student of the six. (lazy)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the laziest</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>Kitty is ______ girl of the two. (beautiful)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the more beautiful</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">6</span>Kevin is ______ of the four boys. (popular)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">the most popular</div></div></div></div></section><section id="2-5" class="section"><div class="section-inner"><h1 class="section-title"><span class="number">2-5</span>which 與 who 的問句</h1><div class="grammar-box"><span class="grammar-tag">說明</span><p><span class="en">which / which one</span> 用來詢問事物；<span class="en">who</span> 用來詢問人。兩者都可搭配比較級或最高級。</p><div class="example-line"><span class="en">Which one is the longest river in China?</span> 中國的哪條河最長？</div><div class="example-line"><span class="en">Who is the smartest student in your class?</span> 誰是你班上最聰明的學生？</div></div><div class="practice-container"><div class="practice-heading"><span class="practice-label">Practice <b>E</b></span><h4>請填入 who 或 which one。</h4></div><div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>______ is the younger boy of the two?</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Who</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>______ is the most interesting, the computer game, the video game or the basketball game?</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Which one</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>______ is the oldest of the four in your family?</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Who</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>______ is more interesting, the tennis match or the basketball game?</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Which one</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>______ is the smartest of the four in the Lin family?</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Who</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">6</span>______ is the most popular, Mr. Wang, Mr. Wu or Mr. White?</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Who</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">7</span>______ is heavier, the red box or the blue box?</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Which one</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">8</span>______ is more interesting, Kitty or Lily?</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Who</div></div></div></div></section><section id="2-6" class="section"><div class="section-inner"><span class="level-label">進階練習</span><h1 class="section-title"><span class="number">2-6</span>than any／than all the</h1><div class="grammar-box"><span class="grammar-tag">說明</span><p><span class="en">than any</span> 與 <span class="en">than all the</span> 用於和「不同群體」比較，因此比較級句型也能表達最高級概念。</p><div class="formula-pill">主詞 + be + 比較級 + than + any + 單數名詞 + 範圍</div><div class="formula-pill">主詞 + be + 比較級 + than + all the + 複數名詞 + 範圍</div><div class="example-line en">Kitty is thinner than any girl in Class 10.</div><div class="example-line en">Kitty is thinner than all the girls in Class 10.</div></div><div class="practice-container"><div class="practice-heading"><span class="practice-label">Practice <b>F</b></span><h4>請填入適當的字。</h4></div><div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>An airplane is the fastest transportation in the world.<br>→ An airplane is ______ land transportation.</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">faster than any</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>Sue is the tallest in her class.<br>→ Sue is taller ______ boys in her class.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">than all the</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>A blue whale is the biggest animal in the world.<br>→ A blue whale is bigger ______ animal on the land.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">than any</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>Blue whales are bigger ______ animals on the land.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">than all the</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>Mount Everest is higher ______ mountains in Europe.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">than all the</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>Mount Everest is higher ______ mountain in Europe.</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">than any</div></div></div></div></section><section id="2-7" class="section"><div class="section-inner"><h1 class="section-title"><span class="number">2-7</span>than any other／than all the other</h1><div class="grammar-box"><span class="grammar-tag">說明</span><p><span class="en">than any other</span> 與 <span class="en">than all the other</span> 用於「同一群體」內的比較，必須用 <span class="en">other</span> 排除主詞自己。</p><div class="formula-pill">最高級句型 ＝ 比較級 + than any other + 單數名詞</div><div class="formula-pill">最高級句型 ＝ 比較級 + than all the other + 複數名詞</div><div class="example-line en">Allen is the tallest boy in his class.<br>= Allen is taller than any other boy in his class.<br>= Allen is taller than all the other boys in his class.</div></div><div class="practice-container"><div class="practice-heading"><span class="practice-label">Practice <b>G</b></span><h4>請用 than any other... 或 than all the other... 改寫句子。</h4></div><div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>She is the most beautiful girl in the world.</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">She is more beautiful than any other girl in the world.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>Bill is the noisiest boy in his class. (than all the other)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Bill is noisier than all the other boys in his class.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>This flower is the most beautiful flower in the vase. (than any other)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">This flower is more beautiful than any other flower in the vase.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>Science is more difficult than any other subject. (than all the other)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Science is more difficult than all the other subjects.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>Shanghai is bigger than any other city in the world. (than all the other)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">Shanghai is bigger than all the other cities in the world.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">5</span>The chocolate cake is the most expensive in the shop. (than any other)</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">The chocolate cake is more expensive than any other cake in the shop.</div></div></div></div></section><section id="2-8" class="section"><div class="section-inner"><h1 class="section-title"><span class="number">2-8</span>no other 的句型</h1><div class="grammar-box"><span class="grammar-tag">說明</span><p>「no other + 名詞」或「no + 名詞」雖使用比較級或原級形式，實際語意可表達最高級。</p><div class="subtag"><span class="dot">1</span>同一群體</div><div class="formula-pill">No other + 名詞 + is / are + as / so + 原級 + as...</div><div class="formula-pill">No other + 名詞 + is / are + 比較級 + than...</div><div class="example-line en">No other boys in Class 12 are as handsome as Allen.<br>= No other boys in Class 12 are more handsome than Allen.</div><div class="subtag"><span class="dot">2</span>不同群體</div><div class="formula-pill">No + 名詞 + is / are + as / so + 原級 + as...</div><div class="formula-pill">No + 名詞 + is / are + 比較級 + than...</div><div class="example-line en">No boys in Class 11 are more handsome than Allen.<br>= No boy in Class 11 is as handsome as Allen.</div><div class="wood-note">整理：同一群體用 <span class="en">any other / all the other / no other</span>；不同群體用 <span class="en">any / all the / no</span>。</div></div><div class="practice-container"><div class="practice-heading"><span class="practice-label">Practice <b>H</b></span><h4>請依提示造句。</h4></div><div class="practice-item"><div class="practice-question"><span class="q-badge">例</span>No other girls / in her class / as / tall / Helen</div><div class="answer-text" style="display:block;color:var(--primary-color);background:var(--primary-soft);border-left-color:var(--primary-color);">No other girls in her class are as tall as Helen.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">1</span>No other student / in Class 505 / lazy / than / Ken</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">No other student in Class 505 is lazier than Ken.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">2</span>No one / in my family / heavy / than / Jill</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">No one in my family is heavier than Jill.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">3</span>No other boys / in his class / as / short / Robert</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">No other boys in his class are as short as Robert.</div></div><div class="practice-item"><div class="practice-question"><span class="q-badge">4</span>No teacher / in my school / good / than / Sarah</div><button class="answer-btn" onclick="toggleAnswer(this)">顯示答案</button><div class="answer-text">No teacher in my school is better than Sarah.</div></div></div></div></section><section id="quiz-basic" class="section"><div class="section-inner"><h1 class="section-title"><span class="number">Review</span>單題選擇</h1><div class="score-panel"><div class="score-head"><span>作答進度</span><span class="count"><b id="quiz-basic-correct">0</b> / <span id="quiz-basic-total">0</span></span></div><div class="score-track"><div class="score-fill" id="quiz-basic-fill"></div></div><div class="score-done" id="quiz-basic-done"></div></div><div class="quiz-container" id="quiz-basic"></div></div></section><section id="quiz-cloze" class="section"><div class="section-inner"><h1 class="section-title"><span class="number">Review</span>克漏字選擇</h1><div class="cloze-article">There are five students in Jeff’s English class. Gary, Sue, and Joe are thin. Gary is thin. Mandy and Anthony are fat. Anthony is <span class="cloze-blank">1</span> of the five students because he eats a lot. Sue and Mandy have long hair. Sue has <span class="cloze-blank">2</span> hair. Gary has the shortest hair. Joe is the laziest student in class, and he <span class="cloze-blank">3</span> his homework. Gary is <span class="cloze-blank">4</span> than all the other students in class. He never stops talking, but no student in Jeff’s class is <span class="cloze-blank">5</span> Gary. Joe is <span class="cloze-blank">6</span> than all the <span class="cloze-blank">7</span> students in English class. There are only five students in Jeff’s class. It’s <span class="cloze-blank">8</span> than Susan’s class but the class is fun.</div><div class="score-panel"><div class="score-head"><span>作答進度</span><span class="count"><b id="quiz-cloze-correct">0</b> / <span id="quiz-cloze-total">0</span></span></div><div class="score-track"><div class="score-fill" id="quiz-cloze-fill"></div></div><div class="score-done" id="quiz-cloze-done"></div></div><div class="quiz-container" id="quiz-cloze"></div></div></section><div class="source-note">內容依使用者提供之 B4 Unit 2 課本頁面整理製作；介面延續 B4 Unit 1 架構並改為北歐家具風格。</div></main></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const basicQuestions=[{"q": "Pears ______ the most delicious of the three.", "options": ["do", "is", "are", "does"], "ans": 2}, {"q": "The peaches are the ______ of all.", "options": ["more expensive", "expensive", "most expensive", "expensive than"], "ans": 2}, {"q": "The black CD player ______ the worst of the three.", "options": ["are", "is", "do", "does"], "ans": 1}, {"q": "He is smarter ______ any man in the world.", "options": ["then", "for", "with", "than"], "ans": 3}, {"q": "Steven is ______ boy in the class.", "options": ["the smartest", "the smarter", "smartest", "smarter"], "ans": 0}, {"q": "Jenny’s plan is the ______ of the three.", "options": ["good", "best", "bad", "better"], "ans": 1}, {"q": "Susan is the tallest ______ all the girls.", "options": ["of", "for", "in", "at"], "ans": 0}, {"q": "Pandas are the ______ of all animals.", "options": ["most cuter", "cute", "cutest", "cuter"], "ans": 2}, {"q": "English is ______ interesting subject of all.", "options": ["most", "the most", "more", "the more"], "ans": 1}, {"q": "______ is more beautiful, the pink shirt or the yellow shirt?", "options": ["Who", "Which one", "What", "Where"], "ans": 1}, {"q": "Winter is ______ than any season of the year.", "options": ["cold", "colder", "coldest", "colds"], "ans": 1}, {"q": "That department ______ less modern than all the departments in the city.", "options": ["is", "are", "do", "does"], "ans": 0}, {"q": "Maggie is ______ than any nurse in the hospital.", "options": ["more nice", "nice", "nicer", "nicest"], "ans": 2}, {"q": "My sister is lazier ______ person in my family.", "options": ["then other", "than other", "than any other", "than all other"], "ans": 2}, {"q": "Andy is ______ successful than all the other businessmen.", "options": ["much", "most", "more", "many"], "ans": 2}, {"q": "No boy in the school ______ more popular than Danny.", "options": ["is", "are", "do", "does"], "ans": 0}, {"q": "No boys in my class ______ more handsome than Mark.", "options": ["are", "is", "do", "does"], "ans": 0}, {"q": "The purple balloon is ______ at the party.", "options": ["bigger than all the balloon", "the biggest balloon", "more bigger than the red balloon", "the biggest than any balloon"], "ans": 1}, {"q": "The red pencil is shorter than the yellow one. The yellow pencil is shorter than the blue one. ______", "options": ["The blue pencil is the shortest of the three.", "The yellow pencil is longer than the blue pencil.", "The red pencil is the shortest of the three.", "The red pencil is the longest of the three."], "ans": 2}, {"q": "Which sentence is correct?", "options": ["No one is the friendliest as in the factory.", "No workers in the factory is as friendly as James.", "No workers in the factory is friendlier than James.", "No workers in the factory are as friendly as James."], "ans": 3}];
+const clozeQuestions=[{"q": "1.", "options": ["the fattest", "more fat", "the more fat", "fatter"], "ans": 0}, {"q": "2.", "options": ["the longest", "longer", "more longer", "long"], "ans": 0}, {"q": "3.", "options": ["always does", "seldom does", "does seldom", "does always"], "ans": 1}, {"q": "4.", "options": ["noisier", "the noisiest", "more noisier", "noise"], "ans": 0}, {"q": "5.", "options": ["too smart as", "more smart as", "as smart as", "very smart as"], "ans": 2}, {"q": "6.", "options": ["more popular", "popular", "the most popular", "very popular"], "ans": 0}, {"q": "7.", "options": ["another", "other", "X", "many"], "ans": 1}, {"q": "8.", "options": ["more small", "the smaller", "smaller", "more smaller"], "ans": 2}];
+const sidebar=document.getElementById('sidebar'),backdrop=document.getElementById('backdrop'),navProgress=document.getElementById('navProgress');
+const reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const readingProgress=document.getElementById('readingProgress');
+function updateReadingProgress(){const h=Math.max(1,document.documentElement.scrollHeight-innerHeight);readingProgress.style.width=Math.min(100,Math.max(0,(scrollY/h)*100))+'%'}
+addEventListener('scroll',updateReadingProgress,{passive:true});addEventListener('resize',updateReadingProgress);
+function openMenu(){sidebar.classList.add('open');backdrop.classList.add('show')} function closeMenu(){sidebar.classList.remove('open');backdrop.classList.remove('show')}
+document.getElementById('menuToggle').addEventListener('click',openMenu);backdrop.addEventListener('click',closeMenu);
+function clearState(el){if(!el)return;if(window.gsap){gsap.killTweensOf(el);gsap.set(el,{clearProps:'opacity,visibility,transform'})}}
+function animateSection(s){if(!s||reduceMotion||!window.gsap)return;const t=s.querySelectorAll('.section-title,.level-label,.grammar-box,.practice-container,.score-panel,.quiz-item,.cloze-article');gsap.killTweensOf(t);gsap.fromTo(t,{y:18,autoAlpha:0},{y:0,autoAlpha:1,duration:.5,ease:'power2.out',stagger:.045,overwrite:true})}
+window.showSection=function(id){const cur=document.querySelector('.section.active'),next=document.getElementById(id);if(!next)return;const links=[...document.querySelectorAll('.nav-links a')];links.forEach(x=>x.classList.remove('active'));const a=document.querySelector(`.nav-links a[onclick="showSection('${id}')"]`);if(a)a.classList.add('active');const idx=links.indexOf(a);if(idx>=0)navProgress.style.width=((idx+1)/links.length*100)+'%';closeMenu();const hero=document.querySelector('.course-hero');const top=Math.max(0,document.getElementById('mainContent').offsetTop+(hero?hero.offsetHeight+18:0));const reveal=()=>{clearState(next);next.classList.add('active');requestAnimationFrame(()=>{next.classList.add('visible');scrollTo({top,behavior:reduceMotion?'auto':'smooth'});animateSection(next);if(window.ScrollTrigger)ScrollTrigger.refresh()})};if(cur===next){scrollTo({top,behavior:reduceMotion?'auto':'smooth'});animateSection(next);return}if(cur){if(window.gsap&&!reduceMotion)gsap.to(cur,{opacity:0,y:10,duration:.18,onComplete:()=>{cur.classList.remove('active','visible');clearState(cur);reveal()}});else{cur.classList.remove('active','visible');reveal()}}else reveal()};
+window.toggleAnswer=function(btn){const ans=btn.nextElementSibling,open=ans.style.display==='block';if(open){if(window.gsap&&!reduceMotion)gsap.to(ans,{autoAlpha:0,y:-5,duration:.15,onComplete:()=>ans.style.display='none'});else ans.style.display='none';btn.textContent='顯示答案'}else{ans.style.display='block';if(window.gsap&&!reduceMotion)gsap.fromTo(ans,{autoAlpha:0,y:-8,scale:.98},{autoAlpha:1,y:0,scale:1,duration:.28,ease:'back.out(1.4)'});btn.textContent='隱藏答案'}};
+const quizState={};function initScore(id,total){quizState[id]={total,correct:0,answered:new Set()};document.getElementById(id+'-total').textContent=total}function updateScore(id){const s=quizState[id],pct=Math.round(s.answered.size/s.total*100);document.getElementById(id+'-correct').textContent=s.correct;document.getElementById(id+'-fill').style.width=pct+'%';if(s.answered.size===s.total){const d=document.getElementById(id+'-done');d.textContent=s.correct===s.total?'滿分！全部答對。':`完成：答對 ${s.correct} / ${s.total}。`;d.classList.add('show')}}
+function renderQuiz(id,qs,start){const c=document.getElementById(id);initScore(id,qs.length);c.innerHTML=qs.map((q,i)=>`<div class="quiz-item" id="${id}-q${i}"><div class="quiz-question">${i+start}. ${q.q}</div><div class="quiz-options">${q.options.map((o,j)=>`<button class="quiz-option" onclick="checkAnswer('${id}',${i},${j},${q.ans})">(${String.fromCharCode(65+j)})&nbsp;${o}</button>`).join('')}</div><div class="feedback" id="${id}-fb${i}"></div></div>`).join('')}
+window.checkAnswer=function(id,qi,oi,ai){const s=quizState[id];if(s.answered.has(qi))return;const el=document.getElementById(`${id}-q${qi}`),opts=el.querySelectorAll('.quiz-option'),fb=document.getElementById(`${id}-fb${qi}`);opts.forEach(x=>x.disabled=true);if(oi===ai){opts[oi].classList.add('correct');fb.innerHTML='<span style="color:var(--success-color)">Correct! 答對了。</span>';s.correct++}else{opts[oi].classList.add('wrong');opts[ai].classList.add('correct');fb.innerHTML=`<span style="color:var(--error-color)">正確答案是 (${String.fromCharCode(65+ai)})</span>`}s.answered.add(qi);updateScore(id)};
+addEventListener('load',()=>{document.getElementById('2-1').classList.add('active','visible');updateReadingProgress();renderQuiz('quiz-basic',basicQuestions,1);renderQuiz('quiz-cloze',clozeQuestions,1);if(window.gsap&&!reduceMotion){gsap.registerPlugin(ScrollTrigger);gsap.from('.course-hero',{y:24,autoAlpha:0,duration:.75,ease:'power3.out'});gsap.from('.nav-links li',{x:-14,autoAlpha:0,duration:.4,stagger:.035,ease:'power2.out',delay:.12});gsap.from('.brand-card',{scale:.96,autoAlpha:0,duration:.55,ease:'back.out(1.5)'});animateSection(document.querySelector('.section.active'))}});
+</script></body></html>

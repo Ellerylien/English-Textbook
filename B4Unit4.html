@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國中英語文法通 4 - Unit 4 代名詞互動教學</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #5a715f;
+      --primary-light: #dce6db;
+      --primary-soft: #f1f5ef;
+      --primary-dark: #374a3b;
+      --primary-ink: #26372a;
+      --secondary-color: #f8f6f0;
+      --page-bg: #f2f3ee;
+      --text-color: #2f3a33;
+      --muted-text: #6f766e;
+      --accent-color: #b97f63;
+      --accent-soft: #f8eee7;
+      --success-color: #5f826e;
+      --success-soft: #edf4ef;
+      --error-color: #b66b65;
+      --error-soft: #f8eeee;
+      --warning-color: #b58a52;
+      --surface: rgba(255,255,255,0.82);
+      --surface-solid: #ffffff;
+      --hairline: rgba(51,79,80,0.12);
+      --hairline-strong: rgba(51,79,80,0.22);
+      --border-radius: 22px;
+      --shadow-soft: 0 10px 28px rgba(51,79,80,0.08);
+      --shadow-lift: 0 24px 64px rgba(51,79,80,0.14);
+      --shadow-card: 0 8px 22px rgba(51,79,80,0.07);
+      --focus-ring: 0 0 0 4px rgba(197,139,98,0.24);
+      --sidebar-width: 292px;
+      --font-zh: "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+      --font-en: "Inter", "Noto Sans TC", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-zh);
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 6%, rgba(82,122,122,0.15), transparent 31%),
+        radial-gradient(circle at 86% 12%, rgba(197,139,98,0.11), transparent 27%),
+        radial-gradient(circle at 50% 100%, rgba(201,241,244,0.58), transparent 38%),
+        linear-gradient(135deg, #f8fffe 0%, #f2faf8 48%, #fffafb 100%);
+      color: var(--text-color);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(51,79,80,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(51,79,80,0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.62), transparent 78%);
+      z-index: -2;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      width: 360px;
+      height: 360px;
+      right: -150px;
+      bottom: -160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(82,122,122,0.13), transparent 68%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001s !important; transition-duration: 0.001s !important; scroll-behavior: auto !important; }
+    }
+    :focus-visible { outline: none; box-shadow: var(--focus-ring); }
+    ::selection { background: rgba(197,139,98,0.28); }
+
+    .reading-progress { position: fixed; top: 0; left: 0; width: 0%; height: 4px; z-index: 2000; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); box-shadow: 0 0 18px rgba(82,122,122,0.32); transition: width 0.12s linear; }
+    .app-shell { display: flex; min-height: 100vh; }
+    .topbar {
+      display: none; position: sticky; top: 0; z-index: 1100;
+      background: rgba(51,79,80,0.86); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      color: #fff; padding: 12px 16px; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.15); box-shadow: 0 12px 28px rgba(51,79,80,0.18);
+    }
+    .topbar .title { font-weight: 900; letter-spacing: 0.03em; }
+    .hamburger {
+      background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.24); color: #fff; width: 42px; height: 42px; border-radius: 14px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.15s, border-color 0.2s;
+    }
+    .hamburger:active { transform: scale(0.94); }
+    .hamburger:hover { background: rgba(255,255,255,0.24); border-color: rgba(255,255,255,0.38); }
+    .sidebar {
+      width: var(--sidebar-width); background: linear-gradient(180deg, rgba(51,79,80,0.97), rgba(82,122,122,0.92)), radial-gradient(circle at 0 0, rgba(255,255,255,0.24), transparent 35%);
+      color: white; padding: 22px 16px 26px; position: fixed; height: 100%; overflow-y: auto; overscroll-behavior: contain; transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); z-index: 1000; box-shadow: 12px 0 34px rgba(51,79,80,0.20);
+    }
+    .sidebar::-webkit-scrollbar { width: 8px; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.36); border-radius: 999px; }
+    .brand-card { position: relative; overflow: hidden; background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08)); border: 1px solid rgba(255,255,255,0.22); border-radius: 24px; padding: 18px; margin-bottom: 18px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 16px 34px rgba(0,0,0,0.08); }
+    .brand-card::after { content: ''; position: absolute; width: 150px; height: 150px; right: -64px; top: -64px; background: radial-gradient(circle, rgba(255,255,255,0.22), transparent 64%); pointer-events: none; }
+    .unit-pill { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-en); font-size: 0.76rem; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.92); background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.20); border-radius: 999px; padding: 7px 11px; }
+    .brand-card h2 { margin: 12px 0 6px; font-size: 1.46rem; line-height: 1.35; letter-spacing: 0.01em; }
+    .brand-card p { margin: 0; font-size: 0.91rem; color: rgba(255,255,255,0.80); }
+    .progress-mini { margin-top: 15px; height: 7px; background: rgba(255,255,255,0.18); border-radius: 999px; overflow: hidden; }
+    .progress-mini span { display: block; height: 100%; width: 8%; background: linear-gradient(90deg, #ffffff, #ffd0e3); border-radius: 999px; transition: width 0.45s ease; }
+    .nav-links { list-style: none; padding: 0; margin: 0; }
+    .nav-links li { margin-bottom: 7px; }
+    .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; display: block; padding: 10px 12px; border-radius: 15px; transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease, padding-left 0.22s ease; font-size: 0.92rem; line-height: 1.45; position: relative; overflow: hidden; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.17); color: #fff; font-weight: 800; padding-left: 18px; transform: translateX(2px); }
+    .sidebar-footer { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.16); display: grid; gap: 10px; }
+    .sidebar-footer a { color: #fff; text-decoration: none; font-size: 0.88rem; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.10); }
+    .sidebar-footer a:hover { background: rgba(255,255,255,0.18); }
+    .main-content { margin-left: var(--sidebar-width); flex: 1; padding: 32px 38px 90px; }
+    .hero-section {
+      position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(255,255,255,0.80), rgba(255,255,255,0.56)); border: 1px solid rgba(255,255,255,0.68); border-radius: 30px; padding: 34px clamp(22px, 5vw, 42px); box-shadow: var(--shadow-lift); margin-bottom: 26px;
+    }
+    .hero-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(255,255,255,0), rgba(255,255,255,0.28)); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr); gap: 26px; align-items: end; }
+    .hero-section h1 { margin: 8px 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; color: var(--primary-dark); }
+    .hero-section p { margin: 0; color: var(--muted-text); font-size: 1rem; }
+    .hero-badge { justify-self: end; background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(255,255,255,0.75)); border: 1px solid rgba(255,255,255,0.75); border-radius: 28px; padding: 22px 20px; min-width: 210px; box-shadow: var(--shadow-soft); }
+    .hero-badge strong { display: block; font: 800 2.7rem/1 var(--font-en); color: var(--primary-color); }
+    .hero-badge span { display: block; margin-top: 4px; color: var(--muted-text); }
+    .section { display: none; margin-top: 16px; }
+    .section.active { display: block; }
+    .section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+    .section-title { margin: 0; font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.2; color: var(--primary-dark); }
+    .level-label { color: var(--accent-color); font: 700 0.76rem/1 var(--font-en); letter-spacing: 0.12em; text-transform: uppercase; background: var(--accent-soft); border-radius: 999px; padding: 8px 12px; }
+    .lede { margin: 0 0 18px; color: var(--muted-text); font-size: 0.98rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grammar-box, .practice-container, .review-card, .tip-box {
+      background: var(--surface); border: 1px solid rgba(255,255,255,0.65); border-radius: 22px; box-shadow: var(--shadow-card); padding: 18px 18px 18px;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    }
+    .grammar-box h3, .practice-container h3, .review-card h3 { margin: 0 0 12px; font-size: 1.05rem; color: var(--primary-dark); }
+    .tip-box { background: linear-gradient(140deg, var(--primary-soft), rgba(255,255,255,0.88)); }
+    .eyebrow-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; font: 800 0.74rem/1 var(--font-en); letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary-color); }
+    .eyebrow-label::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-color); box-shadow: 0 0 0 6px rgba(197,139,98,0.13); }
+    table.data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; overflow: hidden; border-radius: 16px; }
+    .data-table th, .data-table td { border: 1px solid var(--hairline-strong); padding: 10px 12px; vertical-align: top; }
+    .data-table th { background: var(--primary-light); color: var(--primary-dark); text-align: left; }
+    .data-table td small { color: var(--muted-text); }
+    .formula-list, .note-list, .example-list { margin: 0; padding-left: 1.1rem; }
+    .formula-list li, .note-list li, .example-list li { margin-bottom: 8px; }
+    .example { margin: 8px 0 0; padding: 10px 12px; background: rgba(255,255,255,0.66); border-left: 4px solid var(--accent-color); border-radius: 12px; }
+    .practice-items { display: grid; gap: 10px; }
+    .practice-item { padding: 10px 12px; background: rgba(255,255,255,0.65); border: 1px solid rgba(51,79,80,0.08); border-radius: 14px; }
+    .practice-label { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; font: 800 0.78rem/1 var(--font-en); color: #fff; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); margin-bottom: 12px; }
+    .answer-text { color: #d32583; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .answer-inline { color: var(--primary-color); font-weight: 700; }
+    .formula-pill { display: inline-block; padding: 6px 10px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-dark); font: 700 0.84rem/1.2 var(--font-en); margin: 4px 6px 4px 0; }
+    .review-card + .review-card { margin-top: 16px; }
+    .score-block { margin-bottom: 12px; }
+    .score-head { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; font-weight: 700; color: var(--primary-dark); }
+    .score-track { height: 10px; background: rgba(51,79,80,0.08); border-radius: 999px; overflow: hidden; }
+    .score-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); transition: width 0.25s ease; }
+    .score-done { margin-top: 6px; color: var(--muted-text); font-size: 0.9rem; }
+    .quiz-item { margin-bottom: 14px; padding: 14px; background: rgba(255,255,255,0.66); border: 1px solid rgba(51,79,80,0.10); border-radius: 16px; }
+    .quiz-question { font-weight: 700; color: var(--primary-dark); margin-bottom: 12px; }
+    .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .quiz-option { appearance: none; border: 1px solid var(--hairline-strong); background: #fff; border-radius: 12px; padding: 10px 12px; text-align: left; font: inherit; color: var(--text-color); cursor: pointer; transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease; }
+    .quiz-option:hover { transform: translateY(-2px); border-color: var(--primary-color); }
+    .quiz-option.correct { background: var(--success-soft); border-color: var(--success-color); color: #22543c; }
+    .quiz-option.wrong { background: var(--error-soft); border-color: var(--error-color); color: #8c2d34; }
+    .cloze-article { margin-bottom: 18px; padding: 14px 16px; border-radius: 16px; background: rgba(255,255,255,0.7); border: 1px dashed var(--hairline-strong); color: var(--text-color); }
+    .summary-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+    .summary-grid .mini { padding: 14px 16px; background: rgba(255,255,255,.62); border-radius: 16px; border: 1px solid rgba(51,79,80,0.08); }
+    .mini strong { display: block; color: var(--primary-dark); margin-bottom: 4px; }
+    .section-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 26px; }
+    .section-nav a { text-decoration: none; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.74); border: 1px solid rgba(51,79,80,0.10); color: var(--primary-dark); font-weight: 700; }
+    .section-nav a:hover { background: #fff; }
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(17,26,26,0.42); z-index: 950; }
+    .overlay.show { display: block; }
+    .en, .practice-question, .quiz-question, .quiz-option, .answer-text, .formula-pill, .cloze-article { font-family: var(--font-en); }
+    @media (max-width: 1040px) {
+      .hero-grid, .grid-2, .summary-grid { grid-template-columns: 1fr; }
+      .hero-badge { justify-self: start; }
+    }
+    @media (max-width: 920px) {
+      .topbar { display: flex; }
+      .sidebar { transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      .main-content { margin-left: 0; padding: 24px 16px 84px; }
+      .hero-section { margin-top: 14px; }
+    }
+    @media (max-width: 640px) {
+      .quiz-options { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .level-label { display: inline-block; margin-top: 10px; }
+      .hero-section h1 { font-size: 1.85rem; }
+      .hero-badge strong { font-size: 2.2rem; }
+      .practice-item { padding: 10px; }
+    }
+</style>
+<style id="series-theme">
+:root{--primary-color:#4f6757;--primary-light:#dce5dc;--primary-soft:#f0f4ef;--primary-dark:#33483a;--primary-ink:#243329;--secondary-color:#fbf7ed;--page-bg:#f2f2ec;--text-color:#303831;--muted-text:#6e756e;--accent-color:#b58b67;--accent-soft:#f5ece2;}
+body{background:radial-gradient(circle at 12% 6%,rgba(79,103,87,.14),transparent 31%),radial-gradient(circle at 86% 12%,rgba(181,139,103,.10),transparent 27%),radial-gradient(circle at 50% 100%,rgba(220,229,220,.56),transparent 38%),linear-gradient(135deg,#f2f2ec 0%,#fbf7ed 52%,#fbfaf7 100%) !important;}
+body::after{background:radial-gradient(circle,rgba(79,103,87,.12),transparent 68%) !important;}
+.sidebar{background:linear-gradient(180deg,rgba(51,72,58,.98),rgba(79,103,87,.94)),radial-gradient(circle at 0 0,rgba(255,255,255,.16),transparent 36%) !important;}
+</style></head>
+<body>
+  <div class="reading-progress" id="readingProgress"></div>
+  <div class="topbar"><button class="hamburger" id="hamburger" aria-label="開啟選單">☰</button><div class="title">B4 Unit 4｜代名詞</div></div>
+  <div class="overlay" id="overlay"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-card">
+        <div class="unit-pill">Nordic Grammar · Unit 4</div>
+        <h2>Unit 4．代名詞</h2>
+        <p>整理所有格代名詞、反身代名詞與多種不定代名詞，幫助你看懂「另一個／其他一些」的句型差異。</p>
+        <div class="progress-mini"><span id="sidebarProgress"></span></div>
+      </div>
+      <ul class="nav-links" id="navLinks"><li><a href="#" data-section="u4-1" class="active">4-1 所有格代名詞</a></li><li><a href="#" data-section="u4-2" class="">4-2 反身代名詞</a></li><li><a href="#" data-section="u4-3" class="">4-3 one / ones</a></li><li><a href="#" data-section="u4-4" class="">4-4 one / any</a></li><li><a href="#" data-section="u4-5" class="">4-5 both / all</a></li><li><a href="#" data-section="u4-6" class="">4-6 any / some / many...</a></li><li><a href="#" data-section="u4-7" class="">4-7 the other / another</a></li><li><a href="#" data-section="u4-8" class="">4-8 one..., another...</a></li><li><a href="#" data-section="u4-9" class="">4-9 others / the others</a></li><li><a href="#" data-section="u4-10" class="">4-10 綜合句型</a></li><li><a href="#" data-section="review-basic" class="">Review 基礎</a></li><li><a href="#" data-section="review-adv" class="">Review 進階</a></li><li><a href="#" data-section="review-cloze" class="">Review 克漏</a></li></ul>
+      <div class="sidebar-footer">
+        <a href="index.html">← 回到 Index</a>
+        <a href="B4Unit3.html">回到 Unit 3 ↗</a>
+      </div>
+    </aside>
+    <main class="main-content" id="mainContent">
+      <header class="hero-section">
+        <div class="hero-grid">
+          <div>
+            <div class="unit-pill" style="color: var(--primary-color); background: var(--primary-soft); border-color: transparent;">Unit 4</div>
+            <h1>代名詞系統：所有格、反身與不定代名詞</h1>
+            <p>本單元從基礎代名詞出發，逐步練習 one / another / others 等句型，最後用 review 檢查理解。</p>
+          </div>
+          <div class="hero-badge"><strong>04</strong><span>Pronouns · Quantity · Review</span></div>
+        </div>
+      </header>
+      <section id="u4-1" class="section active"><div class="section-head"><div><h2 class="section-title">4-1 所有格代名詞</h2><p class="lede">所有格代名詞用來取代「某人的某物」，避免重複說出名詞。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Table</div><h3>代名詞總整理</h3><p>規則：多半在所有格後面加 -s，例如 your → yours；若原字已有 s，通常維持原貌，如 his → his。</p><table class="data-table"><thead><tr><th>主格</th><th>所有格（…的）</th><th>受格</th><th>所有格代名詞</th></tr></thead><tbody><tr><td>I</td><td>my</td><td>me</td><td>mine</td></tr><tr><td>you</td><td>your</td><td>you</td><td>yours</td></tr><tr><td>he</td><td>his</td><td>him</td><td>his</td></tr><tr><td>she</td><td>her</td><td>her</td><td>hers</td></tr><tr><td>it</td><td>its</td><td>it</td><td>its</td></tr><tr><td>who</td><td>whose</td><td>whom</td><td>whose</td></tr><tr><td>we</td><td>our</td><td>us</td><td>ours</td></tr><tr><td>you</td><td>your</td><td>you</td><td>yours</td></tr><tr><td>they</td><td>their</td><td>them</td><td>theirs</td></tr></tbody></table></div><div class="practice-container"><div class="practice-label">Practice A｜請寫出所有格代名詞</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> our</div><div class="answer-text">ours</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> my</div><div class="answer-text">mine</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> his</div><div class="answer-text">his</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> its</div><div class="answer-text">its</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> their</div><div class="answer-text">theirs</div></div><div class="practice-item"><div class="practice-question"><strong>6.</strong> Mandy’s</div><div class="answer-text">Mandy’s</div></div><div class="practice-item"><div class="practice-question"><strong>7.</strong> her</div><div class="answer-text">hers</div></div><div class="practice-item"><div class="practice-question"><strong>8.</strong> your</div><div class="answer-text">yours</div></div></div></div></div><div class="practice-container"><div class="practice-label">Practice B｜請填入適當的所有格代名詞</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> My bag is blue, and ___ (her bag) is red.</div><div class="answer-text">hers</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> Are those Betty’s books? No, they’re ___ (your books).</div><div class="answer-text">yours</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Their house is big, but ___ (my house) is bigger.</div><div class="answer-text">mine</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> You eat your lunch, and I eat ___ (my lunch).</div><div class="answer-text">mine</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> Is this your pencil box? No, it’s ___ (his pencil box).</div><div class="answer-text">his</div></div></div></div><div class="section-nav"><span></span><a href="#" data-section="u4-2">下一節 →</a></div></section><section id="u4-2" class="section"><div class="section-head"><div><h2 class="section-title">4-2 反身代名詞</h2><p class="lede">反身代名詞表示「某人自己」，也可用在 by + 反身代名詞 表示獨自。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Table</div><h3>反身代名詞整理</h3><ul class="note-list"><li>當受詞：<span class="en">He loves himself.</span></li><li>強調本人：<span class="en">She saw John himself.</span></li><li>by + 反身代名詞：<span class="en">The machine works by itself.</span></li></ul><table class="data-table"><thead><tr><th>主格</th><th>受格</th><th>反身代名詞</th></tr></thead><tbody><tr><td>I</td><td>me</td><td>myself</td></tr><tr><td>you</td><td>you</td><td>yourself</td></tr><tr><td>he</td><td>him</td><td>himself</td></tr><tr><td>she</td><td>her</td><td>herself</td></tr><tr><td>it</td><td>it</td><td>itself</td></tr><tr><td>we</td><td>us</td><td>ourselves</td></tr><tr><td>you</td><td>you</td><td>yourselves</td></tr><tr><td>they</td><td>them</td><td>themselves</td></tr></tbody></table></div><div class="practice-container"><div class="practice-label">Practice C｜請寫出反身代名詞</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> you</div><div class="answer-text">yourself</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> they</div><div class="answer-text">themselves</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> he</div><div class="answer-text">himself</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> her</div><div class="answer-text">herself</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> me</div><div class="answer-text">myself</div></div><div class="practice-item"><div class="practice-question"><strong>6.</strong> us</div><div class="answer-text">ourselves</div></div><div class="practice-item"><div class="practice-question"><strong>7.</strong> it</div><div class="answer-text">itself</div></div><div class="practice-item"><div class="practice-question"><strong>8.</strong> you（複數）</div><div class="answer-text">yourselves</div></div></div></div></div><div class="practice-container"><div class="practice-label">Practice D｜請填入適當的反身代名詞</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> Danny and Jenny really enjoyed ____.</div><div class="answer-text">themselves</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> She cut ____ yesterday.</div><div class="answer-text">herself</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Take this place as your own and help ____!</div><div class="answer-text">yourself</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> The old man lives by ____.</div><div class="answer-text">himself</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> I saw Mr. Wu ____.</div><div class="answer-text">himself</div></div></div></div><div class="section-nav"><a href="#" data-section="u4-1">← 上一節</a><a href="#" data-section="u4-3">下一節 →</a></div></section><section id="u4-3" class="section"><div class="section-head"><div><h2 class="section-title">4-3 不定代名詞 one / ones</h2><p class="lede">one 代替單數可數名詞，ones 代替複數可數名詞，用來避免名詞重複。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="tip-box"><div class="eyebrow-label">Compare</div><h3>one 與 ones</h3><div class="example"><span class="en">I don’t like this yellow camera. I like the blue one.</span><br><span class="en">The red cameras are more beautiful than the blue ones.</span></div><div class="summary-grid"><div class="mini"><strong>one</strong><div>代替單數名詞，例如 <span class="en">the blue one</span></div></div><div class="mini"><strong>ones</strong><div>代替複數名詞，例如 <span class="en">the blue ones</span></div></div></div></div><div class="practice-container"><div class="practice-label">Practice E｜請填入 one 或 ones</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> I need a house. I want to buy ____.</div><div class="answer-text">one</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> The big shoes are better than the small ____.</div><div class="answer-text">ones</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> I don’t have a ruler. Can I borrow ____ from you?</div><div class="answer-text">one</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> This skirt is too fashionable for me. How about that ____?</div><div class="answer-text">one</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> They don’t like long novels. How about short ____?</div><div class="answer-text">ones</div></div><div class="practice-item"><div class="practice-question"><strong>6.</strong> These shirts are much nicer than those ____.</div><div class="answer-text">ones</div></div><div class="practice-item"><div class="practice-question"><strong>7.</strong> This lesson is more interesting than that ____.</div><div class="answer-text">one</div></div></div></div></div><div class="section-nav"><a href="#" data-section="u4-2">← 上一節</a><a href="#" data-section="u4-4">下一節 →</a></div></section><section id="u4-4" class="section"><div class="section-head"><div><h2 class="section-title">4-4 不定代名詞 one / any</h2><p class="lede">one 與 any 都可以代替單數可數名詞；搭配 of + 限定詞 + 複數名詞時，後面用單數動詞。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Pattern</div><h3>基本句型</h3><span class="formula-pill">one / any + of + the / these / those / my + 複數名詞</span><span class="formula-pill">one / any + of + them / us / you + 單數動詞</span><div class="example"><span class="en">I didn’t eat any of those peaches on the table.</span><br><span class="en">One of you has to mop the floor.</span></div></div><div class="practice-container"><div class="practice-label">Practice F｜請重組句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> excellent. / those teachers / One / is / of</div><div class="answer-text">One of those teachers is excellent.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> my / pencils? / Do / want / you / any / of</div><div class="answer-text">Do you want any of my pencils?</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Kitty / friends. / my / one / best / of / is</div><div class="answer-text">Kitty is one of my best friends.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> my father. / of / One / the doctors / is</div><div class="answer-text">One of the doctors is my father.</div></div></div></div></div><div class="practice-container"><div class="practice-label">Practice G｜請用所有格代名詞改寫句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> He is one of my best friends.</div><div class="answer-text">He is a best friend of mine.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> She is one of her great teachers.</div><div class="answer-text">She is a great teacher of hers.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Snoopy is one of his dogs.</div><div class="answer-text">Snoopy is a dog of his.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Harry Potter is one of their favorite books.</div><div class="answer-text">Harry Potter is a favorite book of theirs.</div></div></div></div><div class="section-nav"><a href="#" data-section="u4-3">← 上一節</a><a href="#" data-section="u4-5">下一節 →</a></div></section><section id="u4-5" class="section"><div class="section-head"><div><h2 class="section-title">4-5 數量代名詞 both / all</h2><p class="lede">both 用於兩者，all 用於三者以上；兩者都可用在「數量詞 + of + 群體」結構。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Pattern</div><h3>用法整理</h3><ul class="note-list"><li><span class="en">Both of my sisters are nurses.</span></li><li><span class="en">All of them are teachers.</span></li></ul><span class="formula-pill">both + of + 限定詞 / 受格</span><span class="formula-pill">all + of + 限定詞 / 受格</span></div><div class="practice-container"><div class="practice-label">Practice H｜請依提示造句</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> All / my students / great</div><div class="answer-text">All of my students are great.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> All / the peaches / pink</div><div class="answer-text">All of the peaches are pink.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Both / her parents / engineers</div><div class="answer-text">Both of her parents are engineers.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Both / them / my classmates</div><div class="answer-text">Both of them are my classmates.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> Both / my sisters / good actresses</div><div class="answer-text">Both of my sisters are good actresses.</div></div></div></div></div><div class="section-nav"><a href="#" data-section="u4-4">← 上一節</a><a href="#" data-section="u4-6">下一節 →</a></div></section><section id="u4-6" class="section"><div class="section-head"><div><h2 class="section-title">4-6 數量代名詞 any / some / many / much / most</h2><p class="lede">搭配可數名詞時通常用複數動詞；搭配不可數名詞時則多用單數動詞。</p></div><div class="level-label">基礎練習</div></div><div class="grid-2"><div class="grammar-box"><div class="eyebrow-label">Rule</div><h3>可數與不可數的動詞變化</h3><div class="example"><span class="en">Some of the students wear uniforms.</span><br><span class="en">Much of the money was wasted.</span></div></div><div class="practice-container"><div class="practice-label">Practice I｜請圈出正確的動詞</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> Both of my brothers (wear / wears) uniforms.</div><div class="answer-text">wear</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> Much of the milk (are / is) fresh.</div><div class="answer-text">is</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> Most of my students (studies / study) hard.</div><div class="answer-text">study</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Many of the boys (is / are) happy.</div><div class="answer-text">are</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> Some of the juice (is / are) very sweet.</div><div class="answer-text">is</div></div><div class="practice-item"><div class="practice-question"><strong>6.</strong> Some of the girls (likes / like) Mr. Wang.</div><div class="answer-text">like</div></div><div class="practice-item"><div class="practice-question"><strong>7.</strong> All of the soccer players (is / are) strong.</div><div class="answer-text">are</div></div></div></div></div><div class="section-nav"><a href="#" data-section="u4-5">← 上一節</a><a href="#" data-section="u4-7">下一節 →</a></div></section><section id="u4-7" class="section"><div class="section-head"><div><h2 class="section-title">4-7 不定代名詞 the other / another</h2><p class="lede">another 表不特定的另一個；the other 表兩個中的另一個。</p></div><div class="level-label">進階練習</div></div><div class="grid-2"><div class="tip-box"><div class="eyebrow-label">Compare</div><h3>兩個關鍵差異</h3><div class="example"><span class="en">I don’t like this hat. Show me another.</span><br><span class="en">I don’t like this hat. Show me the other.</span></div><div class="summary-grid"><div class="mini"><strong>another</strong><div>很多個之中的另一個</div></div><div class="mini"><strong>the other</strong><div>兩個之中的另一個</div></div></div></div><div class="practice-container"><div class="practice-label">Practice J｜請填入 another 或 the other</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> Raise your right hand, and wave ____ hand.</div><div class="answer-text">the other</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> Can you close one eye and open ____ one?</div><div class="answer-text">the other</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> I only had one cup of coffee. Let’s have ____.</div><div class="answer-text">another</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Put ____ foot down.</div><div class="answer-text">the other</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> To know is one thing; to teach is ____.</div><div class="answer-text">another</div></div></div></div></div><div class="section-nav"><a href="#" data-section="u4-6">← 上一節</a><a href="#" data-section="u4-8">下一節 →</a></div></section><section id="u4-8" class="section"><div class="section-head"><div><h2 class="section-title">4-8 不定代名詞 one..., another..., and the other...</h2><p class="lede">描述兩個、三個或很多個物品時，可用 one / another / the other 來逐一說明。</p></div><div class="level-label">進階練習</div></div><div class="tip-box"><div class="eyebrow-label">Pattern</div><h3>句型比較</h3><div class="example"><span class="en">There are three hats. One is orange, another is blue, and the other is white.</span></div><div class="summary-grid"><div class="mini"><strong>很多個</strong><div>one..., and another...</div></div><div class="mini"><strong>兩個</strong><div>one..., and the other...</div></div><div class="mini"><strong>三個</strong><div>one..., another..., and the other...</div></div></div></div><div class="practice-container"><div class="practice-label">Practice K｜請填入 one、another 或 the other</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> She has two bicycles. ____ is red, and ____ is blue.</div><div class="answer-text">One / the other</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> There are three bags in the shop. ____ is large, ____ is medium, and ____ is small.</div><div class="answer-text">One / another / the other</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> I have three best friends. ____ is Lily, ____ is Sandy, and ____ is Kitty.</div><div class="answer-text">One / another / the other</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> Here are two pencils. ____ is long, and ____ is short.</div><div class="answer-text">One / the other</div></div></div></div><div class="section-nav"><a href="#" data-section="u4-7">← 上一節</a><a href="#" data-section="u4-9">下一節 →</a></div></section><section id="u4-9" class="section"><div class="section-head"><div><h2 class="section-title">4-9 不定代名詞 others / the others</h2><p class="lede">others 表不特定的「其他一些」；the others 表剩下的「其餘那些」。</p></div><div class="level-label">進階練習</div></div><div class="grid-2"><div class="tip-box"><div class="eyebrow-label">Compare</div><h3>others 與 the others</h3><div class="example"><span class="en">In art class, some draw fruits, while the others draw people.</span></div><div class="summary-grid"><div class="mini"><strong>others</strong><div>不特定的其他一些</div></div><div class="mini"><strong>the others</strong><div>特定、剩下的其他那些</div></div></div></div><div class="practice-container"><div class="practice-label">Practice L｜請翻譯下列句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> 我不喜歡這些裙子。你還有其中的另一些嗎？</div><div class="answer-text">I don’t like these skirts. Do you have other ones?</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> 我不喜歡這些長的襯衫。我想要剩下的另一些短襯衫。</div><div class="answer-text">I don’t like these long shirts. I want the other short ones.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> 我不喜歡這些紅色的夾克。給我看看剩下的另一些夾克。</div><div class="answer-text">I don’t like these red jackets. Show me the others.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> 我不喜歡這些圓桌。給我看看其他的另一些桌子。</div><div class="answer-text">I don’t like these round tables. Show me others.</div></div></div></div></div><div class="section-nav"><a href="#" data-section="u4-8">← 上一節</a><a href="#" data-section="u4-10">下一節 →</a></div></section><section id="u4-10" class="section"><div class="section-head"><div><h2 class="section-title">4-10 one..., and the others... / some..., and the others... / one..., and others... / some..., and others...</h2><p class="lede">another / the other 與 others / the others 可以組合成四種常見句型，用來表達「一個／一些」與「其他」的關係。</p></div><div class="level-label">進階練習</div></div><div class="grammar-box"><div class="eyebrow-label">Pattern</div><h3>四種用法</h3><ul class="note-list"><li><span class="en">one..., and the others</span>：一個，其餘全部</li><li><span class="en">some..., and the others</span>：一些，其餘全部</li><li><span class="en">one..., and others</span>：一個，另一些（不是全部）</li><li><span class="en">some..., and others</span>：一些，另一些</li></ul><table class="data-table"><thead><tr><th>用法</th><th>單數</th><th>複數</th></tr></thead><tbody><tr><td>不特定</td><td>another</td><td>others</td></tr><tr><td>特定</td><td>the other</td><td>the others</td></tr></tbody></table></div><div class="practice-container"><div class="practice-label">Practice M｜請翻譯下列句子</div><div class="practice-items"><div class="practice-item"><div class="practice-question"><strong>1.</strong> 桌上有很多枝鉛筆；一枝是紅色的，其他一部分是綠色的。</div><div class="answer-text">There are many pencils. One is red, and others are green.</div></div><div class="practice-item"><div class="practice-question"><strong>2.</strong> 椅子下有很多個橡皮擦；一些是小的，其他一部分是大的。</div><div class="answer-text">There are many erasers under the chair. Some are small, and others are big.</div></div><div class="practice-item"><div class="practice-question"><strong>3.</strong> 黑板上有很多字；一些是中文，其他全部是英文。</div><div class="answer-text">There are many words on the blackboard. Some are Chinese, and the others are English.</div></div><div class="practice-item"><div class="practice-question"><strong>4.</strong> 商店裡有很多錢包；一個是圓型的，其他全部是方型的。</div><div class="answer-text">There are many purses in the store. One is round, and the others are square.</div></div><div class="practice-item"><div class="practice-question"><strong>5.</strong> 這裡有十台 CD 音響；一台是紫色的，其他全部是藍色的。</div><div class="answer-text">There are ten CD players here. One is purple, and the others are blue.</div></div></div></div><div class="section-nav"><a href="#" data-section="u4-9">← 上一節</a><a href="#" data-section="review-basic">下一節 →</a></div></section><section id="review-basic" class="section"><div class="section-head"><div><h2 class="section-title">Review｜單題選擇（基礎）</h2><p class="lede">依照課本 review 內容整理成互動題組。每題點選後立即顯示正誤。</p></div><div class="level-label">Review</div></div><div class="review-card"><div class="score-block"><div class="score-head"><span>作答進度</span><span><b id="quiz-basic-correct">0</b> / <span id="quiz-basic-total">0</span> 答對</span></div><div class="score-track"><div class="score-fill" id="quiz-basic-fill"></div></div><div class="score-done" id="quiz-basic-done"></div></div><div id="quiz-basic"></div></div><div class="section-nav"><a href="#" data-section="u4-10">← 上一節</a><a href="#" data-section="review-adv">下一節 →</a></div></section><section id="review-adv" class="section"><div class="section-head"><div><h2 class="section-title">Review｜單題選擇（進階）</h2><p class="lede">進階題與延伸句型。</p></div><div class="level-label">Review</div></div><div class="review-card"><div class="score-block"><div class="score-head"><span>作答進度</span><span><b id="quiz-adv-correct">0</b> / <span id="quiz-adv-total">0</span> 答對</span></div><div class="score-track"><div class="score-fill" id="quiz-adv-fill"></div></div><div class="score-done" id="quiz-adv-done"></div></div><div id="quiz-adv"></div></div><div class="section-nav"><a href="#" data-section="review-basic">← 上一節</a><a href="#" data-section="review-cloze">下一節 →</a></div></section><section id="review-cloze" class="section"><div class="section-head"><div><h2 class="section-title">Review｜克漏字選擇</h2><p class="lede">先閱讀短文，再完成每一題選項。</p></div><div class="level-label">Review</div></div><div class="review-card"><div class="cloze-article" id="cloze-article"></div><div class="score-block"><div class="score-head"><span>作答進度</span><span><b id="quiz-cloze-correct">0</b> / <span id="quiz-cloze-total">0</span> 答對</span></div><div class="score-track"><div class="score-fill" id="quiz-cloze-fill"></div></div><div class="score-done" id="quiz-cloze-done"></div></div><div id="quiz-cloze"></div></div><div class="section-nav"><a href="#" data-section="review-adv">← 上一節</a><a href="index.html">回到索引 ↗</a></div></section>
+    </main>
+  </div>
+<script>
+const unitData = {"basicQuestions": [{"q": "The old woman lives by ____.", "opts": ["(A) myself", "(B) herself", "(C) himself", "(D) themselves"], "ans": 1}, {"q": "Do you want ____ my pencils?", "opts": ["(A) other of", "(B) any", "(C) any of", "(D) the other of"], "ans": 2}, {"q": "One of the boys ____ the cake.", "opts": ["(A) eats", "(B) eating", "(C) eat", "(D) is eat"], "ans": 0}, {"q": "All of the peaches ____ orange.", "opts": ["(A) is", "(B) does", "(C) do", "(D) are"], "ans": 3}, {"q": "I only found Jessie’s hats, but where are ____?", "opts": ["(A) mine", "(B) my", "(C) my hat", "(D) ones"], "ans": 0}, {"q": "All of the food in the refrigerator ____ fresh.", "opts": ["(A) is", "(B) are", "(C) be", "(D) not"], "ans": 0}, {"q": "One of ____ is my father.", "opts": ["(A) doctor", "(B) a doctor", "(C) the doctor", "(D) the doctors"], "ans": 3}, {"q": "Danny and Jenny really enjoyed ____.", "opts": ["(A) themselves", "(B) himself", "(C) ourselves", "(D) herself"], "ans": 0}, {"q": "We bought some red flowers for Mom’s birthday because the red ____ are more beautiful than the others.", "opts": ["(A) others", "(B) one", "(C) ones", "(D) some"], "ans": 2}, {"q": "____ of them are my sister’s roommates.", "opts": ["(A) The one", "(B) One", "(C) Both", "(D) The other"], "ans": 2}], "advQuestions": [{"q": "She has two bicycles. ____ is red, and the other is blue.", "opts": ["(A) The one of", "(B) One", "(C) ✕", "(D) Ones"], "ans": 1}, {"q": "There are five skirts. I don’t like this red skirt. Show me ____.", "opts": ["(A) the other", "(B) other", "(C) the others", "(D) ones"], "ans": 2}, {"q": "She has two bicycles. One is red, and ____.", "opts": ["(A) the other is blue", "(B) other is blue", "(C) others is blue", "(D) another is blue"], "ans": 0}, {"q": "This skirt is too fashionable for me. ____ ?", "opts": ["(A) How about that ones?", "(B) How about that the one?", "(C) How about that one?", "(D) How about that others?"], "ans": 2}, {"q": "There are many books on the shelf. ____, and others are English.", "opts": ["(A) Any are French", "(B) Some are French", "(C) Many are French", "(D) Much are French"], "ans": 1}], "clozeQuestions": [{"q": "Blank 1", "opts": ["(A) ourselves", "(B) myself", "(C) herself", "(D) himself"], "ans": 1}, {"q": "Blank 2", "opts": ["(A) one’s", "(B) it", "(C) ones", "(D) one"], "ans": 2}, {"q": "Blank 3", "opts": ["(A) one", "(B) other", "(C) other", "(D) the other"], "ans": 3}, {"q": "Blank 4", "opts": ["(A) it", "(B) one", "(C) ones", "(D) them"], "ans": 3}, {"q": "Blank 5", "opts": ["(A) I", "(B) myself", "(C) me", "(D) my"], "ans": 2}, {"q": "Blank 6", "opts": ["(A) Him", "(B) He", "(C) His", "(D) Her"], "ans": 2}, {"q": "Blank 7", "opts": ["(A) Hers", "(B) Her", "(C) She", "(D) One"], "ans": 0}, {"q": "Blank 8", "opts": ["(A) one", "(B) ones", "(C) it", "(D) them"], "ans": 1}, {"q": "Blank 9", "opts": ["(A) ones", "(B) one", "(C) it", "(D) them"], "ans": 1}, {"q": "Blank 10", "opts": ["(A) yours", "(B) you", "(C) your", "(D) it"], "ans": 0}], "clozeArticle": "Lisa: Wow! You make so many model planes by yourself.<br>Sam: Yes. I like to make model planes by <b>1</b>. I’m making two new <b>2</b>. One is red and <b>3</b> is gray.<br>Lisa: They look so pretty, and I like <b>4</b> so much. Can you give <b>5</b> one?<br>Sam: Sure. I can give you one. The green one is my brother’s. <b>6</b> has two long wings. The yellow one is my sister’s. <b>7</b> has a big nose. But there are many blue <b>8</b>. You can choose a blue <b>9</b>.<br>Lisa: Great! I love blue model planes. I want the blue one with the yellow tail.<br>Sam: Take it. It’s <b>10</b> now."};
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+const hamburger = document.getElementById('hamburger');
+const navLinks = [...document.querySelectorAll('#navLinks a')];
+const sections = [...document.querySelectorAll('.section')];
+const readingProgress = document.getElementById('readingProgress');
+const sidebarProgress = document.getElementById('sidebarProgress');
+const storageKey = 'b4-unit4-active-section';
+
+function toggleSidebar(show) {
+  if (window.innerWidth > 920) return;
+  sidebar.classList.toggle('open', show);
+  overlay.classList.toggle('show', show);
+}
+if (hamburger) hamburger.addEventListener('click', () => toggleSidebar(!sidebar.classList.contains('open')));
+overlay.addEventListener('click', () => toggleSidebar(false));
+
+function showSection(id) {
+  sections.forEach(sec => sec.classList.toggle('active', sec.id === id));
+  navLinks.forEach(link => link.classList.toggle('active', link.dataset.section === id));
+  localStorage.setItem(storageKey, id);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (window.innerWidth <= 920) toggleSidebar(false);
+  updateSidebarMini();
+}
+
+navLinks.forEach(link => link.addEventListener('click', e => { e.preventDefault(); showSection(link.dataset.section); }));
+document.querySelectorAll('.section-nav a[data-section]').forEach(link => link.addEventListener('click', e => { e.preventDefault(); showSection(link.dataset.section); }));
+
+const saved = localStorage.getItem(storageKey);
+if (saved && document.getElementById(saved)) showSection(saved); else showSection(sections[0].id);
+
+function updateReadingProgress() {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+  readingProgress.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateReadingProgress);
+updateReadingProgress();
+
+function updateSidebarMini() {
+  const activeIndex = sections.findIndex(sec => sec.classList.contains('active'));
+  const pct = ((activeIndex + 1) / sections.length) * 100;
+  sidebarProgress.style.width = pct + '%';
+}
+
+const quizState = {};
+function setupQuiz(id, total) { quizState[id] = { total, answered: new Set(), correct: 0 }; updateScore(id); }
+function updateScore(id) {
+  const state = quizState[id];
+  document.getElementById(`${id}-total`).textContent = state.total;
+  document.getElementById(`${id}-correct`).textContent = state.correct;
+  document.getElementById(`${id}-fill`).style.width = (state.correct / state.total * 100) + '%';
+  document.getElementById(`${id}-done`).textContent = `已作答 ${state.answered.size} / ${state.total} 題`;
+}
+function renderQuiz(containerId, scoreId, questions, startNo=1) {
+  const container = document.getElementById(containerId);
+  setupQuiz(scoreId, questions.length);
+  container.innerHTML = questions.map((q, qi) => `
+    <div class="quiz-item" id="${scoreId}-q${qi}">
+      <div class="quiz-question">${qi+startNo}. ${q.q}</div>
+      <div class="quiz-options">
+        ${q.opts.map((opt, oi) => `<button class="quiz-option" data-score="${scoreId}" data-q="${qi}" data-o="${oi}">${opt}</button>`).join('')}
+      </div>
+    </div>
+  `).join('');
+  container.querySelectorAll('.quiz-option').forEach(btn => btn.addEventListener('click', () => {
+    const sid = btn.dataset.score; const qIndex = Number(btn.dataset.q); const optIndex = Number(btn.dataset.o); const q = questions[qIndex]; const st = quizState[sid];
+    if (st.answered.has(qIndex)) return;
+    st.answered.add(qIndex);
+    const item = document.getElementById(`${sid}-q${qIndex}`);
+    item.querySelectorAll('.quiz-option').forEach((b,i) => {
+      if (i === q.ans) b.classList.add('correct');
+      if (i === optIndex && i !== q.ans) b.classList.add('wrong');
+      b.disabled = true;
+    });
+    if (optIndex === q.ans) st.correct += 1;
+    updateScore(sid);
+  }));
+}
+
+document.getElementById('cloze-article').innerHTML = unitData.clozeArticle;
+renderQuiz('quiz-basic', 'quiz-basic', unitData.basicQuestions, 1);
+renderQuiz('quiz-adv', 'quiz-adv', unitData.advQuestions, 11);
+renderQuiz('quiz-cloze', 'quiz-cloze', unitData.clozeQuestions, 1);
+</script>
+</body></html>
