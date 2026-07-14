@@ -7,7 +7,7 @@
   <title>國中英語文法通 4｜單元索引</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --page: #f2f0e9;
@@ -22,7 +22,7 @@
       --shadow: 0 18px 50px rgba(48, 53, 48, 0.08);
       --radius: 22px;
       --font-zh: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      --font-en: "Manrope", "Noto Sans TC", sans-serif;
+      --font-en: "Inter", "Noto Sans TC", sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -403,6 +403,43 @@
     }
     .empty-state.show { display: block; }
 
+    .maintenance {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.7fr);
+      gap: clamp(30px, 7vw, 88px);
+      margin-top: clamp(56px, 8vw, 96px);
+      padding: clamp(28px, 5vw, 48px);
+      background: #e2e4dc;
+      border: 1px solid #d0d2ca;
+    }
+    .maintenance h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      line-height: 1.3;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+    .maintenance p {
+      margin: 14px 0 0;
+      color: #62675f;
+      font-size: 0.9rem;
+    }
+    .code-note {
+      align-self: center;
+      margin: 0;
+      padding-left: 22px;
+      border-left: 1px solid #bfc3ba;
+      color: #555b54;
+      font-size: 0.84rem;
+    }
+    .code-note code {
+      display: block;
+      margin-top: 7px;
+      color: var(--ink);
+      font: 600 0.8rem/1.7 var(--font-en);
+      word-break: break-word;
+    }
+
     .footer {
       display: flex;
       justify-content: space-between;
@@ -420,6 +457,8 @@
       .unit-card { grid-template-columns: 58px minmax(0, 1fr) 38px; gap: 18px; }
       .unit-summary { grid-column: 2 / 4; }
       .unit-arrow { grid-column: 3; grid-row: 1; }
+      .maintenance { grid-template-columns: 1fr; }
+      .code-note { padding-left: 0; padding-top: 22px; border-left: 0; border-top: 1px solid #bfc3ba; }
     }
 
     @media (max-width: 640px) {
@@ -445,6 +484,7 @@
       .unit-summary { grid-column: 1 / 4; padding-left: 55px; }
       .unit-arrow { width: 34px; height: 34px; }
       .continue-panel { align-items: flex-start; flex-direction: column; }
+      .maintenance { margin-inline: -14px; }
       .footer { flex-direction: column; gap: 6px; }
     }
 
@@ -457,7 +497,7 @@
       }
     }
   </style>
-</head>
+<link rel="stylesheet" href="nordic.css"></head>
 <body>
   <a class="skip-link" href="#catalogue">跳到單元列表</a>
 
@@ -664,16 +704,20 @@
     renderUnits();
     setupContinuePanel();
 
-    if (window.gsap && !reduceMotion) {
-      const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
-      intro
-        .from(".site-header", { y: -14, autoAlpha: 0, duration: 0.5 })
-        .from(".eyebrow", { y: 14, autoAlpha: 0, duration: 0.45 }, "-=0.15")
-        .from(".hero h1", { y: 26, autoAlpha: 0, duration: 0.7 }, "-=0.25")
-        .from(".hero-aside", { y: 18, autoAlpha: 0, duration: 0.58 }, "-=0.4")
-        .from(".catalogue-head, .tools", { y: 18, autoAlpha: 0, duration: 0.5, stagger: 0.08 }, "-=0.2")
-        .from(".unit-card", { y: 18, autoAlpha: 0, duration: 0.5, stagger: 0.07 }, "-=0.2");
+    if (window.gsap) {
+      const motion = gsap.matchMedia();
+      motion.add("(prefers-reduced-motion: no-preference)", () => {
+        const intro = gsap.timeline({ defaults: { ease: "power2.out" } });
+        intro
+          .from(".site-header", { y: -8, autoAlpha: 0, duration: 0.28 })
+          .from(".eyebrow", { y: 8, autoAlpha: 0, duration: 0.26 }, "-=0.08")
+          .from(".hero h1", { y: 10, autoAlpha: 0, duration: 0.38 }, "-=0.14")
+          .from(".hero-aside", { y: 8, autoAlpha: 0, duration: 0.3 }, "-=0.2")
+          .from(".catalogue-head, .tools", { y: 8, autoAlpha: 0, duration: 0.28, stagger: 0.04 }, "-=0.12")
+          .from(".unit-card", { y: 8, autoAlpha: 0, duration: 0.28, stagger: 0.035 }, "-=0.12");
+      });
     }
   </script>
+<script src="nordic.js"></script>
 </body>
 </html>

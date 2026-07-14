@@ -19,8 +19,8 @@
       --page-bg: #f1efe8;
       --text-color: #393932;
       --muted-text: #747267;
-      --accent-color: #667b70;
-      --accent-soft: #eaf0ec;
+      --accent-color:#b0835f;
+      --accent-soft:#f4ece2;
       --success-color: #5f826e;
       --success-soft: #edf4ef;
       --error-color: #b66b65;
@@ -111,7 +111,7 @@
     .brand-card h2 { margin: 12px 0 6px; font-size: 1.46rem; line-height: 1.35; letter-spacing: 0.01em; }
     .brand-card p { margin: 0; font-size: 0.91rem; color: rgba(255,255,255,0.80); }
     .progress-mini { margin-top: 15px; height: 7px; background: rgba(255,255,255,0.18); border-radius: 999px; overflow: hidden; }
-    .progress-mini span { display: block; height: 100%; width: 8%; background: linear-gradient(90deg, #ffffff, #ffd0e3); border-radius: 999px; transition: width 0.45s ease; }
+    .progress-mini span { display: block; height: 100%; width: 8%; background: linear-gradient(90deg, #ffffff, #e7ded0); border-radius: 999px; transition: width 0.45s ease; }
     .nav-links { list-style: none; padding: 0; margin: 0; }
     .nav-links li { margin-bottom: 7px; }
     .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; display: block; padding: 10px 12px; border-radius: 15px; transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease, padding-left 0.22s ease; font-size: 0.92rem; line-height: 1.45; position: relative; overflow: hidden; }
@@ -155,7 +155,12 @@
     .practice-items { display: grid; gap: 10px; }
     .practice-item { padding: 10px 12px; background: rgba(255,255,255,0.65); border: 1px solid rgba(51,79,80,0.08); border-radius: 14px; }
     .practice-label { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; font: 800 0.78rem/1 var(--font-en); color: #fff; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); margin-bottom: 12px; }
-    .answer-text { color: #d32583; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .answer-btn { margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.9); color: var(--primary-dark); border: 1.6px solid var(--primary-color); padding: 6px 15px; border-radius: 999px; cursor: pointer; font: 800 0.82rem/1.2 var(--font-en); transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease; }
+    .answer-btn:hover { background: var(--primary-color); color: #fff; box-shadow: 0 8px 16px rgba(0,0,0,0.14); transform: translateY(-1px); }
+    .answer-btn:active { transform: scale(0.96); }
+    .answer-btn:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--accent-soft); }
+    .answer-btn::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-color); }
+    .answer-text { display: none; margin-top: 10px; color: var(--primary-dark); font-weight: 700; padding: 10px 14px; background: var(--accent-soft); border-radius: 12px; border-left: 4px solid var(--accent-color); line-height: 1.6; text-decoration: none; }
     .answer-inline { color: var(--primary-color); font-weight: 700; }
     .formula-pill { display: inline-block; padding: 6px 10px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-dark); font: 700 0.84rem/1.2 var(--font-en); margin: 4px 6px 4px 0; }
     .review-card + .review-card { margin-top: 16px; }
@@ -202,14 +207,19 @@
     }
 </style>
 <style id="series-theme">
-:root{--primary-color:#a38a4e;--primary-light:#eee5cd;--primary-soft:#f8f4e8;--primary-dark:#63583a;--primary-ink:#433c29;--secondary-color:#f5f3ee;--page-bg:#f1efe8;--text-color:#393934;--muted-text:#737168;--accent-color:#5f6261;--accent-soft:#e9eaea;}
+:root{--primary-color:#a38a4e;--primary-light:#eee5cd;--primary-soft:#f8f4e8;--primary-dark:#63583a;--primary-ink:#433c29;--secondary-color:#f5f3ee;--page-bg:#f1efe8;--text-color:#393934;--muted-text:#737168;--accent-color:#b0835f;--accent-soft:#f4ece2;}
 body{background:radial-gradient(circle at 12% 6%,rgba(163,138,78,.14),transparent 31%),radial-gradient(circle at 86% 12%,rgba(95,98,97,.09),transparent 27%),radial-gradient(circle at 50% 100%,rgba(238,229,205,.56),transparent 38%),linear-gradient(135deg,#f1efe8 0%,#f5f3ee 52%,#fbfaf7 100%) !important;}
 body::after{background:radial-gradient(circle,rgba(163,138,78,.12),transparent 68%) !important;}
 .sidebar{background:linear-gradient(180deg,rgba(99,88,58,.98),rgba(163,138,78,.94)),radial-gradient(circle at 0 0,rgba(255,255,255,.16),transparent 36%) !important;}
-</style></head>
-<body>
+
+.skip-link{position:fixed;left:16px;top:12px;z-index:3000;transform:translateY(-160%);background:var(--primary-dark);color:#fff;padding:9px 14px;border-radius:10px;text-decoration:none;transition:transform .2s ease;}
+.skip-link:focus{transform:translateY(0);}
+.answer-btn{padding:8px 16px;}
+@media (max-width:640px){.answer-btn{padding:11px 18px;font-size:0.9rem;}}
+</style><link rel="stylesheet" href="nordic.css"></head>
+<body><a href="#mainContent" class="skip-link">跳至主內容</a>
   <div class="reading-progress" id="readingProgress"></div>
-  <div class="topbar"><button class="hamburger" id="hamburger" aria-label="開啟選單">☰</button><div class="title">B4 Unit 5｜連綴與使役動詞</div></div>
+  <div class="topbar"><button type="button" class="hamburger" id="hamburger" aria-label="開啟選單">☰</button><div class="title">B4 Unit 5｜連綴與使役動詞</div></div>
   <div class="overlay" id="overlay"></div>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
@@ -262,7 +272,8 @@ function showSection(id) {
   sections.forEach(sec => sec.classList.toggle('active', sec.id === id));
   navLinks.forEach(link => link.classList.toggle('active', link.dataset.section === id));
   localStorage.setItem(storageKey, id);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
   if (window.innerWidth <= 920) toggleSidebar(false);
   updateSidebarMini();
   const targetSection = document.getElementById(id);
@@ -302,7 +313,7 @@ function updateScore(id) {
   const state = quizState[id];
   document.getElementById(`${id}-total`).textContent = state.total;
   document.getElementById(`${id}-correct`).textContent = state.correct;
-  document.getElementById(`${id}-fill`).style.width = (state.correct / state.total * 100) + '%';
+  document.getElementById(`${id}-fill`).style.width = (state.answered.size / state.total * 100) + '%';
   document.getElementById(`${id}-done`).textContent = `已作答 ${state.answered.size} / ${state.total} 題`;
 }
 function renderQuiz(containerId, scoreId, questions, startNo=1) {
@@ -312,7 +323,7 @@ function renderQuiz(containerId, scoreId, questions, startNo=1) {
     <div class="quiz-item" id="${scoreId}-q${qi}">
       <div class="quiz-question">${qi+startNo}. ${q.q}</div>
       <div class="quiz-options">
-        ${q.opts.map((opt, oi) => `<button class="quiz-option" data-score="${scoreId}" data-q="${qi}" data-o="${oi}">${opt}</button>`).join('')}
+        ${q.opts.map((opt, oi) => `<button type="button" class="quiz-option" data-score="${scoreId}" data-q="${qi}" data-o="${oi}">${opt}</button>`).join('')}
       </div>
     </div>
   `).join('');
@@ -338,9 +349,65 @@ renderQuiz('quiz-cloze', 'quiz-cloze', unitData.clozeQuestions, 1);
 
 window.addEventListener('load', () => {
   if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  gsap.from('.hero-section', { opacity: 0, y: 24, duration: 0.75, ease: 'power3.out' });
-  gsap.from('.brand-card', { opacity: 0, x: -18, duration: 0.68, ease: 'power3.out' });
-  gsap.from('.nav-links li', { opacity: 0, x: -12, duration: 0.42, stagger: 0.035, delay: 0.12, ease: 'power2.out' });
+  gsap.from('.hero-section', { y: 24, duration: 0.75, ease: 'power3.out' });
+  gsap.from('.brand-card', { x: -18, duration: 0.68, ease: 'power3.out' });
+  gsap.from('.nav-links li', { x: -12, duration: 0.42, stagger: 0.035, delay: 0.12, ease: 'power2.out' });
 });
 </script>
-</body></html>
+<script>
+/* Reveal-answer mechanism — consistent across every unit. Self-healing:
+   the answer is guaranteed visible even if the (optional) GSAP tween never runs. */
+(function () {
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function animate() { return window.gsap && !reduceMotion; }
+  function setAnswer(btn, ans, open) {
+    if (open) {
+      ans.style.display = 'block';
+      ans.setAttribute('data-open', '1');
+      btn.textContent = '隱藏答案';
+      btn.setAttribute('aria-expanded', 'true');
+      if (animate()) {
+        gsap.killTweensOf(ans);
+        gsap.fromTo(ans, { autoAlpha: 0, y: -8 }, { autoAlpha: 1, y: 0, duration: 0.28, ease: 'power2.out' });
+        // Safety net: if the tween can't finish (e.g. tab was backgrounded),
+        // clear GSAP's inline opacity/visibility so the answer never stays hidden.
+        setTimeout(function () {
+          if (ans.getAttribute('data-open') === '1') gsap.set(ans, { clearProps: 'opacity,visibility,transform' });
+        }, 380);
+      }
+    } else {
+      ans.setAttribute('data-open', '0');
+      btn.textContent = '顯示答案';
+      btn.setAttribute('aria-expanded', 'false');
+      if (animate()) {
+        gsap.killTweensOf(ans);
+        gsap.to(ans, { autoAlpha: 0, y: -5, duration: 0.15, ease: 'power1.in', onComplete: function () {
+          ans.style.display = 'none'; gsap.set(ans, { clearProps: 'opacity,visibility,transform' });
+        }});
+        setTimeout(function () { if (ans.getAttribute('data-open') === '0') ans.style.display = 'none'; }, 260);
+      } else {
+        ans.style.display = 'none';
+      }
+    }
+  }
+  function initReveals() {
+    document.querySelectorAll('.practice-item').forEach(function (item) {
+      var ans = item.querySelector('.answer-text');
+      if (!ans || item.querySelector('.answer-btn')) return;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'answer-btn';
+      btn.textContent = '顯示答案';
+      btn.setAttribute('aria-expanded', 'false');
+      ans.setAttribute('data-open', '0');
+      btn.addEventListener('click', function () {
+        setAnswer(btn, ans, ans.getAttribute('data-open') !== '1');
+      });
+      ans.parentNode.insertBefore(btn, ans);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initReveals);
+  else initReveals();
+})();
+</script>
+<script src="nordic.js"></script></body></html>
